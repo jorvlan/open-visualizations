@@ -1,4 +1,4 @@
-![Raincloud example](raincloud_extended_repmes_means_4.png)
+![Raincloud example](raincloud_extended_repmes_complete.png)
 
 # open-visualizations
 Visualizations based on best open science practices.
