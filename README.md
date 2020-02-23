@@ -1,4 +1,4 @@
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![Raincloud example](raincloud_extended_repmes_means_4.png)
 
 # open-visualizations
 Visualizations based on best open science practices.
