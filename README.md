@@ -1,3 +1,5 @@
+![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+
 # open-visualizations
 Visualizations based on best open science practices.
 
