@@ -1,6 +1,6 @@
 ![Raincloud example](raincloud_extended_repmes_complete.png)
 ![Raincloud example2](example.png)
-![Raincloud example2](example_plot.tif)
+![Raincloud example2](raincloud_extended_bisque.png)
 ![Raincloud example2](example_jitter.png)
 
 
