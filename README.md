@@ -1,5 +1,8 @@
 ![Raincloud example](raincloud_extended_repmes_complete.png)
 ![Raincloud example2](example.png)
+![Raincloud example2](example_plot.tif)
+![Raincloud example2](example_jitter.png)
+
 
 # open-visualizations
 Visualizations based on best open science practices.
