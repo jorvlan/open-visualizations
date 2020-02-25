@@ -8,10 +8,10 @@
 Visualizations based on best open science practices.
 
 This repository currently includes visualizations made with:
-- Python (Jupyter notebooks)
-- R (R markdown)
+- Python (.ipynb)
+- R (.rmd)
 
-Will soon upload the R markdown template for the figures made in R
+ The r-markdown template for the figures made in R will be uploaded soon.
 
 More to come... 
 - e.g., time-series, lineplots, etc.
