@@ -7,7 +7,6 @@ Allen, M., Poggiali, D., Whitaker, K., Marshall, T. R., & Kievit, R. A. (2019). 
 
 ![Raincloud example](R/figure9.png)
 ![Raincloud example2](R/figure6.png)
-![Raincloud example2](R/raincloud_extended_dashed.png)
 ![Raincloud example2](Python/example_jitter.png)
 
 
