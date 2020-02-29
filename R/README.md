@@ -1,3 +1,3 @@
 This folder contains figures created in R.
 
-The .rmd template is still under development and will be uploaded soon.
+Although the .rmd template is uploaded, it is still under development.
