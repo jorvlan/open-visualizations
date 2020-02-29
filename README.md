@@ -1,4 +1,4 @@
-![DOI](https://zenodo.org/badge/latestdoi/239716316)
+[![DOI](https://zenodo.org/badge/239716316.svg)]
 
 # open-visualizations
 
