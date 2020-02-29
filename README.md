@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/239716316.svg)](http://dx.doi.org/10.5281/zenodo.3692477)
+#[![DOI](https://zenodo.org/badge/239716316.svg)](http://dx.doi.org/10.5281/zenodo.3692477)
 
 # open-visualizations
 
