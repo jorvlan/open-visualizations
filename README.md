@@ -3,8 +3,8 @@ Some of this work is inspired by work from Neuroscientist Micah Allen et al.  (2
 Allen, M., Poggiali, D., Whitaker, K., Marshall, T. R., & Kievit, R. A. (2019). Raincloud plots: a multi-platform tool for robust data visualization. Wellcome open research, 4.
 
 ![Raincloud example](R/figure9.png)
+![Raincloud example2](R/figure6.png)
 ![Raincloud example2](R/raincloud_extended_dashed.png)
-![Raincloud example2](R/raincloud_extended_blue&orange.png)
 ![Raincloud example2](Python/example_jitter.png)
 
 
