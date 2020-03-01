@@ -83,6 +83,10 @@ library("gghalves")
 w = 6
 h = 4
 
+# Define limits of y-axis
+y_lim_min = 4
+y_lim_max = 7.5
+
 # Make the figure folder if it doesn't exist yet
 dir.create('../tutorial_R/figs_repmes/', showWarnings = FALSE)
 
@@ -122,7 +126,7 @@ f1 <- ggplot(data=d, aes(y=y)) +
    xlab("Condition") + ylab("Value") +
    ggtitle('Figure 1: Repeated measures individual datapoints') +
    theme_classic() +
-   coord_cartesian(ylim=c(4, 7.5))
+   coord_cartesian(ylim=c(y_lim_min, y_lim_max))
 
 f1
 
@@ -145,7 +149,7 @@ f2 <- ggplot(data=d, aes(y=y)) +
    xlab("Condition") + ylab("Value") +
    ggtitle('Figure 2: Repeated measures with connecting lines') +
    theme_classic()+
-   coord_cartesian(ylim=c(4, 7.5))
+   coord_cartesian(ylim=c(y_lim_min, y_lim_max))
 
 f2
 
@@ -176,7 +180,7 @@ f3 <- ggplot(data=d, aes(y=y)) +
    xlab("Condition") + ylab("Value") +
    ggtitle('Figure 3: Repeated measures with jitter and connections') +
    theme_classic()+
-   coord_cartesian(ylim=c(4, 7.5))
+   coord_cartesian(ylim=c(y_lim_min, y_lim_max))
 
 f3
 
@@ -203,7 +207,7 @@ f4 <- ggplot(data=d, aes(y=y)) +
    xlab("Condition") + ylab("Value") +
    ggtitle('Figure 4: Repeated measures with jittered datapoints and connections') +
    theme_classic()+
-   coord_cartesian(ylim=c(4, 7.5))
+   coord_cartesian(ylim=c(y_lim_min, y_lim_max))
 
 f4
 
@@ -250,7 +254,7 @@ f5 <- ggplot(data = d, aes(y = y)) +
    xlab("Condition") + ylab("Value") +
    ggtitle('Figure 5: Repeated measures with box- and violin plots') +
    theme_classic()+
-   coord_cartesian(ylim=c(4, 7.5))
+   coord_cartesian(ylim=c(y_lim_min, y_lim_max))
 
 f5
 
@@ -349,7 +353,7 @@ f6 <- ggplot(data = d, aes(y = y)) +
    xlab("Condition") + ylab("Value") +
    ggtitle('Figure 6: Repeated measures with box- and violin plots') +
    theme_classic()+
-   coord_cartesian(ylim=c(4, 7.5))
+   coord_cartesian(ylim=c(y_lim_min, y_lim_max))
 
 f6
 
@@ -418,7 +422,7 @@ f7 <- ggplot(data = d, aes(y = y)) +
    xlab("Condition") + ylab("Value") +
    ggtitle('Figure 7: Repeated measures with box- and violin plots and means + ci ') +
    theme_classic()+
-   coord_cartesian(ylim=c(4, 7.5))
+   coord_cartesian(ylim=c(y_lim_min, y_lim_max))
 
 f7
 
@@ -536,7 +540,7 @@ f8 <- ggplot(data = d, aes(y = y)) +
    xlab("Condition") + ylab("Value") +
    ggtitle('Figure 8: 2 x 2 Repeated measures with box- and violin plots') +
    theme_classic()+
-   coord_cartesian(ylim=c(4, 7.5))
+   coord_cartesian(ylim=c(y_lim_min, y_lim_max))
 
 f8
 
@@ -549,8 +553,8 @@ Finally, let's add lines that connect the means of each group.
 
 ```{r figure 9, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
 #First we must again define the x-coordinates of the means.
-x_tick_means_x <- c(.87, 2.15)
-x_tick_means_z <- c(2.87, 4.15)
+x_tick_means_x <- c(.87, 2.13) #same as above
+x_tick_means_z <- c(2.87, 4.13) #just add 2 for each tick
 
 f9 <- ggplot(data = d, aes(y = y)) +
   
@@ -611,11 +615,11 @@ f9 <- ggplot(data = d, aes(y = y)) +
      color = "dodgerblue", width = 0.05, size = 0.4, alpha = .6) + 
   
    geom_point(data = d %>% filter(x=="2"), aes(x = x, y = score_mean[2]), 
-    position = position_nudge(x = .15), color = "darkorange", alpha = .6, size = 1.5)+ 
+    position = position_nudge(x = .13), color = "darkorange", alpha = .6, size = 1.5)+ 
  
    geom_errorbar(data = d %>% filter(x=="2"), aes(x = x, y = score_mean[2], 
     ymin = score_mean[2]-ci[2], 
-    ymax = score_mean[2]+ci[2]), position = position_nudge(x = .15), color = "darkorange", 
+    ymax = score_mean[2]+ci[2]), position = position_nudge(x = .13), color = "darkorange", 
     width = 0.05, size = 0.4, alpha = .6) +
 
    geom_point(data = d %>% filter(z=="3"), aes(x = z, y = score_mean[1]), 
@@ -627,11 +631,11 @@ f9 <- ggplot(data = d, aes(y = y)) +
     color = "dodgerblue", width = 0.05, size = 0.4, alpha = .5)+ 
 
    geom_point(data = d %>% filter(z=="4"), aes(x = z, y = score_mean[2]), 
-    position = position_nudge(x = .15), color = "darkorange", alpha = .5)+
+    position = position_nudge(x = .13), color = "darkorange", alpha = .5)+
 
    geom_errorbar(data = d %>% filter(z=="4"), aes(x = z, y = score_mean[2], 
     ymin = score_mean[2]-ci[2], ymax = score_mean[2]+ci[2]), 
-    position = position_nudge(.15), 
+    position = position_nudge(.13), 
     color = "darkorange", width = 0.05, size = 0.4, alpha = .5)+
   
    #Add lines connecting the two means
@@ -646,7 +650,7 @@ f9 <- ggplot(data = d, aes(y = y)) +
    xlab("Condition") + ylab("Value") +
    ggtitle('Figure 9: 2 x 2 Repeated measures with box- and violin plots') +
    theme_classic()+
-   coord_cartesian(ylim=c(4, 7.5))
+   coord_cartesian(ylim=c(y_lim_min, y_lim_max))
 
 f9
 
