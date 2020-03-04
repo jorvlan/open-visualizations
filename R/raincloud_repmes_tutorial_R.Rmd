@@ -37,7 +37,6 @@ Make sure you have the packages that are needed for this tutorial.
 - Install **`tidyverse`** since it includes **`ggplot2`**, **`dplyr`**, and **`readr`**.   
 - Install **`rmarkdown`** to convert this .Rmd template into a variety of formats including HTML, MS Word, PDF, and Beamer (Only required if you do not work in Rstudio).  
 - Install **`Rmisc`** to perform some basic statistical computations (e.g., calculate mean, median, sd, se, ci).  
-- Install **`cowplot`** since it includes features that help with creating publication-quality figures, such as a set of themes, functions to align plots and arrange them into complex compound figures, and functions that make it easy to annotate plots and or mix plots with images. This package enables other themes next to the standard **`ggplot2`** *`theme_()`* functionality.  
 - Install **`gghalves`** from their GitHub repository since it features the newest options as opposed to the version on CRAN. To install from GitHub, the **`devtools`** package needs to be installed first. **`gghalves`** is a **`ggplot2`** extension for easy plotting of half-half geom combinations. Think half boxplot and half jitterplot, or half violinplot and half dotplot.  
 
 ## Package references   
@@ -47,14 +46,13 @@ Make sure you have the packages that are needed for this tutorial.
 - **`tidyverse`** - [Wickham, Rstudio, 2019](https://cran.r-project.org/web/packages/tidyverse/index.html)  
 - **`rmarkdown`** - [Allaire & Xie, 2020](https://cran.r-project.org/web/packages/rmarkdown/index.html)  
 - **`Rmisc`** - [Hope, 2013](https://cran.r-project.org/web/packages/Rmisc/index.html)  
-- **`cowplot`** - [Wilke, 2019](https://cran.r-project.org/web/packages/cowplot/index.html)  
 - **`devtools`** - [Wickham & Hester, 2020](https://cran.r-project.org/web/packages/devtools/index.html)  
 - **`gghalves`** - [Tiedemann, 2020](https://github.com/erocoar/gghalves)  
 
 ## Install packages
 
 ```{r install packages, include = TRUE, message = FALSE, eval = FALSE}
-packages <- c("plyr", "lattice", "tidyverse", "rmarkdown","Rmisc", "cowplot")
+packages <- c("plyr", "lattice", "tidyverse", "rmarkdown","Rmisc")
 
 if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
   install.packages(setdiff(packages, rownames(installed.packages())))  
