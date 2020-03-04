@@ -72,7 +72,6 @@ library("lattice")
 library("tidyverse")
 library("rmarkdown")
 library("Rmisc")
-library("cowplot")
 library("devtools")
 library("gghalves")
 
