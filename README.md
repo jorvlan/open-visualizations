@@ -17,6 +17,7 @@ If you use my repository for your research, please reference it (see the DOI abo
 ![Raincloud example](R/figure9.png)
 ![Raincloud example2](R/figure6.png)
 ![Raincloud example2](Python/example_jitter.png)
+![Raincloud example3](Python/python_example.png)
 
 
 References:
