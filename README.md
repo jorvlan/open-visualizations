@@ -12,18 +12,8 @@ If you have any questions, suggestions for improvement or identify bugs, please 
 
 If you use my repository for your research, please reference it (see the DOI above).
 
-
 ![Raincloud example](R/figure9.png)
 ![Raincloud example2](R/figure6.png)
-![Raincloud example2](Python/example_jitter.png)
-![Raincloud example3](Python/python_example.png)
-
-Installing and running in your local environment
-
-The easiest way to get the code you need is to download a copy of this repository to your computer. 
-
-You'll notice that we've included three copies of the sampled data files, one for each language. This is to hopefully make it as easy for you as possible to run the tutorials and edit the code yourself.
-
 
 References:
 
