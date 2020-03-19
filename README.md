@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/239716316.svg)](http://dx.doi.org/10.5281/zenodo.3700209)
-[![Binder python](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jorvlan/open-visualizations/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jorvlan/open-visualizations/master)
 # open-visualizations
 
 Visualizations based on best open science practices.
@@ -11,6 +11,10 @@ Visualizations based on best open science practices.
 This repository currently includes visualizations made with:
 - Python (.ipynb)
 - R (.rmd)
+
+# Interactive tutorials
+Both Python tutorials are directly available through Binder. Click on the Binder launcher to open them!
+
 
 The idea behind the ‘open-visualizations’ repository stems from the fact that (open) science - in general - lacks ‘fully’ transparent and robust visualizations, i.e., figures have always some form of ‘hidden-data’. To overcome this issue, I created this repository. So far I've uploaded an R tutorial and am currently working on a tutorial in Python, which I hope to upload soon. Both R and python tutorial will be put in a binder tutorial. Some of the work in R is inspired by work from Allen et al. (2019). 
 
