@@ -1,0 +1,7 @@
+install.packages("plyr")
+install.packages("lattice")
+install.packages("tidyverse")
+install.packages("rmarkdown")
+install.packages("Rmisc")
+install.packages("devtools")
+install.packages("gghalves")
