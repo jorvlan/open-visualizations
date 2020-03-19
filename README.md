@@ -14,6 +14,8 @@ If you use my repository for your research, please reference it (see the DOI abo
 
 ![Raincloud example](R/figure9.png)
 ![Raincloud example2](R/figure6.png)
+![Raincloud example3](Python/tutorial1/figure8.png)
+![Raincloud example4](Python/tutorial2/figure8.png)
 
 References:
 
