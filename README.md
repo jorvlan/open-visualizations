@@ -1,4 +1,5 @@
 [![DOI](https://zenodo.org/badge/239716316.svg)](http://dx.doi.org/10.5281/zenodo.3700209)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jorvlan/open-visualizations/master)
 # open-visualizations
 Visualizations based on best open science practices.
 
