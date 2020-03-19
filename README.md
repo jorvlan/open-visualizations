@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/239716316.svg)](http://dx.doi.org/10.5281/zenodo.3700209)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3715538.svg)](https://doi.org/10.5281/zenodo.3715538)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jorvlan/open-visualizations/master)
 # open-visualizations
 
