@@ -32,27 +32,30 @@ R.version$version.string
 
 Make sure you have the packages that are needed for this tutorial.
 
-- Install **`plyr`** before **`dplyr`** - which is included in **`tidyverse`**. If you need functions from both **`plyr`** and **`dplyr`**, please load **`plyr`** first, then **`dplyr`**, otherwise error messages might occur (source: R console). **`Rmisc`** also depends on this package.  
-- Install **`lattice`** since **`Rmisc`** dependends on this package.   
-- Install **`tidyverse`** since it includes **`ggplot2`**, **`dplyr`**, and **`readr`**.   
-- Install **`rmarkdown`** to convert this .Rmd template into a variety of formats including HTML, MS Word, PDF, and Beamer (Only required if you do not work in Rstudio).  
-- Install **`Rmisc`** to perform some basic statistical computations (e.g., calculate mean, median, sd, se, ci).  
-- Install **`gghalves`** from their GitHub repository since it features the newest options as opposed to the version on CRAN. To install from GitHub, the **`devtools`** package needs to be installed first. **`gghalves`** is a **`ggplot2`** extension for easy plotting of half-half geom combinations. Think half boxplot and half jitterplot, or half violinplot and half dotplot.  
+- Install **`plyr`** before **`dplyr`**. If you need functions from both **`plyr`** and **`dplyr`**, please load **`plyr`** first, then **`dplyr`**, otherwise error messages might occur (source: R console). **`Rmisc`** also depends on this package.
+- Install **`lattice`** since **`Rmisc`** dependends on this package.
+- Install **`ggplot2`**, **`dplyr`**, and **`readr`**.
+- Install **`rmarkdown`** to convert this .Rmd template into a variety of formats including HTML, MS Word, PDF, and Beamer (Only required if you do not work in Rstudio).
+- Install **`Rmisc`** to perform some basic statistical computations (e.g., calculate mean, median, sd, se, ci).
+- Install **`gghalves`** from their GitHub repository since it features the newest options as opposed to the version on CRAN. To install from GitHub, the **`devtools`** package needs to be installed first. **`gghalves`** is a **`ggplot2`** extension for easy plotting of half-half geom combinations. Think half boxplot and half jitterplot, or half violinplot and half dotplot.
+
 
 ## Package references   
 
-- **`plyr`** - [Wickham, 2019](https://cran.r-project.org/web/packages/plyr/index.html)  
-- **`lattice`** - [Sarkar, 2019](https://cran.r-project.org/web/packages/lattice/index.html)  
-- **`tidyverse`** - [Wickham, Rstudio, 2019](https://cran.r-project.org/web/packages/tidyverse/index.html)  
-- **`rmarkdown`** - [Allaire & Xie, 2020](https://cran.r-project.org/web/packages/rmarkdown/index.html)  
-- **`Rmisc`** - [Hope, 2013](https://cran.r-project.org/web/packages/Rmisc/index.html)  
-- **`devtools`** - [Wickham & Hester, 2020](https://cran.r-project.org/web/packages/devtools/index.html)  
+- **`plyr`** - [Wickham, 2019](https://cran.r-project.org/web/packages/plyr/index.html)
+- **`lattice`** - [Sarkar, 2019](https://cran.r-project.org/web/packages/lattice/index.html)
+- **`rmarkdown`** - [Allaire & Xie, 2020](https://cran.r-project.org/web/packages/rmarkdown/index.html)
+- **`ggplot2`** - [Wickham et al., 2020](https://cran.r-project.org/web/packages/ggplot2/index.html)
+- **`dplyr`** - [Wickham et al., 2020](https://cran.r-project.org/web/packages/dplyr/index.html)
+- **`readr`** - [Wickham et al., 2020](https://cran.r-project.org/web/packages/readr/index.html)
+- **`Rmisc`** - [Hope, 2013](https://cran.r-project.org/web/packages/Rmisc/index.html)
+- **`devtools`** - [Wickham & Hester, 2020](https://cran.r-project.org/web/packages/devtools/index.html)
 - **`gghalves`** - [Tiedemann, 2020](https://github.com/erocoar/gghalves)  
 
 ## Install packages
 
 ```{r install packages, include = TRUE, message = FALSE, eval = FALSE}
-packages <- c("plyr", "lattice", "tidyverse", "rmarkdown","Rmisc")
+packages <- c("plyr", "lattice", "ggplot2", "dplyr", "readr" "rmarkdown","Rmisc")
 
 if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
   install.packages(setdiff(packages, rownames(installed.packages())))  
@@ -69,7 +72,9 @@ devtools::install_github('erocoar/gghalves')
 ```{r load packages, include = TRUE, echo = TRUE}
 library("plyr")
 library("lattice")
-library("tidyverse")
+library("ggplot2")
+library("dplyr")
+library("readr")
 library("rmarkdown")
 library("Rmisc")
 library("devtools")
