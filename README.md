@@ -1,7 +1,12 @@
 [![DOI](https://zenodo.org/badge/239716316.svg)](http://dx.doi.org/10.5281/zenodo.3700209)
 [![Binder python](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jorvlan/open-visualizations/master)
 # open-visualizations
+
 Visualizations based on best open science practices.
+
+![Raincloud example](R/figure9.png)
+![Raincloud example2](R/figure6.png)
+
 
 This repository currently includes visualizations made with:
 - Python (.ipynb)
@@ -13,8 +18,6 @@ If you have any questions, suggestions for improvement or identify bugs, please 
 
 If you use my repository for your research, please reference it (see the DOI above).
 
-![Raincloud example](R/figure9.png)
-![Raincloud example2](R/figure6.png)
 
 
 References:
