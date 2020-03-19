@@ -1,2 +1,4 @@
-This folder includes figures created in Python.
-Note that the jupyter notebook will be replaced soon by a new tutorial.
+This folder includes two Python tutorials:
+
+- tutorial_1 
+- tutorial_2 
