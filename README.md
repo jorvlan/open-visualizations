@@ -23,10 +23,3 @@ I hope that these tutorials are helpful for your research and there are now fewe
 There is a zenodo (http://dx.doi.org/10.5281/zenodo.3700209) archive of the code and this repository is made available under the MIT license i.e., you can do with it what you want, but if you use it, reference needs to be given to the author of this repository.
 
 If you have any questions, suggestions for improvement or identify bugs, please open an issue in this repository.   
-
-
-
-
-References:
-
-Allen, M., Poggiali, D., Whitaker, K., Marshall, T. R., & Kievit, R. A. (2019). Raincloud plots: a multi-platform tool for robust data visualization. Wellcome open research, 4.
