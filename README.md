@@ -13,7 +13,9 @@ This repository currently includes visualizations made with:
 - R (.rmd)
 
 # Interactive tutorials
-Both Python tutorials are directly available through Binder. Click on the Binder launcher to open them!
+Both Python tutorials and the R tutorial are directly available through Binder. Click on the Binder launcher to open them! 
+
+NOTE: if you want to open the R tutorial in RStudio, you'll have to select RStudio within the Jupyter environment by - inside the R folder - clicking: 'new' -> 'RStudio'. This will open RStudio in Binder.
 
 # Background
 The idea behind the ‘open-visualizations’ repository stems from the fact that (open) science - in general - lacks ‘fully’ transparent and robust visualizations, i.e., figures have always some form of ‘hidden-data’. To overcome this issue, I created this repository. Some of the work in R is inspired by work from Allen et al. (2019)(https://github.com/RainCloudPlots/RainCloudPlots)
