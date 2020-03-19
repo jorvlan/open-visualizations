@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/239716316.svg)](http://dx.doi.org/10.5281/zenodo.3700209)
-[![Binder](https://mybinder.org/v2/gh/jorvlan/open-visualizations/412b13b53bc6fc1e22c2330d378192aac798f226?filepath=Python%2Ftutorial_1%2Frepeated_measures_python.ipynb)
+[!Binder](https://mybinder.org/v2/gh/jorvlan/open-visualizations/412b13b53bc6fc1e22c2330d378192aac798f226?filepath=Python%2Ftutorial_1%2Frepeated_measures_python.ipynb)
 
 # open-visualizations
 Visualizations based on best open science practices.
