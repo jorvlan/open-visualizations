@@ -18,7 +18,7 @@ Both Python tutorials are directly available through Binder. Click on the Binder
 # Background
 The idea behind the ‘open-visualizations’ repository stems from the fact that (open) science - in general - lacks ‘fully’ transparent and robust visualizations, i.e., figures have always some form of ‘hidden-data’. To overcome this issue, I created this repository. Some of the work in R is inspired by work from Allen et al. (2019)(https://github.com/RainCloudPlots/RainCloudPlots)
 
-I hope that these tutorials are helpful for your research and there are now fewer excuses to use 'standard' barplots! 
+I hope that these tutorials are helpful for your research!
 
 There is a zenodo (http://dx.doi.org/10.5281/zenodo.3700209) archive of the code and this repository is made available under the MIT license i.e., you can do with it what you want, but if you use it, reference needs to be given to the author of this repository.
 
