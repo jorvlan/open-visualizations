@@ -55,7 +55,7 @@ Make sure you have the packages that are needed for this tutorial.
 ## Install packages
 
 ```{r install packages, include = TRUE, message = FALSE, eval = FALSE}
-packages <- c("plyr", "lattice", "ggplot2", "dplyr", "readr" "rmarkdown","Rmisc")
+packages <- c("plyr", "lattice", "ggplot2", "dplyr", "readr", "rmarkdown","Rmisc")
 
 if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
   install.packages(setdiff(packages, rownames(installed.packages())))  
