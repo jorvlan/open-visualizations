@@ -1,0 +1,6 @@
+numpy
+pandas
+matplotlib
+scipy
+seaborn
+plotnine >= 0.6.0
