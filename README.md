@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/239716316.svg)](http://dx.doi.org/10.5281/zenodo.3700209)
-
+[![Binder python](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jorvlan/open-visualizations/master)
 # open-visualizations
 Visualizations based on best open science practices.
 
@@ -15,8 +15,6 @@ If you use my repository for your research, please reference it (see the DOI abo
 
 ![Raincloud example](R/figure9.png)
 ![Raincloud example2](R/figure6.png)
-![Raincloud example3](Python/tutorial_2/figure8.png)
-![Raincloud example4](Python/tutorial_1/figure9.png)
 
 
 References:
