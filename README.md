@@ -21,7 +21,9 @@ NOTE: if you want to open the R tutorial with Binder and use RStudio, you'll hav
 The idea behind the ‘open-visualizations’ repository stems from the fact that (open) science - in general - lacks ‘fully’ transparent and robust visualizations, i.e., figures have always some form of ‘hidden-data’. To overcome this issue, I created this repository. Some of the work in R is inspired by work from Allen et al. (2019)(https://github.com/RainCloudPlots/RainCloudPlots)
 
 There is a zenodo (https://doi.org/10.5281/zenodo.3715576) archive of the code and this repository is made available under the MIT license i.e., you can do with it what you want, but if you use it, reference needs to be given to the author of this repository (see DOI above). 
-
-Jordy van Langen. (2020, February 29). jorvlan/open-visualizations: Open-visualizations in R and Python (Version v.1.0.4). Zenodo. http://doi.org/10.5281/zenodo.3715576
+```
+J. van Langen. (2020). Open-visualizations in R and Python (Version v.1.0.4). Zenodo. 
+http://doi.org/10.5281/zenodo.3715576*
+```
 
 I hope that these tutorials are helpful for your research and if you have any questions, suggestions for improvement - I'm nor R nor Python Pro - or identify bugs, please open an issue in this repository.   
