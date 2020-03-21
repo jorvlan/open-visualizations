@@ -23,7 +23,7 @@ The idea behind the ‘open-visualizations’ repository stems from the fact tha
 There is a zenodo (https://doi.org/10.5281/zenodo.3715576) archive of the code and this repository is made available under the MIT license i.e., you can do with it what you want, but if you use it, reference needs to be given to the author of this repository (see DOI above). 
 ```
 J. van Langen. (2020). Open-visualizations in R and Python (Version v.1.0.4). Zenodo. 
-http://doi.org/10.5281/zenodo.3715576*
+http://doi.org/10.5281/zenodo.3715576
 ```
 
 I hope that these tutorials are helpful for your research and if you have any questions, suggestions for improvement - I'm nor R nor Python Pro - or identify bugs, please open an issue in this repository.   
