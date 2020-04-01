@@ -3,10 +3,12 @@
 # open-visualizations
 
 Visualizations based on best open science practices.
-
+# Made in R
 ![Raincloud example](R/figure9.png)
 ![Raincloud example2](R/figure6.png)
 
+# Made in Python
+![Example3](Python/tutorial_1/figure10.png)
 
 This repository currently includes visualizations made with:
 - Python (.ipynb)
