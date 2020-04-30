@@ -15,7 +15,7 @@ This repository currently includes visualizations made with:
 - R (.rmd)
 
 ## Update 30 April - 2020: 
-Thanks to the overwhelming feedback on Twitter, and thanks to Micah Allen, I will implement some of people's comments and upload an updated version somewhere in the upcoming two months.
+Thanks to the overwhelming feedback on Twitter, and thanks to Micah Allen, I will try to implement some comments and upload an updated version somewhere in the next two months.
 
 
 # Interactive tutorials
