@@ -14,6 +14,10 @@ This repository currently includes visualizations made with:
 - Python (.ipynb)
 - R (.rmd)
 
+## Update 30 April - 2020: 
+Thanks to the overwhelming feedback on Twitter, and thanks to Micah Allen, I will implement some of people's comments and upload an updated version somewhere in the upcoming two months.
+
+
 # Interactive tutorials
 Both Python tutorials and the R tutorial are directly available through Binder. Click on the Binder launcher to open them! 
 
@@ -28,4 +32,4 @@ J. van Langen. (2020). Open-visualizations in R and Python (Version v.1.0.4). Ze
 http://doi.org/10.5281/zenodo.3715576
 ```
 
-I hope that these tutorials are helpful for your research and if you have any questions, suggestions for improvement - I'm nor R nor Python Pro - or identify bugs, please open an issue in this repository.   
+I hope that these tutorials are helpful for your research and if you have any questions, suggestions for improvement - I'm nor R nor Python Pro - or identify bugs, please open an issue in this repository. 
