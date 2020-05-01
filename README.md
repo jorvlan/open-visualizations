@@ -15,7 +15,7 @@ This repository currently includes visualizations made with:
 - R (.rmd)
 
 ## Update 30 April - 2020: 
-Thanks to the overwhelming feedback on Twitter, and thanks to Micah Allen, I will try to implement some comments and upload an updated version somewhere in the next two months. It might be that, due to the recent Rstudio update, some package versions don't work anymore e.g., gghalves. If you encounter this problem, please try to install that packages from CRAN and if that doesn't work, try to install it from the respective GitHub package page. 
+Thanks to the overwhelming feedback on Twitter, and thanks to Micah Allen, I will try to implement some comments and upload an updated version somewhere in the next two months. It might be that, due to the recent Rstudio update, some package versions don't work anymore e.g., gghalves. If you encounter this problem, please try to install those packages from CRAN and if that doesn't work, try to install it from the respective GitHub package page. 
 
 
 # Interactive tutorials
