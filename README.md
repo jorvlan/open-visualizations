@@ -4,8 +4,9 @@
 
 Visualizations based on best open science practices.
 # Made in R
-![Raincloud example](R/figure9.png)
+![Raincloud example](R/figure5c.png)
 ![Raincloud example2](R/figure6.png)
+![Raincloud example3](R/figure11.png)
 
 # Made in Python
 ![Example3](Python/tutorial_1/figure10.png)
