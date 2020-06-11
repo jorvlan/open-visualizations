@@ -263,6 +263,96 @@ f5
 ggsave('../tutorial_R/figs_repmes/figure5.png', width = w, height = h)
 
 ```
+## Figure 5b
+
+```{r figure 5b, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+
+f5b <- ggplot(data = d, aes(y = y)) +
+  
+   #Add geom_() objects
+   geom_point(data = d %>% filter(x =="1"), aes(x = xj), color = 'dodgerblue', size = 1.5, 
+              alpha = .5) +
+   geom_point(data = d %>% filter(x =="2"), aes(x = xj), color = 'darkorange', size = 1.5, 
+              alpha = .5) +
+   geom_line(aes(x = xj, group = id), color = 'lightgray', alpha = .5) +
+  
+   geom_half_boxplot(
+     data = d %>% filter(x=="1"), aes(x=x, y = y), position = position_nudge(x = -.25), 
+     side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = TRUE, width = .1, 
+     fill = 'dodgerblue', alpha = .5) +
+   
+   geom_half_boxplot(
+     data = d %>% filter(x=="2"), aes(x=x, y = y), position = position_nudge(x = .15), 
+     side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = TRUE, width = .1, 
+     fill = 'darkorange', alpha = .5) +
+  
+   geom_half_violin(
+     data = d %>% filter(x=="1"),aes(x = x, y = y), position = position_nudge(x = 1.3), 
+     side = "r", fill = 'dodgerblue', alpha = .5, trim = FALSE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(x=="2"),aes(x = x, y = y), position = position_nudge(x = .3), 
+     side = "r", fill = "darkorange", alpha = .5, trim = FALSE) +
+  
+  
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2), labels=c("Before", "After"), limits=c(0, 3)) +
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 5b: Repeated measures with box- and violin plots') +
+   theme_classic()+
+   coord_cartesian(ylim=c(y_lim_min, y_lim_max))
+
+f5b
+
+ggsave('../tutorial_R/figs_repmes/figure5b.png', width = w, height = h)
+
+
+```
+
+```{r figure 5c, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+
+f5c <- ggplot(data = d, aes(y = y)) +
+  
+   #Add geom_() objects
+   geom_point(data = d %>% filter(x =="1"), aes(x = xj), color = 'dodgerblue', size = 1.5, 
+              alpha = .5) +
+   geom_point(data = d %>% filter(x =="2"), aes(x = xj), color = 'darkorange', size = 1.5, 
+              alpha = .5) +
+   geom_line(aes(x = xj, group = id), color = 'lightgray', alpha = .5) +
+  
+   geom_half_boxplot(
+     data = d %>% filter(x=="1"), aes(x=x, y = y), position = position_nudge(x = 1.21), 
+     side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = TRUE, width = .1, 
+     fill = 'dodgerblue', alpha = .5) +
+   
+   geom_half_boxplot(
+     data = d %>% filter(x=="2"), aes(x=x, y = y), position = position_nudge(x = .15), 
+     side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = TRUE, width = .1, 
+     fill = 'darkorange', alpha = .5) +
+  
+   geom_half_violin(
+     data = d %>% filter(x=="1"),aes(x = x, y = y), position = position_nudge(x = 1.3), 
+     side = "r", fill = 'dodgerblue', alpha = .5, trim = FALSE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(x=="2"),aes(x = x, y = y), position = position_nudge(x = .3), 
+     side = "r", fill = "darkorange", alpha = .5, trim = FALSE) +
+  
+  
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2), labels=c("Before", "After"), limits=c(0, 3)) +
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 5c: Repeated measures with box- and violin plots') +
+   theme_classic()+
+   coord_cartesian(ylim=c(y_lim_min, y_lim_max))
+
+f5c
+
+ggsave('../tutorial_R/figs_repmes/figure5c.png', width = w, height = h)
+
+
+```
+
 
 ## Note
 A potential downside of the current approach is that it uses a lot of filtering and a lot of `geom`s.
@@ -659,6 +749,265 @@ f9
 ggsave('../tutorial_R/figs_repmes/figure9.png', width = w, height = h)
 
 ```
+## Figure 10
+
+## Here, we add an additional variable 'during' if you want to show the effect measured over 3 timepoints.
+```{r figure 10, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+before = iris$Sepal.Length[1:50]
+during = iris$Sepal.Length[51:100]
+after = iris$Sepal.Length[1:50]
+n <- length(before) 
+d <- data.frame(y = c(before, during, after),
+               x = rep(c(1,2,3), each=n),
+               id = factor(rep(1:n,3)))
+
+set.seed(321)
+d$xj <- jitter(d$x, amount = .09) 
+
+f10 <- ggplot(data=d, aes(y=y)) +
+  
+   #Add geom_() objects
+   geom_point(data = d %>% filter(x=="1"), aes(x=xj), color = 'dodgerblue', size = 1.5,
+              alpha = .6) +
+   geom_point(data = d %>% filter(x=="2"), aes(x=xj), color = 'darkgreen', size = 1.5,
+              alpha = .6) +
+   geom_point(data = d %>% filter(x=="3"), aes(x=xj), color = 'darkorange', size = 1.5, 
+              alpha = .6) +
+   
+   geom_line(aes(x=xj, group=id), color = 'lightgray', alpha = .3) +
+   
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2,3), labels=c("Before", "During", "After"), limits=c(0.5, 3.5)) +
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 10: Repeated measures with jittered datapoints and connections') +
+   theme_classic()+
+   coord_cartesian(ylim=c(3.5, 7.5))
+
+f10
+
+ggsave('../tutorial_R/figs_repmes/figure10.png', width = w, height = h)
+
+
+
+```
+
+```{r figure 11, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+
+before = iris$Sepal.Width[1:50]
+during = iris$Sepal.Length[51:100]
+after = iris$Sepal.Length[1:50]
+n <- length(before) 
+d <- data.frame(y = c(before, during, after),
+               x = rep(c(1,2,3), each=n),
+               id = factor(rep(1:n,3)))
+
+set.seed(321)
+d$xj <- jitter(d$x, amount = .09) 
+
+
+f11 <- ggplot(data=d, aes(y=y)) +
+  
+   #Add geom_() objects
+   geom_point(data = d %>% filter(x=="1"), aes(x=xj), color = 'dodgerblue', size = 1.5,
+              alpha = .6) +
+   geom_point(data = d %>% filter(x=="2"), aes(x=xj), color = 'darkgreen', size = 1.5,
+              alpha = .6) +
+   geom_point(data = d %>% filter(x=="3"), aes(x=xj), color = 'darkorange', size = 1.5, 
+              alpha = .6) +
+   
+   geom_line(aes(x=xj, group=id), color = 'lightgray', alpha = .3) +
+  
+   geom_half_violin(
+     data = d %>% filter(x=="1"),aes(x = x, y = y), position = position_nudge(x = 2.2), 
+     side = "r", fill = 'dodgerblue', alpha = .5, color = "dodgerblue", trim = TRUE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(x=="2"),aes(x = x, y = y), position = position_nudge(x = 1.2), 
+     side = "r", fill = "darkgreen", alpha = .5, color = "darkgreen", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(x=="3"),aes(x = x, y = y), position = position_nudge(x = 0.2), 
+     side = "r", fill = "darkorange", alpha = .5, color = "darkorange", trim = TRUE) +
+   
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2,3), labels=c("Before", "During", "After"), limits=c(0.5, 4)) +
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 11: Repeated measures with jittered datapoints and connections') +
+   theme_classic()+
+   coord_cartesian(ylim=c(2.3, 7.2))
+
+f11
+
+ggsave('../tutorial_R/figs_repmes/figure11.png', width = w, height = h)
+```
+```{r figure 12, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+f12 <- ggplot(data=d, aes(y=y)) +
+  
+   #Add geom_() objects
+   geom_point(data = d %>% filter(x=="1"), aes(x=xj), color = 'dodgerblue', size = 1.5,
+              alpha = .8) +
+   geom_point(data = d %>% filter(x=="2"), aes(x=xj), color = 'darkgreen', size = 1.5,
+              alpha = .8) +
+   geom_point(data = d %>% filter(x=="3"), aes(x=xj), color = 'darkorange', size = 1.5, 
+              alpha = .8) +
+   
+   geom_line(aes(x=xj, group=id), color = 'lightgray', alpha = .3) +
+  
+   geom_violin(
+     data = d %>% filter(x=="1"),aes(x = x, y = y), position = position_nudge(x = 0),
+     fill = 'dodgerblue', alpha = .1, color = "white", trim = TRUE) +
+ 
+   geom_violin(
+     data = d %>% filter(x=="2"),aes(x = x, y = y), position = position_nudge(x = 0),
+     fill = "darkgreen", alpha = .1, color = "white", trim = FALSE) +
+   
+   geom_violin(
+     data = d %>% filter(x=="3"),aes(x = x, y = y), position = position_nudge(x = 0),
+     fill = "darkorange", alpha = .1, color = "white", trim = TRUE) +
+   
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2,3), labels=c("Before", "During", "After"), limits=c(0.5, 4)) +
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 12: Repeated measures with jittered datapoints and connections') +
+   theme_classic()+
+   coord_cartesian(ylim=c(2.3, 7.2))
+
+f12
+
+ggsave('../tutorial_R/figs_repmes/figure12.png', width = w, height = h)
+```
+
+
+
+```{r figure 13, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+before = iris$Sepal.Width[1:50]
+during = iris$Sepal.Length[51:100]
+after = iris$Sepal.Length[1:50]
+n <- length(before) 
+d <- data.frame(y = c(before, during, after),
+               x = rep(c(1,2,3), each=n),
+               z = rep(c(4,5,6), each=n), 
+               id = factor(rep(1:n,3)))
+
+set.seed(321)
+d$xj <- jitter(d$x, amount = .09) 
+d$xj_2 <- jitter(d$z, amount = .09)
+#d$xj_3 <- jitter(d$a, amount = .09)
+
+f13 <- ggplot(data=d, aes(y=y)) +
+  
+   #Add geom_() objects
+   geom_point(data = d %>% filter(x=="1"), aes(x=xj), color = 'dodgerblue', size = 1.5,
+              alpha = .6) +
+   geom_point(data = d %>% filter(x=="2"), aes(x=xj), color = 'darkgreen', size = 1.5,
+              alpha = .6) +
+   geom_point(data = d %>% filter(x=="3"), aes(x=xj), color = 'darkorange', size = 1.5, 
+              alpha = .6) +
+   
+    #Add geom_() objects
+   geom_point(data = d %>% filter(z=="4"), aes(x=xj_2), color = 'dodgerblue', size = 1.5,
+              alpha = .6) +
+   geom_point(data = d %>% filter(z=="5"), aes(x=xj_2), color = 'darkgreen', size = 1.5,
+              alpha = .6) +
+   geom_point(data = d %>% filter(z=="6"), aes(x=xj_2), color = 'darkorange', size = 1.5, 
+              alpha = .6) +
+   
+   geom_line(aes(x=xj, group=id), color = 'lightgray', alpha = .3) +
+   geom_line(aes(x=xj_2, group=id), color = 'lightgray', alpha = .3) +
+  
+   geom_half_violin(
+     data = d %>% filter(x=="1"),aes(x = x, y = y), position = position_nudge(x = -0.2), 
+     side = "l", fill = 'dodgerblue', alpha = .5, color = "dodgerblue", trim = TRUE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(x=="2"),aes(x = x, y = y), position = position_nudge(x = -1.2), 
+     side = "l", fill = "darkgreen", alpha = .5, color = "darkgreen", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(x=="3"),aes(x = x, y = y), position = position_nudge(x = -2.2), 
+     side = "l", fill = "darkorange", alpha = .5, color = "darkorange", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(z=="4"),aes(x = x, y = y), position = position_nudge(x = 5.2), 
+     side = "r", fill = 'dodgerblue', alpha = .5, color = "dodgerblue", trim = TRUE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(z=="5"),aes(x = x, y = y), position = position_nudge(x = 4.2), 
+     side = "r", fill = "darkgreen", alpha = .5, color = "darkgreen", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(z=="6"),aes(x = x, y = y), position = position_nudge(x = 3.2), 
+     side = "r", fill = "darkorange", alpha = .5, color = "darkorange", trim = TRUE) +
+   
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2,3,4,5,6), labels=c("Before", "During", "After", "Before", "During", "After"), limits=c(0, 7)) +
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 13: Repeated measures with jittered datapoints and connections') +
+   theme_classic()+
+   coord_cartesian(ylim=c(2.3, 7.2))
+
+f13
+
+ggsave('../tutorial_R/figs_repmes/figure13.png', width = w, height = h)
+```
+```{r figure 14, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+f14 <- ggplot(data=d, aes(y=y)) +
+  
+   #Add geom_() objects
+   geom_point(data = d %>% filter(x=="1"), aes(x=xj), color = 'dodgerblue', size = 1.5,
+              alpha = .8) +
+   geom_point(data = d %>% filter(x=="2"), aes(x=xj), color = 'darkgreen', size = 1.5,
+              alpha = .8) +
+   geom_point(data = d %>% filter(x=="3"), aes(x=xj), color = 'darkorange', size = 1.5, 
+              alpha = .8) +
+   
+    #Add geom_() objects
+   geom_point(data = d %>% filter(z=="4"), aes(x=xj_2), color = 'dodgerblue', size = 1.5,
+              alpha = .8) +
+   geom_point(data = d %>% filter(z=="5"), aes(x=xj_2), color = 'darkgreen', size = 1.5,
+              alpha = .8) +
+   geom_point(data = d %>% filter(z=="6"), aes(x=xj_2), color = 'darkorange', size = 1.5, 
+              alpha = .8) +
+   
+   geom_line(aes(x=xj, group=id), color = 'lightgray', alpha = .3) +
+   geom_line(aes(x=xj_2, group=id), color = 'lightgray', alpha = .3) +
+  
+   geom_half_violin(
+     data = d %>% filter(x=="1"),aes(x = x, y = y), position = position_nudge(x = 0), 
+     side = "r", fill = 'dodgerblue', alpha = .15, color = "lightgray", trim = TRUE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(x=="2"),aes(x = x, y = y), position = position_nudge(x = 0), 
+     side = "r", fill = "darkgreen", alpha = .15, color = "lightgray", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(x=="3"),aes(x = x, y = y), position = position_nudge(x = 0), 
+     side = "r", fill = "darkorange", alpha = .15, color = "lightgray", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(z=="4"),aes(x = x, y = y), position = position_nudge(x = 3), 
+     side = "r", fill = 'dodgerblue', alpha = .15, color = "lightgray", trim = TRUE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(z=="5"),aes(x = x, y = y), position = position_nudge(x = 3), 
+     side = "r", fill = "darkgreen", alpha = .15, color = "lightgray", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(z=="6"),aes(x = x, y = y), position = position_nudge(x = 3), 
+     side = "r", fill = "darkorange", alpha = .15, color = "lightgray", trim = TRUE) +
+   
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2,3,4,5,6), labels=c("Before", "During", "After", "Before", "During", "After"), limits=c(0, 7)) +
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 14: Repeated measures with jittered datapoints and connections') +
+   theme_classic()+
+   coord_cartesian(ylim=c(2.3, 7.2))
+
+f14
+
+ggsave('../tutorial_R/figs_repmes/figure14.png', width = w, height = h)
+```
+
 
 ## General remarks / tips
 
