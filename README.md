@@ -1,6 +1,10 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3715576.svg)](https://doi.org/10.5281/zenodo.3715576)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jorvlan/open-visualizations/master)
 # open-visualizations
+```
+J. van Langen. (2020). Open-visualizations in R and Python. 
+https://github.com/jorvlan/open-visualizations
+```
 
 Visualizations based on best open science practices.
 # Made in R
