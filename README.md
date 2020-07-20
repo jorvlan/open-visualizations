@@ -6,6 +6,12 @@ van Langen, J. (2020). Open-visualizations in R and Python.
 https://github.com/jorvlan/open-visualizations
 ```
 
+This repository has been cited by:
+``` Genc, S., et al., (2020). Longitudinal white matter development in child-ren is associated with puberty, attentional difficulties and mental health. bioRxiv, 607671.
+https://www.biorxiv.org/content/10.1101/607671v2 ```
+``` Wynn J., et al., (2020). Encoding and retreival eye movements mediateage differences in pattern completion. PsyArXiv.
+https://psyarxiv.com/mdx3f/ ```
+
 Visualizations based on best open science practices.
 # Made in R
 ![Raincloud example](R/figure5c.png)
