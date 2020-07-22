@@ -16,6 +16,7 @@ https://psyarxiv.com/mdx3f/
 
 Visualizations based on best open science practices.
 # Made in R
+![Raincloud example](R/figure10d.png)
 ![Raincloud example](R/figure10c.png)
 ![Raincloud example](R/figure10b.png)
 ![Raincloud example](R/figure5c.png)
