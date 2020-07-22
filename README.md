@@ -1,3 +1,5 @@
+![Raincloud example](R/figure10d_rotated_2.png)
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3715576.svg)](https://doi.org/10.5281/zenodo.3715576)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jorvlan/open-visualizations/master)
 # open-visualizations
@@ -16,7 +18,6 @@ https://psyarxiv.com/mdx3f/
 
 Visualizations based on best open science practices.
 # Made in R
-![Raincloud example](R/figure10d_rotated_2.png)
 ![Raincloud example](R/figure10e.png)
 ![Raincloud example](R/figure10d.png)
 ![Raincloud example](R/figure5c.png)
