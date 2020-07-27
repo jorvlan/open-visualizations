@@ -14,6 +14,7 @@ This repository has been cited by:
 https://www.biorxiv.org/content/10.1101/607671v2
 - Wynn J., et al., (2020). Encoding and retreival eye movements mediateage differences in pattern completion. PsyArXiv.
 https://psyarxiv.com/mdx3f/
+- Uhlig, M., & Gaebler, M. (2020, July 27). Rapid brain changes following acute psychosocial stress. Retrieved from osf.io/vw2zb 
 ```
 
 Visualizations based on best open science practices.
