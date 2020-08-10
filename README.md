@@ -16,7 +16,9 @@ https://www.biorxiv.org/content/10.1101/607671v2
 https://psyarxiv.com/mdx3f/
 - Ehlers, M., et al., (2020). Natural variations in brain morphology do not account for inter-individual differences in defensive responding during fear acquisition training and extinction. PsyArXiv.
 https://psyarxiv.com/q2kyf/
-- Uhlig, M., & Gaebler, M. (2020, July 27). Rapid brain changes following acute psychosocial stress. Retrieved from osf.io/vw2zb 
+- Uhlig, M., & Gaebler, M. (2020, July 27). Rapid brain changes following acute psychosocial stress. Retrieved from osf.io/vw2zb -
+- Bejjani, C., & Egner, T. (2020). How reinforcement shapes the binding of stimulus-control associations. 
+PsyArXiv. https://psyarxiv.com/cdpxh/
 ```
 
 Visualizations based on best open science practices.
