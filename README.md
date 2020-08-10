@@ -10,13 +10,12 @@ https://github.com/jorvlan/open-visualizations
 
 This repository has been cited by:
 ``` 
-- Genc, S., et al., (2020). Longitudinal white matter development in child-ren is associated with puberty, attentional difficulties and mental health. bioRxiv, 607671.
-https://www.biorxiv.org/content/10.1101/607671v2
-- Wynn J., et al., (2020). Encoding and retreival eye movements mediateage differences in pattern completion. PsyArXiv.
-https://psyarxiv.com/mdx3f/
-- Ehlers, M., et al., (2020). Natural variations in brain morphology do not account for inter-individual differences in defensive responding during fear acquisition training and extinction. PsyArXiv.
-https://psyarxiv.com/q2kyf/
-- Uhlig, M., & Gaebler, M. (2020, July 27). Rapid brain changes following acute psychosocial stress. Retrieved from osf.io/vw2zb -
+- Genc, S., et al., (2020). Longitudinal white matter development in child-ren is associated with puberty, attentional difficulties and mental health. 
+bioRxiv, 607671. https://www.biorxiv.org/content/10.1101/607671v2
+- Wynn J., et al., (2020). Encoding and retreival eye movements mediateage differences in pattern completion. 
+PsyArXiv. https://psyarxiv.com/mdx3f/
+- Ehlers, M., et al., (2020). Natural variations in brain morphology do not account for inter-individual differences in defensive responding during fear acquisition training and extinction. PsyArXiv. https://psyarxiv.com/q2kyf/
+- Uhlig, M., & Gaebler, M. (2020, July 27). Rapid brain changes following acute psychosocial stress. Retrieved from osf.io/vw2zb
 - Bejjani, C., & Egner, T. (2020). How reinforcement shapes the binding of stimulus-control associations. 
 PsyArXiv. https://psyarxiv.com/cdpxh/
 ```
