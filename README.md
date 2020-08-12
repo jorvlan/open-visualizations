@@ -1,4 +1,4 @@
-![Raincloud example](R/figure3_1.png)
+
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3715576.svg)](https://doi.org/10.5281/zenodo.3715576)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jorvlan/open-visualizations/master)
@@ -28,12 +28,13 @@ This repository has been cited by:
 
 Visualizations based on best open science practices.
 # Made in R
+![Raincloud example](R/figure5_1.png)
+![Raincloud example](R/figure3_1.png)
 ![Raincloud example](R/figure4_1.png)
 ![Raincloud example](R/figure10e.png)
 ![Raincloud example](R/figure10d.png)
 ![Raincloud example](R/figure5c.png)
 ![Raincloud example2](R/figure6.png)
-![Raincloud example3](R/figure11.png)
 
 # Made in Python
 ![Example3](Python/tutorial_1/figure10.png)
