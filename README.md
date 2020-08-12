@@ -28,6 +28,7 @@ This repository has been cited by:
 
 Visualizations based on best open science practices.
 # Made in R
+![Raincloud example](R/figure4_1.png)
 ![Raincloud example](R/figure10e.png)
 ![Raincloud example](R/figure10d.png)
 ![Raincloud example](R/figure5c.png)
