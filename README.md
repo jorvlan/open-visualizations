@@ -13,11 +13,11 @@ This repository has been cited by:
 - Genc, S., Malpas, C. B., Gulenc, A., Sciberras, E., Efron, D., Silk, T. J., & Seal, M. L. (2020). 
     Longitudinal patterns of white matter fibre density and morphology in children 
     is associated with age and pubertal stage. 
-    **Developmental Cognitive Neuroscience**, 100853. https://doi.org/10.1016/j.dcn.2020.100853
+    *Developmental Cognitive Neuroscience*, 100853. https://doi.org/10.1016/j.dcn.2020.100853
 - Mosley, P. E., Robinson, K., Coyne, T., Silburn, P., Barker, M. S., Breakspear, M., ... & Perry, A. (2020). 
     Subthalamic Deep Brain Stimulation Identifies Frontal Networks Supporting Initiation, 
     Inhibition and Strategy Use in Parkinson's Disease: Initiation and Inhibition after STN-DBS for PD. 
-    NeuroImage, 117352. https://doi.org/10.1016/j.neuroimage.2020.117352
+    ***NeuroImage***, 117352. https://doi.org/10.1016/j.neuroimage.2020.117352
 - Genc, S., et al., (2020). Longitudinal white matter development in child-ren is associated with puberty, 
     attentional difficulties and mental health. 
     bioRxiv, 607671. https://www.biorxiv.org/content/10.1101/607671v2
