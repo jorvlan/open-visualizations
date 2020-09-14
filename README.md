@@ -10,11 +10,11 @@ https://github.com/jorvlan/open-visualizations
 
 This repository has been cited by:
 <pre>
-- Genc, S., Malpas, C. B., Gulenc, A., Sciberras, E., Efron, D., Silk, T. J., & Seal, M. L. (2020). 
+- Genc, S., et al., (2020). 
     Longitudinal patterns of white matter fibre density and morphology in children 
     is associated with age and pubertal stage. 
     <b>Developmental Cognitive Neuroscience</b>, 100853. https://doi.org/10.1016/j.dcn.2020.100853
-- Mosley, P. E., Robinson, K., Coyne, T., Silburn, P., Barker, M. S., Breakspear, M., ... & Perry, A. (2020). 
+- Mosley, et al.,(2020). 
     Subthalamic Deep Brain Stimulation Identifies Frontal Networks Supporting Initiation, 
     Inhibition and Strategy Use in Parkinson's Disease: Initiation and Inhibition after STN-DBS for PD. 
     <b>NeuroImage</b>, 117352. https://doi.org/10.1016/j.neuroimage.2020.117352
