@@ -10,6 +10,9 @@ https://github.com/jorvlan/open-visualizations
 
 This repository has been cited by:
 <pre>
+- Medel, V., et al., (2020). 
+    Complexity and 1/f slope jointly reflect cortical states across different E/I balances. 
+    <b>bioRxiv</b>. https://doi.org/10.1101/2020.09.15.298497
 - Genc, S., et al., (2020). 
     Longitudinal patterns of white matter fibre density and morphology in children 
     is associated with age and pubertal stage. 
