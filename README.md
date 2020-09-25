@@ -4,8 +4,10 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jorvlan/open-visualizations/master)
 # open-visualizations
 ```
+<pre>
 van Langen, J. (2020). Open-visualizations in R and Python. 
-https://github.com/jorvlan/open-visualizations
+<b>https://github.com/jorvlan/open-visualizations</b>
+</pre>
 ```
 
 This repository has been cited by:
