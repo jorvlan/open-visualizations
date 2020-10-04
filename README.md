@@ -23,7 +23,7 @@ This repository has been cited by:
     Longitudinal patterns of white matter fibre density and morphology in children 
     is associated with age and pubertal stage. 
     <b>Developmental Cognitive Neuroscience</b>, 100853. <a href="https://doi.org/10.1016/j.dcn.2020.100853">https://doi.org/10.1016/j.dcn.2020.100853</a>
-- Mosley, et al.,(2020). 
+- Mosley, P., et al.,(2020). 
     Subthalamic Deep Brain Stimulation Identifies Frontal Networks Supporting Initiation, 
     Inhibition and Strategy Use in Parkinson's Disease: Initiation and Inhibition after STN-DBS for PD. 
     <b>NeuroImage</b>, 117352. <a href="https://doi.org/10.1016/j.neuroimage.2020.117352">https://doi.org/10.1016/j.neuroimage.2020.117352</a>
