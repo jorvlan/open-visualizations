@@ -18,29 +18,29 @@ This repository has been cited by:
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/r6mde">https://psyarxiv.com/r6mde</a>
 - Medel, V., et al., (2020). 
     Complexity and 1/f slope jointly reflect cortical states across different E/I balances. 
-    <b>bioRxiv</b>. https://doi.org/10.1101/2020.09.15.298497
+    <b>bioRxiv</b>. <a href="https://doi.org/10.1101/2020.09.15.298497">https://doi.org/10.1101/2020.09.15.298497</a>
 - Genc, S., et al., (2020). 
     Longitudinal patterns of white matter fibre density and morphology in children 
     is associated with age and pubertal stage. 
-    <b>Developmental Cognitive Neuroscience</b>, 100853. https://doi.org/10.1016/j.dcn.2020.100853
+    <b>Developmental Cognitive Neuroscience</b>, 100853. <a href="https://doi.org/10.1016/j.dcn.2020.100853">https://doi.org/10.1016/j.dcn.2020.100853</a>
 - Mosley, et al.,(2020). 
     Subthalamic Deep Brain Stimulation Identifies Frontal Networks Supporting Initiation, 
     Inhibition and Strategy Use in Parkinson's Disease: Initiation and Inhibition after STN-DBS for PD. 
-    <b>NeuroImage</b>, 117352. https://doi.org/10.1016/j.neuroimage.2020.117352
+    <b>NeuroImage</b>, 117352. <a href="https://doi.org/10.1016/j.neuroimage.2020.117352">https://doi.org/10.1016/j.neuroimage.2020.117352</a>
 - Genc, S., et al., (2020). Longitudinal white matter development in child-ren is associated with puberty, 
     attentional difficulties and mental health. 
-    <b>bioRxiv</b>, 607671. https://www.biorxiv.org/content/10.1101/607671v2
+    <b>bioRxiv</b>, 607671. <a href="https://www.biorxiv.org/content/10.1101/607671v2">https://www.biorxiv.org/content/10.1101/607671v2</a>
 - Wynn J., et al., (2020). Encoding and retreival eye movements mediateage differences in pattern completion. 
-    <b>PsyArXiv</b>. https://psyarxiv.com/mdx3f/
+    <b>PsyArXiv</b>. <a href="https://psyarxiv.com/mdx3f/">https://psyarxiv.com/mdx3f/</a>
 - Ehlers, M., et al., (2020). Natural variations in brain morphology do not account for inter-individual 
     differences in defensive responding during fear acquisition training and extinction. 
-    <b>PsyArXiv</b>. https://psyarxiv.com/q2kyf/
+    <b>PsyArXiv</b>. <a href="https://psyarxiv.com/q2kyf/">https://psyarxiv.com/q2kyf/</a>
 - Uhlig, M., & Gaebler, M. (2020, July 27). Rapid brain changes following acute psychosocial stress. 
-    Retrieved from osf.io/vw2zb
+    Retrieved from <a href="osf.io/vw2zb/">osf.io/vw2zb</a>
 - Bejjani, C., & Egner, T. (2020). How reinforcement shapes the binding of stimulus-control associations. 
-    <b>PsyArXiv</b>. https://psyarxiv.com/cdpxh/
+    <b>PsyArXiv</b>. <a href="https://psyarxiv.com/cdpxh/">https://psyarxiv.com/cdpxh/</a>
 - Wiedemann (2020). lcsm: Univariate and Bivariate Latent Change Score Modeling.
-    <b>CRAN</b> https://cran.r-project.org/web/packages/lcsm/vignettes/v0-longitudinal-plots.html
+    <b>CRAN</b> <a href="https://cran.r-project.org/web/packages/lcsm/vignettes/v0-longitudinal-plots.html">https://cran.r-project.org/web/packages/lcsm/vignettes/v0-longitudinal-plots.html</a>
 </pre> 
 
 Visualizations based on best open science practices.
