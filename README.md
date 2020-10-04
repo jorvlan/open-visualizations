@@ -15,7 +15,7 @@ This repository has been cited by:
 <pre>
 - Hatano, A., et al., (2020).
     Thinking about thinking: People Underestimate Intrinsically Motivating Experiences of Waiting
-    <b>PsyArXiv</b>. [](https://psyarxiv.com/r6mde/)
+    <b>PsyArXiv</b>. [https://psyarxiv.com/r6mde/]
 - Medel, V., et al., (2020). 
     Complexity and 1/f slope jointly reflect cortical states across different E/I balances. 
     <b>bioRxiv</b>. https://doi.org/10.1101/2020.09.15.298497
