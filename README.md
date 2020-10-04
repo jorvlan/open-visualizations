@@ -40,7 +40,7 @@ This repository has been cited by:
 - Bejjani, C., & Egner, T. (2020). How reinforcement shapes the binding of stimulus-control associations. 
     <b>PsyArXiv</b>. https://psyarxiv.com/cdpxh/
 - Wiedemann (2020). lcsm: Univariate and Bivariate Latent Change Score Modeling.
-    <b>https://cran.r-project.org/web/packages/lcsm/vignettes/v0-longitudinal-plots.html</b>
+    <b>CRAN</b> https://cran.r-project.org/web/packages/lcsm/vignettes/v0-longitudinal-plots.html
 </pre> 
 
 Visualizations based on best open science practices.
