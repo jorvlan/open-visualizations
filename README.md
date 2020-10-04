@@ -86,4 +86,4 @@ van Langen, J. (2020). Open-visualizations in R and Python.
 <a href="https://github.com/jorvlan/open-visualizations">https://github.com/jorvlan/open-visualizations</a>
 </pre>
 
-I hope that these tutorials are helpful for your research and if you have any questions, suggestions for improvement - I'm nor R nor Python Pro - or identify bugs, please open an issue in this repository. 
+I hope that these tutorials are helpful for your research and if you have any questions, suggestions for improvement or identify bugs, please open an issue in this repository. 
