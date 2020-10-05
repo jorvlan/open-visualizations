@@ -1,0 +1,1154 @@
+---
+  title: "Open-visualizations tutorial for repeated measures in R"
+author: "Jordy van Langen"
+date: '`r format(Sys.time(), "%B %d, %Y")`'
+output:
+  pdf_document: default
+keep_md: yes
+urlcolor: blue
+---
+  
+  
+  ## Background
+  
+  This tutorial is partly inspired by work from [Allen et al. (2019)](https://wellcomeopenresearch.org/articles/4-63) and was initially created to contribute to a GitHub repository called ['open-visualizations'](https://github.com/jorvlan/open-visualizations). The idea behind the ['open-visualizations'](https://github.com/jorvlan/open-visualizations) repository stems from the fact that (open) science - in general - lacks 'fully' transparent and robust visualizations, i.e., figures have always some form of 'hidden-data'. To overcome this issue, I started experimenting with some code in Python and R and after posting a [Tweet](https://twitter.com/jordyvanlangen/status/1228614021076533249), in which I stated that I was working on ['open-visualizations'](https://github.com/jorvlan/open-visualizations), Neuroscientist Micah Allen [replied](https://twitter.com/micahgallen/status/1228615972749266944) and advised me to check out his work on Rainclouds. After performing two of their tutorials, in [R](https://r-project.org/) and [Python](https://python.org) respectively, I thought of a way to combine the raincloud approach with my own work performed in [Python](https://www.python.org/). Shortly after posting another [Tweet](https://twitter.com/jordyvanlangen/status/1231171552684625921 ), which included some figures that I produced in [R](https://r-project.org/), I received a huge amount of encouraging feedback which led me to writing this markdown document. Next to this markdown document, I have created two other tutorials in Python. Both tutorials are available in my repository [open-visualizations](https://github.com/jorvlan/open-visualizations). 
+
+If you have any questions, suggestions for improvement or identify bugs, please open an issue in the GitHub repository [open-visualizations](https://github.com/jorvlan/open-visualizations). 
+
+If you use my repository for your research, please reference it.
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.width=6, fig.height=5, fig.path='figs_repmes/',
+                      echo=TRUE, warning=FALSE, message=FALSE)
+```
+
+## R-version check
+
+```{r check R version, echo = TRUE}
+R.version$version.string
+```
+
+## Package dependencies
+
+Make sure you have the packages that are needed for this tutorial.
+
+- Install **`plyr`** before **`dplyr`**. If you need functions from both **`plyr`** and **`dplyr`**, please load **`plyr`** first, then **`dplyr`**, otherwise error messages might occur (source: R console). **`Rmisc`** also depends on this package.
+- Install **`lattice`** since **`Rmisc`** dependends on this package.
+- Install **`ggplot2`**, **`dplyr`**, and **`readr`**.
+- Install **`rmarkdown`** to convert this .Rmd template into a variety of formats including HTML, MS Word, PDF, and Beamer (Only required if you do not work in Rstudio).
+- Install **`Rmisc`** to perform some basic statistical computations (e.g., calculate mean, median, sd, se, ci).
+- Install **`gghalves`** from their GitHub repository since it features the newest options as opposed to the version on CRAN. To install from GitHub, the **`devtools`** package needs to be installed first. **`gghalves`** is a **`ggplot2`** extension for easy plotting of half-half geom combinations. Think half boxplot and half jitterplot, or half violinplot and half dotplot.
+
+
+## Package references   
+
+- **`plyr`** - [Wickham, 2019](https://cran.r-project.org/web/packages/plyr/index.html)
+- **`lattice`** - [Sarkar, 2019](https://cran.r-project.org/web/packages/lattice/index.html)
+- **`rmarkdown`** - [Allaire & Xie, 2020](https://cran.r-project.org/web/packages/rmarkdown/index.html)
+- **`ggplot2`** - [Wickham et al., 2020](https://cran.r-project.org/web/packages/ggplot2/index.html)
+- **`dplyr`** - [Wickham et al., 2020](https://cran.r-project.org/web/packages/dplyr/index.html)
+- **`readr`** - [Wickham et al., 2020](https://cran.r-project.org/web/packages/readr/index.html)
+- **`Rmisc`** - [Hope, 2013](https://cran.r-project.org/web/packages/Rmisc/index.html)
+- **`devtools`** - [Wickham & Hester, 2020](https://cran.r-project.org/web/packages/devtools/index.html)
+- **`gghalves`** - [Tiedemann, 2020](https://github.com/erocoar/gghalves)  
+
+## Install packages
+
+```{r install packages, include = TRUE, message = FALSE, eval = FALSE}
+packages <- c("plyr", "lattice", "ggplot2", "dplyr", "readr", "rmarkdown","Rmisc")
+if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
+  install.packages(setdiff(packages, rownames(installed.packages())))  
+}
+if (!require(devtools)) {
+  install.packages("devtools")
+}
+devtools::install_github('erocoar/gghalves')
+```
+
+## Load packages
+
+```{r load packages, include = TRUE, echo = TRUE}
+library("plyr")
+library("lattice")
+library("ggplot2")
+library("dplyr")
+library("readr")
+library("rmarkdown")
+library("Rmisc")
+library("devtools")
+library("gghalves")
+# width and height variables for saved plots
+w = 6
+h = 4
+# Define limits of y-axis
+y_lim_min = 4
+y_lim_max = 7.5
+# Make the figure folder if it doesn't exist yet
+
+path1 <- 'C:\\Users\\jorvlan\\Documents\\tutorial_R\\figs_repmes'
+
+path <- dir.create('..\\tutorial_R\\figs_repmes', showWarnings = T)
+```
+
+
+## For this tutorial, we make use of the package `gghalves`. 
+
+The main idea behind `gghalves` is that standard `geom's` aggregate data e.g.,`geom_boxplot`, `geom_violin` and `geom_dotplot` who all tend to be an approximation of symmetry. Given that the space to display information is limited, we can make better use of it by cutting the `geom`s in half and displaying additional `geom`s that e.g. give information about the sample size [Tiedemann, 2020](https://github.com/erocoar/gghalves).
+
+## Figure 1
+
+For this example, we make use of the *iris* dataset, which is freely available in R.
+
+We manipulate the dataset by creating two variables (1) `before` and (2) `after`. 
+Specifiy the variable `n` and create a dataframe `d` which includes the variables `y`, `x` and `id`.
+
+```{r dataframe settings, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+before = iris$Sepal.Length[1:50]
+after = iris$Sepal.Length[51:100]
+n <- length(before)
+d <- data.frame(y = c(before, after),
+                x = rep(c(1,2), each=n),
+                id = factor(rep(1:n,2)))
+```
+
+Let's create a first very basic figure only showing the individual datapoints.
+
+```{r figure 1, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE }
+f1 <- ggplot(data=d, aes(y=y)) +
+  
+   #Add geom_() objects
+   geom_point(aes(x=x), color = "magenta", size = 1.5) +
+   
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2), labels=c("Before", "After"), limits=c(0, 3)) +
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 1: Repeated measures individual datapoints') +
+   theme_classic() +
+   coord_cartesian(ylim=c(y_lim_min, y_lim_max))
+f1
+ggsave('tutorial_R\\figs_repmes\\figure1.png', width = w, height = h)
+```
+
+## Figure 2
+
+Let's again create a simple figure, but now with the datapoints connected (i.e., intra-individual trends).
+
+```{r figure 2, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+f2 <- ggplot(data=d, aes(y=y)) +
+  
+  #Add geom_() objects
+  geom_point(aes(x=x), color = "magenta", size = 1.5) +
+  geom_line(aes(x=x, group=id), color = 'lightgray') +
+  
+  #Define additional settings
+  scale_x_continuous(breaks=c(1,2), labels=c("Before", "After"), limits=c(0, 3)) +
+  xlab("Condition") + ylab("Value") +
+  ggtitle('Figure 2: Repeated measures with connecting lines') +
+  theme_classic()+
+  coord_cartesian(ylim=c(y_lim_min, y_lim_max))
+f2
+ggsave('tutorial_R\\figs_repmes\\figure2.png', width = w, height = h)
+```
+
+## Figure 3
+
+Let's add some jitter to avoid that datapoints overlap.
+
+```{r create jitter, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+set.seed(322)
+d$xj <- jitter(d$x, amount=.04)
+```
+
+Now we create the the figure again, including jitter.
+
+```{r figure 3, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+f3 <- ggplot(data=d, aes(y=y)) +
+  
+   #Add geom_() objects
+   geom_point(aes(x=xj), color = "magenta", size = 1.5) +
+   geom_line(aes(x=xj, group=id), color = 'lightgray') +
+   
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2), labels=c("Before", "After"), limits=c(0, 3)) +
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 3: Repeated measures with jitter and connections') +
+   theme_classic()+
+   coord_cartesian(ylim=c(y_lim_min, y_lim_max))
+f3
+ggsave('tutorial_R\\figs_repmes\\figure3.png', width = w, height = h)
+```
+
+## Figure 4
+
+Produce another figure, but now defined by different colors for `Before` and `After`.
+Just for illustrative purposes, `alpha` was used in `geom_line`.
+
+```{r figure 4, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+f4 <- ggplot(data=d, aes(y=y)) +
+  
+   #Add geom_() objects
+   geom_point(data = d %>% filter(x=="1"), aes(x=xj), color = 'dodgerblue', size = 1.5,
+              alpha = .6) +
+   geom_point(data = d %>% filter(x=="2"), aes(x=xj), color = 'darkorange', size = 1.5, 
+              alpha = .6) +
+   geom_line(aes(x=xj, group=id), color = 'lightgray', alpha = .3) +
+   
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2), labels=c("Before", "After"), limits=c(0, 3)) +
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 4: Repeated measures with jittered datapoints and connections') +
+   theme_classic()+
+   coord_cartesian(ylim=c(y_lim_min, y_lim_max))
+f4
+ggsave('tutorial_R\\figs_repmes\\figure4.png', width = w, height = h)
+```
+
+
+## Figure 5
+
+Let's add box- and violinplots to create `raincloud` like plots.
+
+```{r figure 5, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+f5 <- ggplot(data = d, aes(y = y)) +
+  
+  #Add geom_() objects
+  geom_point(data = d %>% filter(x =="1"), aes(x = xj), color = 'dodgerblue', size = 1.5, 
+             alpha = .6) +
+  geom_point(data = d %>% filter(x =="2"), aes(x = xj), color = 'darkorange', size = 1.5, 
+             alpha = .6) +
+  geom_line(aes(x = xj, group = id), color = 'lightgray', alpha = .3) +
+  
+  geom_half_boxplot(
+    data = d %>% filter(x=="1"), aes(x=x, y = y), position = position_nudge(x = -.25), 
+    side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, 
+    fill = 'dodgerblue') +
+  
+  geom_half_boxplot(
+    data = d %>% filter(x=="2"), aes(x=x, y = y), position = position_nudge(x = .15), 
+    side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, 
+    fill = 'darkorange') +
+  
+  geom_half_violin(
+    data = d %>% filter(x=="1"),aes(x = x, y = y), position = position_nudge(x = -.3), 
+    side = "l", fill = 'dodgerblue') +
+  
+  geom_half_violin(
+    data = d %>% filter(x=="2"),aes(x = x, y = y), position = position_nudge(x = .3), 
+    side = "r", fill = "darkorange") +
+  
+  
+  #Define additional settings
+  scale_x_continuous(breaks=c(1,2), labels=c("Before", "After"), limits=c(0, 3)) +
+  xlab("Condition") + ylab("Value") +
+  ggtitle('Figure 5: Repeated measures with box- and violin plots') +
+  theme_classic()+
+  coord_cartesian(ylim=c(y_lim_min, y_lim_max))
+f5
+ggsave('tutorial_R\\figs_repmes\\figure5.png', width = w, height = h)
+```
+## Figure 5b
+
+```{r figure 5b, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+f5b <- ggplot(data = d, aes(y = y)) +
+  
+  #Add geom_() objects
+  geom_point(data = d %>% filter(x =="1"), aes(x = xj), color = 'dodgerblue', size = 1.5, 
+             alpha = .5) +
+  geom_point(data = d %>% filter(x =="2"), aes(x = xj), color = 'darkorange', size = 1.5, 
+             alpha = .5) +
+  geom_line(aes(x = xj, group = id), color = 'lightgray', alpha = .5) +
+  
+  geom_half_boxplot(
+    data = d %>% filter(x=="1"), aes(x=x, y = y), position = position_nudge(x = -.25), 
+    side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = TRUE, width = .1, 
+    fill = 'dodgerblue', alpha = .5) +
+  
+  geom_half_boxplot(
+    data = d %>% filter(x=="2"), aes(x=x, y = y), position = position_nudge(x = .15), 
+    side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = TRUE, width = .1, 
+    fill = 'darkorange', alpha = .5) +
+  
+  geom_half_violin(
+    data = d %>% filter(x=="1"),aes(x = x, y = y), position = position_nudge(x = 1.3), 
+    side = "r", fill = 'dodgerblue', alpha = .5, trim = FALSE) +
+  
+  geom_half_violin(
+    data = d %>% filter(x=="2"),aes(x = x, y = y), position = position_nudge(x = .3), 
+    side = "r", fill = "darkorange", alpha = .5, trim = FALSE) +
+  
+  
+  #Define additional settings
+  scale_x_continuous(breaks=c(1,2), labels=c("Before", "After"), limits=c(0, 3)) +
+  xlab("Condition") + ylab("Value") +
+  ggtitle('Figure 5b: Repeated measures with box- and violin plots') +
+  theme_classic()+
+  coord_cartesian(ylim=c(y_lim_min, y_lim_max))
+f5b
+ggsave('tutorial_R\\figs_repmes\\figure5b.png', width = w, height = h)
+```
+
+```{r figure 5c, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+f5c <- ggplot(data = d, aes(y = y)) +
+  
+  #Add geom_() objects
+  geom_point(data = d %>% filter(x =="1"), aes(x = xj), color = 'dodgerblue', size = 1.5, 
+             alpha = .5) +
+  geom_point(data = d %>% filter(x =="2"), aes(x = xj), color = 'darkorange', size = 1.5, 
+             alpha = .5) +
+  geom_line(aes(x = xj, group = id), color = 'lightgray', alpha = .5) +
+  
+  geom_half_boxplot(
+    data = d %>% filter(x=="1"), aes(x=x, y = y), position = position_nudge(x = 1.21), 
+    side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = TRUE, width = .1, 
+    fill = 'dodgerblue', alpha = .5) +
+  
+  geom_half_boxplot(
+    data = d %>% filter(x=="2"), aes(x=x, y = y), position = position_nudge(x = .15), 
+    side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = TRUE, width = .1, 
+    fill = 'darkorange', alpha = .5) +
+  
+  geom_half_violin(
+    data = d %>% filter(x=="1"),aes(x = x, y = y), position = position_nudge(x = 1.3), 
+    side = "r", fill = 'dodgerblue', alpha = .5, trim = FALSE) +
+  
+  geom_half_violin(
+    data = d %>% filter(x=="2"),aes(x = x, y = y), position = position_nudge(x = .3), 
+    side = "r", fill = "darkorange", alpha = .5, trim = FALSE) +
+  
+  
+  #Define additional settings
+  scale_x_continuous(breaks=c(1,2), labels=c("Before", "After"), limits=c(0, 3)) +
+  xlab("Condition") + ylab("Value") +
+  ggtitle('Figure 5c: Repeated measures with box- and violin plots') +
+  theme_classic()+
+  coord_cartesian(ylim=c(y_lim_min, y_lim_max))
+f5c
+ggsave('tutorial_R\\figs_repmes\\figure5c.png', width = w, height = h)
+```
+
+
+## Note
+A potential downside of the current approach is that it uses a lot of filtering and a lot of `geom`s.
+
+## Add descriptive statistics
+
+- Create a dataframe including:
+  - Mean
+- Median
+- Standard deviation
+- Standard error
+- Confidence interval (95 %)
+
+```{r calculate descriptive statistics,  include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+score_mean_1 <- mean(d$y[1:50])
+score_mean_2 <- mean(d$y[51:100])
+score_median1 <- median(d$y[1:50])
+score_median2 <- median(d$y[51:100])
+score_sd_1 <- sd(d$y[1:50])
+score_sd_2 <- sd(d$y[51:100])
+score_se_1 <- score_sd_1/sqrt(n) #-> adjust your n
+score_se_2 <- score_sd_2/sqrt(n) #-> adjust your n
+score_ci_1 <- CI(d$y[1:50], ci = 0.95)
+score_ci_2 <- CI(d$y[51:100], ci = 0.95)
+#Create data frame with 2 rows and 7 columns containing the descriptives
+group <- c("x", "z")
+N <- c(50, 50)
+score_mean <- c(score_mean_1, score_mean_2)
+score_median <- c(score_median1, score_median2)
+sd <- c(score_sd_1, score_sd_2)
+se <- c(score_se_1, score_se_2)
+ci <- c((score_ci_1[1] - score_ci_1[3]), (score_ci_2[1] - score_ci_2[3]))
+#Create the dataframe
+summary_df <- data.frame(group, N, score_mean, score_median, sd, se, ci)
+```
+
+## Figure 6
+
+Let's add the items calculated in `summary_df` to the figure
+
+```{r figure 6, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+f6 <- ggplot(data = d, aes(y = y)) +
+  
+   #Add geom_() objects
+   geom_point(data = d %>% filter(x =="1"), aes(x = xj), color = 'dodgerblue', size = 1.5, 
+              alpha = .6) +
+   geom_point(data = d %>% filter(x =="2"), aes(x = xj), color = 'darkorange', size = 1.5, 
+              alpha = .6) +
+   geom_line(aes(x = xj, group = id), color = 'lightgray', alpha = .3) +
+  
+   geom_half_boxplot(
+     data = d %>% filter(x=="1"), aes(x=x, y = y), position = position_nudge(x = -.28), 
+     side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, 
+     fill = 'dodgerblue') +
+   
+   geom_half_boxplot(
+     data = d %>% filter(x=="2"), aes(x=x, y = y), position = position_nudge(x = .18), 
+     side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, 
+     fill = 'darkorange') +
+  
+   geom_half_violin(
+     data = d %>% filter(x=="1"),aes(x = x, y = y), position = position_nudge(x = -.3), 
+     side = "l", fill = 'dodgerblue') +
+ 
+   geom_half_violin(
+     data = d %>% filter(x=="2"),aes(x = x, y = y), position = position_nudge(x = .3), 
+     side = "r", fill = "darkorange") +
+  
+   geom_point(data = d %>% filter(x=="1"), aes(x = x, y = score_mean[1]), 
+     position = position_nudge(x = -.13), color = "dodgerblue", alpha = .6, size = 1.5) +
+  
+   geom_errorbar(data = d %>% filter(x=="1"), aes(x = x, y = score_mean[1], 
+     ymin = score_mean[1]-ci[1], ymax = score_mean[1]+ci[1]), 
+     position = position_nudge(-.13), 
+     color = "dodgerblue", width = 0.05, size = 0.4, alpha = .5) + 
+  
+   geom_point(data = d %>% filter(x=="2"), aes(x = x, y = score_mean[2]), 
+    position = position_nudge(x = .13), color = "darkorange", alpha = .6, size = 1.5)+ 
+ 
+   geom_errorbar(data = d %>% filter(x=="2"), aes(x = x, y = score_mean[2], 
+    ymin = score_mean[2]-ci[2], 
+    ymax = score_mean[2]+ci[2]), position = position_nudge(.13), color = "darkorange", 
+    width = 0.05, size = 0.4, alpha = .5) +
+  
+  
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2), labels=c("Before", "After"), limits=c(0, 3)) +
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 6: Repeated measures with box- and violin plots') +
+   theme_classic()+
+   coord_cartesian(ylim=c(y_lim_min, y_lim_max))
+f6
+ggsave('tutorial_R\\figs_repmes\\figure6.png', width = w, height = h)
+```
+
+## Figure 7
+
+Optionally you could add a line between the two means.
+Define the x-coordinates where the line needs to be drawn.
+Note these coordinates can be calculated as 1 - position_nudge() for the first variable and 2 + position_nudge() for the second variable, which in our case is 1 - .13 = .87  and 2 + .13 = 2.13.
+
+```{r figure 7,  include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+x_tick_means <- c(.87, 2.13)
+f7 <- ggplot(data = d, aes(y = y)) +
+  
+   #Add geom_() objects
+   geom_point(data = d %>% filter(x =="1"), aes(x = xj), color = 'dodgerblue', size = 1.5, 
+              alpha = .6) +
+   geom_point(data = d %>% filter(x =="2"), aes(x = xj), color = 'darkorange', size = 1.5, 
+              alpha = .6) +
+   geom_line(aes(x = xj, group = id), color = 'lightgray', alpha = .3) +
+  
+   geom_half_boxplot(
+     data = d %>% filter(x=="1"), aes(x=x, y = y), position = position_nudge(x = -.28), 
+     side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, 
+     fill = 'dodgerblue') +
+   
+   geom_half_boxplot(
+     data = d %>% filter(x=="2"), aes(x=x, y = y), position = position_nudge(x = .18), 
+     side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, 
+     fill = 'darkorange') +
+  
+   geom_half_violin(
+     data = d %>% filter(x=="1"),aes(x = x, y = y), position = position_nudge(x = -.3), 
+     side = "l", fill = 'dodgerblue') +
+ 
+   geom_half_violin(
+     data = d %>% filter(x=="2"),aes(x = x, y = y), position = position_nudge(x = .3), 
+     side = "r", fill = "darkorange") +
+  
+   geom_point(data = d %>% filter(x=="1"), aes(x = x, y = score_mean[1]), 
+     position = position_nudge(x = -.13), color = "dodgerblue", alpha = .6, size = 1.5) +
+  
+   geom_errorbar(data = d %>% filter(x=="1"), aes(x = x, y = score_mean[1], 
+     ymin = score_mean[1]-ci[1], ymax = score_mean[1]+ci[1]), 
+     position = position_nudge(-.13), 
+     color = "dodgerblue", width = 0.05, size = 0.4, alpha = .6) + 
+  
+   geom_point(data = d %>% filter(x=="2"), aes(x = x, y = score_mean[2]), 
+    position = position_nudge(x = .13), color = "darkorange", alpha = .6, size = 1.5)+ 
+ 
+   geom_errorbar(data = d %>% filter(x=="2"), aes(x = x, y = score_mean[2], 
+    ymin = score_mean[2]-ci[2], 
+    ymax = score_mean[2]+ci[2]), position = position_nudge(.13), color = "darkorange", 
+    width = 0.05, size = 0.4, alpha = .6) +
+  
+  #Add a line connecting the two means
+   geom_line(data = summary_df, aes(x = x_tick_means, y = score_mean), color = 'gray', 
+    size = 1) +
+  
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2), labels=c("Before", "After"), limits=c(0, 3)) +
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 7: Repeated measures with box- and violin plots and means + ci ') +
+   theme_classic()+
+   coord_cartesian(ylim=c(y_lim_min, y_lim_max))
+f7
+ggsave('tutorial_R\\figs_repmes\\figure7.png', width = w, height = h)
+```
+
+## 2 x 2 repeated measures rainclouds in a #butterfly fashion
+
+As a last step, let's create these figures for a 2 x 2 repeated measures study.
+
+Define an additional variable `z` which has two categories `3` and `4` and create a second jittered variable.
+
+```{r create jitter 2, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+before = iris$Sepal.Length[1:50] 
+after = iris$Sepal.Length[51:100]
+n <- length(before) 
+d <- data.frame(y = c(before, after),
+                x = rep(c(1,2), each=n),
+                z = rep(c(3,4), each=n), 
+                id = factor(rep(1:n,2))) 
+set.seed(321)
+d$xj <- jitter(d$x, amount = .09) 
+d$xj_2 <- jitter(d$z, amount = .09)
+```
+
+
+```{r figure 8, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+f8 <- ggplot(data = d, aes(y = y)) +
+  
+  #Add geom_() objects
+  geom_point(data = d %>% filter(x =="1"), aes(x = xj), color = 'dodgerblue', size = 1.5, 
+             alpha = .6) +
+  geom_point(data = d %>% filter(x =="2"), aes(x = xj), color = 'darkorange', size = 1.5, 
+             alpha = .6) +
+  geom_point(data = d %>% filter(z =="3"), aes(x = xj_2), color = 'dodgerblue', size = 1.5, 
+             alpha = .6) + 
+  geom_point(data = d %>% filter(z =="4"), aes(x = xj_2), color = 'darkorange', size = 1.5, 
+             alpha = .6) +
+  geom_line(aes(x = xj, group = id), color = 'lightgray', alpha = .3) +
+  geom_line(aes(x = xj_2, group = id), color = 'lightgray', alpha = .3) +
+  
+  geom_half_boxplot(
+    data = d %>% filter(x=="1"), aes(x=x, y = y), position = position_nudge(x = -.35), 
+    side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, 
+    fill = 'dodgerblue', alpha = .6) +
+  
+  geom_half_boxplot(
+    data = d %>% filter(x=="2"), aes(x=x, y = y), position = position_nudge(x = -1.16), 
+    side = "l",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, 
+    fill = 'darkorange', alpha = .6) +
+  
+  geom_half_boxplot(
+    data = d %>% filter(z=="3"), aes(x=z, y = y), position = position_nudge(x = 1.3), 
+    side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, 
+    fill = 'dodgerblue', alpha = .6) +
+  
+  geom_half_boxplot(
+    data = d %>% filter(z=="4"), aes(x=z, y = y), position = position_nudge(x = .2), 
+    side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, 
+    fill = 'darkorange', alpha = .6) +
+  
+  geom_half_violin(
+    data = d %>% filter(x=="1"),aes(x = x, y = y), position = position_nudge(x = -.40), 
+    side = "l", fill = 'dodgerblue', alpha = .6) +
+  
+  geom_half_violin(
+    data = d %>% filter(x=="2"),aes(x = x, y = y), position = position_nudge(x = -1.40), 
+    side = "l", fill = "darkorange", alpha = .6) +
+  
+  geom_half_violin(
+    data = d %>% filter(z=="3"),aes(x = z, y = y), position = position_nudge(x = 1.45), 
+    side = "r", fill = 'dodgerblue', alpha = .6) +
+  
+  geom_half_violin(
+    data = d %>% filter(z=="4"),aes(x = z, y = y), position = position_nudge(x = .45), 
+    side = "r", fill = "darkorange", alpha = .6) +
+  
+  geom_point(data = d %>% filter(x=="1"), aes(x = x, y = score_mean[1]), 
+             position = position_nudge(x = -.13), color = "dodgerblue", alpha = .6, size = 1.5) +
+  
+  geom_errorbar(data = d %>% filter(x=="1"), aes(x = x, y = score_mean[1], 
+                                                 ymin = score_mean[1]-ci[1], ymax = score_mean[1]+ci[1]), 
+                position = position_nudge(-.13), 
+                color = "dodgerblue", width = 0.05, size = 0.4, alpha = .6) + 
+  
+  geom_point(data = d %>% filter(x=="2"), aes(x = x, y = score_mean[2]), 
+             position = position_nudge(x = -1.1), color = "darkorange", alpha = .6, size = 1.5)+ 
+  
+  geom_errorbar(data = d %>% filter(x=="2"), aes(x = x, y = score_mean[2], 
+                                                 ymin = score_mean[2]-ci[2], 
+                                                 ymax = score_mean[2]+ci[2]), position = position_nudge(x = -1.1), color = "darkorange", 
+                width = 0.05, size = 0.4, alpha = .6) +
+  geom_point(data = d %>% filter(z=="3"), aes(x = z, y = score_mean[1]), 
+             position = position_nudge(x = 1.15), color = "dodgerblue", alpha = .5) +
+  
+  geom_errorbar(data = d %>% filter(z=="3"), aes(x = z, y = score_mean[1], 
+                                                 ymin = score_mean[1]-ci[1], 
+                                                 ymax = score_mean[1]+ci[1]), position = position_nudge(1.15), 
+                color = "dodgerblue", width = 0.05, size = 0.4, alpha = .5)+ 
+  geom_point(data = d %>% filter(z=="4"), aes(x = z, y = score_mean[2]), 
+             position = position_nudge(x = .15), color = "darkorange", alpha = .5)+
+  geom_errorbar(data = d %>% filter(z=="4"), aes(x = z, y = score_mean[2], 
+                                                 ymin = score_mean[2]-ci[2], ymax = score_mean[2]+ci[2]), position = position_nudge(.15), 
+                color = "darkorange", width = 0.05, size = 0.4, alpha = .5)+
+  
+  
+  #Define additional settings
+  scale_x_continuous(breaks=c(1,2,3,4), labels=c("Before", "After","Before", "After"), 
+                     limits=c(0, 5))+
+  xlab("Condition") + ylab("Value") +
+  ggtitle('Figure 8: 2 x 2 Repeated measures with box- and violin plots') +
+  theme_classic()+
+  coord_cartesian(ylim=c(y_lim_min, y_lim_max))
+f8
+ggsave('tutorial_R\\figs_repmes\\figure8.png', width = w, height = h)
+```
+
+## Figure 9
+
+Finally, let's add lines that connect the means of each group.
+
+```{r figure 9, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+#First we must again define the x-coordinates of the means.
+x_tick_means_x <- c(.87, 2.13) #same as above
+x_tick_means_z <- c(2.87, 4.13) #just add 2 for each tick
+f9 <- ggplot(data = d, aes(y = y)) +
+  
+   #Add geom_() objects
+   geom_point(data = d %>% filter(x =="1"), aes(x = xj), color = 'dodgerblue', size = 1.5, 
+              alpha = .6) +
+   geom_point(data = d %>% filter(x =="2"), aes(x = xj), color = 'darkorange', size = 1.5, 
+              alpha = .6) +
+   geom_point(data = d %>% filter(z =="3"), aes(x = xj_2), color = 'dodgerblue', size = 1.5, 
+              alpha = .6) + 
+   geom_point(data = d %>% filter(z =="4"), aes(x = xj_2), color = 'darkorange', size = 1.5, 
+              alpha = .6) +
+   geom_line(aes(x = xj, group = id), color = 'lightgray', alpha = .3) +
+   geom_line(aes(x = xj_2, group = id), color = 'lightgray', alpha = .3) +
+  
+   geom_half_boxplot(
+     data = d %>% filter(x=="1"), aes(x=x, y = y), position = position_nudge(x = -.35), 
+     side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, 
+     fill = 'dodgerblue', alpha = .6) +
+   
+   geom_half_boxplot(
+     data = d %>% filter(x=="2"), aes(x=x, y = y), position = position_nudge(x = -1.16), 
+     side = "l",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, 
+     fill = 'darkorange', alpha = .6) +
+  
+   geom_half_boxplot(
+     data = d %>% filter(z=="3"), aes(x=z, y = y), position = position_nudge(x = 1.3), 
+     side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, 
+     fill = 'dodgerblue', alpha = .6) +
+   
+   geom_half_boxplot(
+     data = d %>% filter(z=="4"), aes(x=z, y = y), position = position_nudge(x = .2), 
+     side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, 
+     fill = 'darkorange', alpha = .6) +
+  
+   geom_half_violin(
+     data = d %>% filter(x=="1"),aes(x = x, y = y), position = position_nudge(x = -.40), 
+     side = "l", fill = 'dodgerblue', alpha = .6) +
+ 
+   geom_half_violin(
+     data = d %>% filter(x=="2"),aes(x = x, y = y), position = position_nudge(x = -1.40), 
+     side = "l", fill = "darkorange", alpha = .6) +
+  
+   geom_half_violin(
+     data = d %>% filter(z=="3"),aes(x = z, y = y), position = position_nudge(x = 1.45), 
+     side = "r", fill = 'dodgerblue', alpha = .6) +
+ 
+   geom_half_violin(
+     data = d %>% filter(z=="4"),aes(x = z, y = y), position = position_nudge(x = .45), 
+     side = "r", fill = "darkorange", alpha = .6) +
+  
+   geom_point(data = d %>% filter(x=="1"), aes(x = x, y = score_mean[1]), 
+     position = position_nudge(x = -.13), color = "dodgerblue", alpha = .6, size = 1.5) +
+  
+   geom_errorbar(data = d %>% filter(x=="1"), aes(x = x, y = score_mean[1], 
+     ymin = score_mean[1]-ci[1], ymax = score_mean[1]+ci[1]), 
+     position = position_nudge(-.13), 
+     color = "dodgerblue", width = 0.05, size = 0.4, alpha = .6) + 
+  
+   geom_point(data = d %>% filter(x=="2"), aes(x = x, y = score_mean[2]), 
+    position = position_nudge(x = .13), color = "darkorange", alpha = .6, size = 1.5)+ 
+ 
+   geom_errorbar(data = d %>% filter(x=="2"), aes(x = x, y = score_mean[2], 
+    ymin = score_mean[2]-ci[2], 
+    ymax = score_mean[2]+ci[2]), position = position_nudge(x = .13), color = "darkorange", 
+    width = 0.05, size = 0.4, alpha = .6) +
+   geom_point(data = d %>% filter(z=="3"), aes(x = z, y = score_mean[1]), 
+    position = position_nudge(x = -.13), color = "dodgerblue", alpha = .5) +
+  
+   geom_errorbar(data = d %>% filter(z=="3"), aes(x = z, y = score_mean[1], 
+    ymin = score_mean[1]-ci[1], 
+    ymax = score_mean[1]+ci[1]), position = position_nudge(-.13), 
+    color = "dodgerblue", width = 0.05, size = 0.4, alpha = .5)+ 
+   geom_point(data = d %>% filter(z=="4"), aes(x = z, y = score_mean[2]), 
+    position = position_nudge(x = .13), color = "darkorange", alpha = .5)+
+   geom_errorbar(data = d %>% filter(z=="4"), aes(x = z, y = score_mean[2], 
+    ymin = score_mean[2]-ci[2], ymax = score_mean[2]+ci[2]), 
+    position = position_nudge(.13), 
+    color = "darkorange", width = 0.05, size = 0.4, alpha = .5)+
+  
+   #Add lines connecting the two means
+   geom_line(data = summary_df, aes(x = x_tick_means_x, y = score_mean), 
+             color = 'gray', size = 1) +
+   geom_line(data = summary_df, aes(x = x_tick_means_z, y = score_mean), 
+             color = 'gray', size = 1) +
+  
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2,3,4), labels=c("Before", "After","Before", "After"), 
+                      limits=c(0, 5))+
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 9: 2 x 2 Repeated measures with box- and violin plots') +
+   theme_classic()+
+   coord_cartesian(ylim=c(y_lim_min, y_lim_max))
+f9
+ggsave('tutorial_R\\figs_repmes\\figure9.png', width = w, height = h)
+```
+## Figure 10
+
+## Here, we add an additional variable 'during' if you want to show the effect measured over 3 timepoints.
+```{r figure 10, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+before = iris$Sepal.Length[1:50]
+during = iris$Sepal.Length[51:100]
+after = iris$Sepal.Length[1:50]
+n <- length(before) 
+d <- data.frame(y = c(before, during, after),
+               x = rep(c(1,2,3), each=n),
+               id = factor(rep(1:n,3)))
+set.seed(321)
+d$xj <- jitter(d$x, amount = .09) 
+f10 <- ggplot(data=d, aes(y=y)) +
+  
+   #Add geom_() objects
+   geom_point(data = d %>% filter(x=="1"), aes(x=xj), color = 'dodgerblue', size = 1.5,
+              alpha = .6) +
+   geom_point(data = d %>% filter(x=="2"), aes(x=xj), color = 'darkgreen', size = 1.5,
+              alpha = .6) +
+   geom_point(data = d %>% filter(x=="3"), aes(x=xj), color = 'darkorange', size = 1.5, 
+              alpha = .6) +
+   
+   geom_line(aes(x=xj, group=id), color = 'lightgray', alpha = .3) +
+   
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2,3), labels=c("Before", "During", "After"), limits=c(0.5, 3.5)) +
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 10: Repeated measures with jittered datapoints and connections') +
+   theme_classic()+
+   coord_cartesian(ylim=c(3.5, 7.5))
+f10
+ggsave('tutorial_R\\figs_repmes\\figure10.png', width = w, height = h)
+```
+
+```{r figure 11, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+before = iris$Sepal.Width[1:50]
+during = iris$Sepal.Length[51:100]
+after = iris$Sepal.Length[1:50]
+n <- length(before) 
+d <- data.frame(y = c(before, during, after),
+               x = rep(c(1,2,3), each=n),
+               id = factor(rep(1:n,3)))
+set.seed(321)
+d$xj <- jitter(d$x, amount = .09) 
+f11 <- ggplot(data=d, aes(y=y)) +
+  
+   #Add geom_() objects
+   geom_point(data = d %>% filter(x=="1"), aes(x=xj), color = 'dodgerblue', size = 1.5,
+              alpha = .6) +
+   geom_point(data = d %>% filter(x=="2"), aes(x=xj), color = 'darkgreen', size = 1.5,
+              alpha = .6) +
+   geom_point(data = d %>% filter(x=="3"), aes(x=xj), color = 'darkorange', size = 1.5, 
+              alpha = .6) +
+   
+   geom_line(aes(x=xj, group=id), color = 'lightgray', alpha = .3) +
+  
+   geom_half_violin(
+     data = d %>% filter(x=="1"),aes(x = x, y = y), position = position_nudge(x = 2.2), 
+     side = "r", fill = 'dodgerblue', alpha = .5, color = "dodgerblue", trim = TRUE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(x=="2"),aes(x = x, y = y), position = position_nudge(x = 1.2), 
+     side = "r", fill = "darkgreen", alpha = .5, color = "darkgreen", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(x=="3"),aes(x = x, y = y), position = position_nudge(x = 0.2), 
+     side = "r", fill = "darkorange", alpha = .5, color = "darkorange", trim = TRUE) +
+   
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2,3), labels=c("Before", "During", "After"), limits=c(0.5, 4)) +
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 11: Repeated measures with jittered datapoints and connections') +
+   theme_classic()+
+   coord_cartesian(ylim=c(2.3, 7.2))
+f11
+ggsave('../tutorial_R/figs_repmes/figure11.png', width = w, height = h)
+```
+```{r figure 12, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+f12 <- ggplot(data=d, aes(y=y)) +
+  
+   #Add geom_() objects
+   geom_point(data = d %>% filter(x=="1"), aes(x=xj), color = 'dodgerblue', size = 1.5,
+              alpha = .8) +
+   geom_point(data = d %>% filter(x=="2"), aes(x=xj), color = 'darkgreen', size = 1.5,
+              alpha = .8) +
+   geom_point(data = d %>% filter(x=="3"), aes(x=xj), color = 'darkorange', size = 1.5, 
+              alpha = .8) +
+   
+   geom_line(aes(x=xj, group=id), color = 'lightgray', alpha = .3) +
+  
+   geom_violin(
+     data = d %>% filter(x=="1"),aes(x = x, y = y), position = position_nudge(x = 0),
+     fill = 'dodgerblue', alpha = .1, color = "white", trim = TRUE) +
+ 
+   geom_violin(
+     data = d %>% filter(x=="2"),aes(x = x, y = y), position = position_nudge(x = 0),
+     fill = "darkgreen", alpha = .1, color = "white", trim = FALSE) +
+   
+   geom_violin(
+     data = d %>% filter(x=="3"),aes(x = x, y = y), position = position_nudge(x = 0),
+     fill = "darkorange", alpha = .1, color = "white", trim = TRUE) +
+   
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2,3), labels=c("Before", "During", "After"), limits=c(0.5, 4)) +
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 12: Repeated measures with jittered datapoints and connections') +
+   theme_classic()+
+   coord_cartesian(ylim=c(2.3, 7.2))
+f12
+ggsave('tutorial_R\\figs_repmes\\figure12.png', width = w, height = h)
+```
+
+
+
+```{r figure 13, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+before = iris$Sepal.Width[1:50]
+during = iris$Sepal.Length[51:100]
+after = iris$Sepal.Length[1:50]
+n <- length(before) 
+d <- data.frame(y = c(before, during, after),
+               x = rep(c(1,2,3), each=n),
+               z = rep(c(4,5,6), each=n), 
+               id = factor(rep(1:n,3)))
+set.seed(321)
+d$xj <- jitter(d$x, amount = .09) 
+d$xj_2 <- jitter(d$z, amount = .09)
+#d$xj_3 <- jitter(d$a, amount = .09)
+f13 <- ggplot(data=d, aes(y=y)) +
+  
+   #Add geom_() objects
+   geom_point(data = d %>% filter(x=="1"), aes(x=xj), color = 'dodgerblue', size = 1.5,
+              alpha = .6) +
+   geom_point(data = d %>% filter(x=="2"), aes(x=xj), color = 'darkgreen', size = 1.5,
+              alpha = .6) +
+   geom_point(data = d %>% filter(x=="3"), aes(x=xj), color = 'darkorange', size = 1.5, 
+              alpha = .6) +
+   
+    #Add geom_() objects
+   geom_point(data = d %>% filter(z=="4"), aes(x=xj_2), color = 'dodgerblue', size = 1.5,
+              alpha = .6) +
+   geom_point(data = d %>% filter(z=="5"), aes(x=xj_2), color = 'darkgreen', size = 1.5,
+              alpha = .6) +
+   geom_point(data = d %>% filter(z=="6"), aes(x=xj_2), color = 'darkorange', size = 1.5, 
+              alpha = .6) +
+   
+   geom_line(aes(x=xj, group=id), color = 'lightgray', alpha = .3) +
+   geom_line(aes(x=xj_2, group=id), color = 'lightgray', alpha = .3) +
+  
+   geom_half_violin(
+     data = d %>% filter(x=="1"),aes(x = x, y = y), position = position_nudge(x = -0.2), 
+     side = "l", fill = 'dodgerblue', alpha = .5, color = "dodgerblue", trim = TRUE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(x=="2"),aes(x = x, y = y), position = position_nudge(x = -1.2), 
+     side = "l", fill = "darkgreen", alpha = .5, color = "darkgreen", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(x=="3"),aes(x = x, y = y), position = position_nudge(x = -2.2), 
+     side = "l", fill = "darkorange", alpha = .5, color = "darkorange", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(z=="4"),aes(x = x, y = y), position = position_nudge(x = 5.2), 
+     side = "r", fill = 'dodgerblue', alpha = .5, color = "dodgerblue", trim = TRUE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(z=="5"),aes(x = x, y = y), position = position_nudge(x = 4.2), 
+     side = "r", fill = "darkgreen", alpha = .5, color = "darkgreen", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(z=="6"),aes(x = x, y = y), position = position_nudge(x = 3.2), 
+     side = "r", fill = "darkorange", alpha = .5, color = "darkorange", trim = TRUE) +
+   
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2,3,4,5,6), labels=c("Before", "During", "After", "Before", "During", "After"), limits=c(0, 7)) +
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 13: Repeated measures with jittered datapoints and connections') +
+   theme_classic()+
+   coord_cartesian(ylim=c(2.3, 7.2))
+f13
+ggsave('../tutorial_R/figs_repmes/figure13.png', width = w, height = h)
+```
+```{r figure 14, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+f14 <- ggplot(data=d, aes(y=y)) +
+  
+   #Add geom_() objects
+   geom_point(data = d %>% filter(x=="1"), aes(x=xj), color = 'dodgerblue', size = 1.5,
+              alpha = .8) +
+   geom_point(data = d %>% filter(x=="2"), aes(x=xj), color = 'darkgreen', size = 1.5,
+              alpha = .8) +
+   geom_point(data = d %>% filter(x=="3"), aes(x=xj), color = 'darkorange', size = 1.5, 
+              alpha = .8) +
+   
+    #Add geom_() objects
+   geom_point(data = d %>% filter(z=="4"), aes(x=xj_2), color = 'dodgerblue', size = 1.5,
+              alpha = .8) +
+   geom_point(data = d %>% filter(z=="5"), aes(x=xj_2), color = 'darkgreen', size = 1.5,
+              alpha = .8) +
+   geom_point(data = d %>% filter(z=="6"), aes(x=xj_2), color = 'darkorange', size = 1.5, 
+              alpha = .8) +
+   
+   geom_line(aes(x=xj, group=id), color = 'lightgray', alpha = .3) +
+   geom_line(aes(x=xj_2, group=id), color = 'lightgray', alpha = .3) +
+  
+   geom_half_violin(
+     data = d %>% filter(x=="1"),aes(x = x, y = y), position = position_nudge(x = 0), 
+     side = "r", fill = 'dodgerblue', alpha = .15, color = "lightgray", trim = TRUE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(x=="2"),aes(x = x, y = y), position = position_nudge(x = 0), 
+     side = "r", fill = "darkgreen", alpha = .15, color = "lightgray", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(x=="3"),aes(x = x, y = y), position = position_nudge(x = 0), 
+     side = "r", fill = "darkorange", alpha = .15, color = "lightgray", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(z=="4"),aes(x = x, y = y), position = position_nudge(x = 3), 
+     side = "r", fill = 'dodgerblue', alpha = .15, color = "lightgray", trim = TRUE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(z=="5"),aes(x = x, y = y), position = position_nudge(x = 3), 
+     side = "r", fill = "darkgreen", alpha = .15, color = "lightgray", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(z=="6"),aes(x = x, y = y), position = position_nudge(x = 3), 
+     side = "r", fill = "darkorange", alpha = .15, color = "lightgray", trim = TRUE) +
+   
+   #Define additional settings
+   scale_x_continuous(breaks=c(1,2,3,4,5,6), labels=c("Before", "During", "After", "Before", "During", "After"), limits=c(0, 7)) +
+   xlab("Condition") + ylab("Value") +
+   ggtitle('Figure 14: Repeated measures with jittered datapoints and connections') +
+   theme_classic()+
+   coord_cartesian(ylim=c(2.3, 7.2))
+f14
+ggsave('tutorial_R\\figs_repmes\\figure14.png', width = w, height = h)
+```
+
+
+```{r figure 15, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
+before = iris$Sepal.Length[1:50] 
+after = iris$Sepal.Length[51:100]
+n <- length(before) 
+d <- data.frame(y = c(before, after),
+                x = rep(c(1,2), each=n),
+                z = rep(c(3,4), each=n), 
+                x1 = rep(c(5,6), each=n),
+                z1 = rep(c(7,8), each=n),
+                x2 = rep(c(9,10), each=n),
+                id = factor(rep(1:n,2))) 
+set.seed(321)
+d$xj <- jitter(d$x, amount = .09) 
+d$xj_2 <- jitter(d$z, amount = .09)
+d$xj_3 <- jitter(d$x1, amount = .09)
+d$xj_4 <- jitter(d$z1, amount = .09)
+d$xj_5 <- jitter(d$x2, amount = .09)
+
+f15 <- ggplot(data=d, aes(y=y)) +
+
+    #Add geom_() objects
+    geom_point(data = d %>% dplyr::filter(x =="1"), aes(x = xj), color = 'dodgerblue', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(x =="2"), aes(x = xj), color = 'darkred', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(z =="3"), aes(x = xj_2), color = 'darkorange', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(z =="4"), aes(x = xj_2), color = 'darkgreen', size = 1.5,
+               alpha = .6) +
+    
+    geom_point(data = d %>% dplyr::filter(x1 =="5"), aes(x = xj_3), color = 'dodgerblue', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(x1 =="6"), aes(x = xj_3), color = 'darkred', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(z1 =="7"), aes(x = xj_4), color = 'darkorange', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(z1 =="8"), aes(x = xj_4), color = 'darkgreen', size = 1.5,
+               alpha = .6) +
+
+    geom_point(data = d %>% dplyr::filter(x2 =="9"), aes(x = xj_5), color = 'darkorange', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(x2 =="10"), aes(x = xj_5), color = 'darkgreen', size = 1.5,
+               alpha = .6) +
+  
+    #geom_line(aes(x=jit, y = y, group=id), color = 'lightgray') +
+    #geom_line(data = d %>% dplyr::filter(x %in% c("1", "2")), aes(x = xj, y = y, group = id), color = 'lightgray', alpha = .3) +
+    #geom_line(data = d %>% dplyr::filter(x %in% c("3", "4")), aes(x = xj_2, y = y, group = id), color = 'lightgray', alpha = .3) +
+    geom_line(aes(x=xj, group=id), color = 'lightgray', alpha = .5) +
+    geom_line(aes(x=xj_2, group=id), color = 'lightgray', alpha = .5) +
+    geom_line(aes(x=xj_3, group=id), color = 'lightgray', alpha = .5) +
+    geom_line(aes(x=xj_4, group=id), color = 'lightgray', alpha = .5) +
+    geom_line(aes(x=xj_5, group=id), color = 'lightgray', alpha = .5) +
+
+    # geom_half_boxplot(
+    #   data = d %>% dplyr::filter(x=="1"), aes(x=x, y = y, color = 'blue', fill = 'blue'), position = position_nudge(x = -.37),
+    #   side = "l",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, alpha = .6) +
+    # 
+    # geom_half_boxplot(
+    #   data = d %>% dplyr::filter(x=="2"), aes(x=x, y = y, color = 'blue', fill = 'blue'), position = position_nudge(x = -1.23),
+    #   side = "l",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, alpha = .6) +
+    # 
+    # geom_half_boxplot(
+    #   data = d %>% dplyr::filter(z=="3"), aes(x=z, y = y, color = 'blue', fill = 'blue'), position = position_nudge(x = 1.23),
+    #   side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, alpha = .6) +
+    # 
+    # geom_half_boxplot(
+    #   data = d %>% dplyr::filter(z=="4"), aes(x=z, y = y, color = 'blue', fill = 'blue'), position = position_nudge(x = .37),
+    #   side = "r",outlier.shape = NA, center = TRUE, errorbar.draw = FALSE, width = .2, alpha = .6) +
+    # 
+    # geom_half_violin(
+    #   data = d %>% dplyr::filter(x=="1"),aes(x = x, y = y, color = 'blue', fill = 'blue'), position = position_nudge(x = -.5),
+    #   side = "l", alpha = .6) +
+    # 
+    # geom_half_violin(
+    #   data = d %>% dplyr::filter(x=="2"),aes(x = x, y = y, color = 'blue', fill = 'blue'), position = position_nudge(x = -1.5),
+    #   side = "l", alpha = .6) +
+    # 
+    # geom_half_violin(
+    #   data = d %>% dplyr::filter(z=="3"),aes(x = z, y = y, color = 'blue', fill = 'blue'), position = position_nudge(x = 1.5),
+    #   side = "r", alpha = .6) +
+    # 
+    # geom_half_violin(
+    #   data = d %>% dplyr::filter(z=="4"),aes(x = z, y = y, color = 'blue', fill = 'blue'), position = position_nudge(x = .5),
+    #   side = "r", alpha = .6) +
+   
+#Define additional settings
+   scale_x_continuous(breaks=c(1,2,3,4,5,6,7,8,9,10), labels=c("Pre", "Post", "Pre", "Post","Pre", "Post", "Pre", "Post", "Pre", "Post"), limits=c(0, 11)) +
+   xlab("Condition") + ylab("Value") +
+   #ggtitle('Figure 15: Repeated measures with jittered datapoints and connections') +
+   theme_classic()+
+   coord_cartesian(ylim=c(4, 8))
+
+f15
+
+```
+
+
+```{r}
+f16 <- ggplot(data=d, aes(y=y)) +
+
+    #Add geom_() objects
+    geom_point(data = d %>% dplyr::filter(x =="1"), aes(x = xj), color = 'dodgerblue', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(x =="2"), aes(x = xj), color = 'darkred', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(z =="3"), aes(x = xj_2), color = 'darkorange', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(z =="4"), aes(x = xj_2), color = 'darkgreen', size = 1.5,
+               alpha = .6) +
+    
+    geom_point(data = d %>% dplyr::filter(x1 =="5"), aes(x = xj_3), color = 'dodgerblue', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(x1 =="6"), aes(x = xj_3), color = 'darkred', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(z1 =="7"), aes(x = xj_4), color = 'darkorange', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(z1 =="8"), aes(x = xj_4), color = 'darkgreen', size = 1.5,
+               alpha = .6) +
+
+    geom_point(data = d %>% dplyr::filter(x2 =="9"), aes(x = xj_5), color = 'dodgerblue', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(x2 =="10"), aes(x = xj_5), color = 'darkred', size = 1.5,
+               alpha = .6) +
+  
+    #geom_line(aes(x=jit, y = y, group=id), color = 'lightgray') +
+    #geom_line(data = d %>% dplyr::filter(x %in% c("1", "2")), aes(x = xj, y = y, group = id), color = 'lightgray', alpha = .3) +
+    #geom_line(data = d %>% dplyr::filter(x %in% c("3", "4")), aes(x = xj_2, y = y, group = id), color = 'lightgray', alpha = .3) +
+    geom_line(aes(x=xj, group=id), color = 'lightgray', alpha = .5) +
+    geom_line(aes(x=xj_2, group=id), color = 'lightgray', alpha = .5) +
+    geom_line(aes(x=xj_3, group=id), color = 'lightgray', alpha = .5) +
+    geom_line(aes(x=xj_4, group=id), color = 'lightgray', alpha = .5) +
+    geom_line(aes(x=xj_5, group=id), color = 'lightgray', alpha = .5) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(x=="1"), aes(x=x), fill = 'dodgerblue',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(x=="2"), aes(x=x), fill = 'darkred',
+     outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(z=="3"), aes(x=z), fill = 'darkorange',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(z=="4"), aes(x=z), fill = 'darkgreen',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+      
+  
+  geom_boxplot(
+      data = d %>% dplyr::filter(x1=="5"), aes(x=x1), fill = 'dodgerblue',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(x1=="6"), aes(x=x1), fill = 'darkred',
+     outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(z1=="7"), aes(x=z1), fill = 'darkorange',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(z1=="8"), aes(x=z1), fill = 'darkgreen',
+      outlier.shape = NA, width = .2, alpha = .1) +
+  
+    
+    geom_boxplot(
+      data = d %>% dplyr::filter(x2=="9"), aes(x=x2), fill = 'dodgerblue',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(x2=="10"), aes(x=x2), fill = 'darkred',
+      outlier.shape = NA, width = .2, alpha = .1) +
+   
+#Define additional settings
+   scale_x_continuous(breaks=c(1,2,3,4,5,6,7,8,9,10), labels=c("Pre", "Post", "Pre", "Post","Pre", "Post", "Pre", "Post", "Pre", "Post"), limits=c(0, 11)) +
+   xlab("Condition") + ylab("Value") +
+   #ggtitle('Figure 15: Repeated measures with jittered datapoints and connections') +
+   theme_classic()+
+   coord_cartesian(ylim=c(4, 8))
+
+f16
+ggsave('figure17.png', width = w, height = h, units='in', dpi=600)
+ggsave("figure16.tiff", height=h, width=w, units='in', dpi=600)
+```
+
+
+
+## General remarks / tips
+
+- To be more flexible in assigning labels to your figures, the **`ggtext`** package by [Wilke, 2020](https://github.com/wilkelab/ggtext) might be worthwile .
+- If you would like to be flexible in plotting multiple figures next to each other, check-out the **`patchwork`** package by [Pedersen, 2020](https://cran.r-project.org/web/packages/patchwork/index.html).
+- If you want to save your figures in a high-quality manner (> GB) for e.g., publications, you could save your figure with a `.tiff` extension and add `dpi=` as used in the following line of code:
+
+```{r high-quality figure, include = TRUE, echo = TRUE, eval = FALSE}
+ggsave("figure.tiff", height=h, width=w, units='in', dpi=600)
+```
+
+- If for some reason your code does not work due to e.g., an update in a package, you could use the following line of code to unload and load that package again.
+
+```{r package reload, include = TRUE, echo = TRUE, eval = FALSE}
+if("package_name" %in% (.packages())){
+  detach('package:package_name', unload=TRUE)}
+library("package_name")
+```
+
+You have reached the end of this document.
+
+I hope you'll be able to use this tutorial to create more `open-visualizations` for your research!
+  
+  If you use this tutorial, please cite it in your work.
