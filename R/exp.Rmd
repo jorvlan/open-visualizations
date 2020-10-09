@@ -1126,6 +1126,288 @@ f16
 ggsave('figure17.png', width = w, height = h, units='in', dpi=600)
 ggsave("figure16.tiff", height=h, width=w, units='in', dpi=600)
 ```
+```{r}
+
+
+f17 <- ggplot(data=d, aes(y=y)) +
+
+    #Add geom_() objects
+  
+  
+  
+   geom_half_violin(
+     data = d %>% filter(x=="1"),aes(x = x), position = position_nudge(x = 0), 
+     side = "l", fill = 'dodgerblue', alpha = .15, color = "white", trim = TRUE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(x=="2"),aes(x = x), position = position_nudge(x = 0), 
+     side = "r", fill = "darkred", alpha = .15, color = "white", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(z=="3"),aes(x = z), position = position_nudge(x = 0), 
+     side = "l", fill = "darkorange", alpha = .15, color = "white", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(z=="4"),aes(x = z), position = position_nudge(x = 0), 
+     side = "r", fill = 'darkgreen', alpha = .15, color = "white", trim = TRUE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(x1=="5"),aes(x = x1), position = position_nudge(x = 0), 
+     side = "l", fill = "dodgerblue", alpha = .15, color = "white", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(x1=="6"),aes(x = x1), position = position_nudge(x = 0), 
+     side = "r", fill = "darkred", alpha = .15, color = "white", trim = TRUE) +
+  
+   geom_half_violin(
+     data = d %>% filter(z1=="7"),aes(x = z1), position = position_nudge(x = 0), 
+     side = "l", fill = "darkorange", alpha = .15, color = "white", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(z1=="8"),aes(x = z1), position = position_nudge(x = 0), 
+     side = "r", fill = 'darkgreen', alpha = .15, color = "white", trim = TRUE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(x2=="9"),aes(x = x2), position = position_nudge(x = 0), 
+     side = "l", fill = "dodgerblue", alpha = .15, color = "white", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(x2=="10"),aes(x = x2), position = position_nudge(x = 0), 
+     side = "r", fill = "darkred", alpha = .15, color = 'white', trim = TRUE) +
+  
+  
+    geom_point(data = d %>% dplyr::filter(x =="1"), aes(x = xj), color = 'dodgerblue', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(x =="2"), aes(x = xj), color = 'darkred', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(z =="3"), aes(x = xj_2), color = 'darkorange', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(z =="4"), aes(x = xj_2), color = 'darkgreen', size = 1.5,
+               alpha = .6) +
+    
+    geom_point(data = d %>% dplyr::filter(x1 =="5"), aes(x = xj_3), color = 'dodgerblue', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(x1 =="6"), aes(x = xj_3), color = 'darkred', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(z1 =="7"), aes(x = xj_4), color = 'darkorange', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(z1 =="8"), aes(x = xj_4), color = 'darkgreen', size = 1.5,
+               alpha = .6) +
+
+    geom_point(data = d %>% dplyr::filter(x2 =="9"), aes(x = xj_5), color = 'dodgerblue', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(x2 =="10"), aes(x = xj_5), color = 'darkred', size = 1.5,
+               alpha = .6) +
+  
+    #geom_line(aes(x=jit, y = y, group=id), color = 'lightgray') +
+    #geom_line(data = d %>% dplyr::filter(x %in% c("1", "2")), aes(x = xj, y = y, group = id), color = 'lightgray', alpha = .3) +
+    #geom_line(data = d %>% dplyr::filter(x %in% c("3", "4")), aes(x = xj_2, y = y, group = id), color = 'lightgray', alpha = .3) +
+    geom_line(aes(x=xj, group=id), color = 'lightgray', alpha = .5) +
+    geom_line(aes(x=xj_2, group=id), color = 'lightgray', alpha = .5) +
+    geom_line(aes(x=xj_3, group=id), color = 'lightgray', alpha = .5) +
+    geom_line(aes(x=xj_4, group=id), color = 'lightgray', alpha = .5) +
+    geom_line(aes(x=xj_5, group=id), color = 'lightgray', alpha = .5) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(x=="1"), aes(x=x), fill = 'dodgerblue',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(x=="2"), aes(x=x), fill = 'darkred',
+     outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(z=="3"), aes(x=z), fill = 'darkorange',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(z=="4"), aes(x=z), fill = 'darkgreen',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+      
+  
+  geom_boxplot(
+      data = d %>% dplyr::filter(x1=="5"), aes(x=x1), fill = 'dodgerblue',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(x1=="6"), aes(x=x1), fill = 'darkred',
+     outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(z1=="7"), aes(x=z1), fill = 'darkorange',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(z1=="8"), aes(x=z1), fill = 'darkgreen',
+      outlier.shape = NA, width = .2, alpha = .1) +
+  
+    
+    geom_boxplot(
+      data = d %>% dplyr::filter(x2=="9"), aes(x=x2), fill = 'dodgerblue',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(x2=="10"), aes(x=x2), fill = 'darkred',
+      outlier.shape = NA, width = .2, alpha = .1) +
+  
+  
+  
+  
+   
+#Define additional settings
+   scale_x_continuous(breaks=c(1,2,3,4,5,6,7,8,9,10), labels=c("Pre", "Post", "Pre", "Post","Pre", "Post", "Pre", "Post", "Pre", "Post"), limits=c(0, 11)) +
+   xlab("Condition") + ylab("Value") +
+   #ggtitle('Figure 15: Repeated measures with jittered datapoints and connections') +
+   theme_classic()+
+   coord_cartesian(ylim=c(4, 8))
+
+f17
+
+ggsave('figure19.png', width = w, height = h, units='in', dpi=600)
+```
+
+
+```{r}
+
+f20 <- ggplot(data=d, aes(y=y)) +
+
+    #Add geom_() objects
+  
+  
+  
+   geom_half_violin(
+     data = d %>% filter(x=="1"),aes(x = x), position = position_nudge(x = 0), 
+     side = "l", fill = 'dodgerblue', alpha = .15, color = "lightgray", trim = TRUE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(x=="2"),aes(x = x), position = position_nudge(x = 0), 
+     side = "r", fill = "darkred", alpha = .15, color = "lightgray", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(z=="3"),aes(x = z), position = position_nudge(x = 0), 
+     side = "l", fill = "darkorange", alpha = .15, color = "lightgray", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(z=="4"),aes(x = z), position = position_nudge(x = 0), 
+     side = "r", fill = 'darkgreen', alpha = .15, color = "lightgray", trim = TRUE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(x1=="5"),aes(x = x1), position = position_nudge(x = 0), 
+     side = "l", fill = "dodgerblue", alpha = .15, color = "lightgray", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(x1=="6"),aes(x = x1), position = position_nudge(x = 0), 
+     side = "r", fill = "darkred", alpha = .15, color = "lightgray", trim = TRUE) +
+  
+   geom_half_violin(
+     data = d %>% filter(z1=="7"),aes(x = z1), position = position_nudge(x = 0), 
+     side = "l", fill = "darkorange", alpha = .15, color = "lightgray", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(z1=="8"),aes(x = z1), position = position_nudge(x = 0), 
+     side = "r", fill = 'darkgreen', alpha = .15, color = "lightgray", trim = TRUE) +
+ 
+   geom_half_violin(
+     data = d %>% filter(x2=="9"),aes(x = x2), position = position_nudge(x = 0), 
+     side = "l", fill = "dodgerblue", alpha = .15, color = "lightgray", trim = TRUE) +
+   
+   geom_half_violin(
+     data = d %>% filter(x2=="10"),aes(x = x2), position = position_nudge(x = 0), 
+     side = "r", fill = "darkred", alpha = .15, color = 'lightgray', trim = TRUE) +
+  
+  
+
+  
+    #geom_line(aes(x=jit, y = y, group=id), color = 'lightgray') +
+    #geom_line(data = d %>% dplyr::filter(x %in% c("1", "2")), aes(x = xj, y = y, group = id), color = 'lightgray', alpha = .3) +
+    #geom_line(data = d %>% dplyr::filter(x %in% c("3", "4")), aes(x = xj_2, y = y, group = id), color = 'lightgray', alpha = .3) +
+    geom_line(aes(x=xj, group=id), color = 'lightgray', alpha = .5) +
+    geom_line(aes(x=xj_2, group=id), color = 'lightgray', alpha = .5) +
+    geom_line(aes(x=xj_3, group=id), color = 'lightgray', alpha = .5) +
+    geom_line(aes(x=xj_4, group=id), color = 'lightgray', alpha = .5) +
+    geom_line(aes(x=xj_5, group=id), color = 'lightgray', alpha = .5) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(x=="1"), aes(x=x), fill = 'dodgerblue',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(x=="2"), aes(x=x), fill = 'darkred',
+     outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(z=="3"), aes(x=z), fill = 'darkorange',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(z=="4"), aes(x=z), fill = 'darkgreen',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+      
+  
+  geom_boxplot(
+      data = d %>% dplyr::filter(x1=="5"), aes(x=x1), fill = 'dodgerblue',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(x1=="6"), aes(x=x1), fill = 'darkred',
+     outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(z1=="7"), aes(x=z1), fill = 'darkorange',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(z1=="8"), aes(x=z1), fill = 'darkgreen',
+      outlier.shape = NA, width = .2, alpha = .1) +
+  
+    
+    geom_boxplot(
+      data = d %>% dplyr::filter(x2=="9"), aes(x=x2), fill = 'dodgerblue',
+      outlier.shape = NA, width = .2, alpha = .1) +
+
+    geom_boxplot(
+      data = d %>% dplyr::filter(x2=="10"), aes(x=x2), fill = 'darkred',
+      outlier.shape = NA, width = .2, alpha = .1) +
+  
+  
+   geom_point(data = d %>% dplyr::filter(x =="1"), aes(x = xj), color = 'dodgerblue', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(x =="2"), aes(x = xj), color = 'darkred', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(z =="3"), aes(x = xj_2), color = 'darkorange', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(z =="4"), aes(x = xj_2), color = 'darkgreen', size = 1.5,
+               alpha = .6) +
+    
+    geom_point(data = d %>% dplyr::filter(x1 =="5"), aes(x = xj_3), color = 'dodgerblue', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(x1 =="6"), aes(x = xj_3), color = 'darkred', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(z1 =="7"), aes(x = xj_4), color = 'darkorange', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(z1 =="8"), aes(x = xj_4), color = 'darkgreen', size = 1.5,
+               alpha = .6) +
+
+    geom_point(data = d %>% dplyr::filter(x2 =="9"), aes(x = xj_5), color = 'dodgerblue', size = 1.5,
+               alpha = .6) +
+    geom_point(data = d %>% dplyr::filter(x2 =="10"), aes(x = xj_5), color = 'darkred', size = 1.5,
+               alpha = .6) +
+  
+   
+#Define additional settings
+   scale_x_continuous(breaks=c(1,2,3,4,5,6,7,8,9,10), labels=c("Pre", "Post", "Pre", "Post","Pre", "Post", "Pre", "Post", "Pre", "Post"), limits=c(0, 11)) +
+   xlab("Condition") + ylab("Value") +
+   #ggtitle('Figure 15: Repeated measures with jittered datapoints and connections') +
+   theme_classic()+
+   coord_cartesian(ylim=c(4, 8))
+
+f20
+
+ggsave('figure20.png', width = w, height = h, units='in', dpi=600)
+
+```
 
 
 
