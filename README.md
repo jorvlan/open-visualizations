@@ -13,7 +13,8 @@ van Langen, J. (2020). Open-visualizations in R and Python.
 
 This repository has been cited by:
 <pre>
-- Kuhrt, D., et al., (2020). An immersive first-person navigation task for abstract knowledge acquisition. 
+- Kuhrt, D., et al., (2020). An immersive first-person navigation task for 
+    abstract knowledge acquisition. 
     <b>bioRxiv</b>. <a href="https://www.biorxiv.org/content/10.1101/2020.07.17.208900v1">https://www.biorxiv.org/content/10.1101/2020.07.17.208900v1</a>
 - Hatano, A., et al., (2020).
     Thinking about thinking: People Underestimate Intrinsically Motivating Experiences of Waiting
