@@ -30,17 +30,22 @@ This repository has been cited by:
     Subthalamic Deep Brain Stimulation Identifies Frontal Networks Supporting Initiation, 
     Inhibition and Strategy Use in Parkinson's Disease: Initiation and Inhibition after STN-DBS for PD. 
     <b>NeuroImage</b>, 117352. <a href="https://doi.org/10.1016/j.neuroimage.2020.117352">https://doi.org/10.1016/j.neuroimage.2020.117352</a>
-- Genc, S., et al., (2020). Longitudinal white matter development in child-ren is associated with puberty, 
+- Genc, S., et al., (2020). Longitudinal white matter development in child-ren 
+    is associated with puberty, 
     attentional difficulties and mental health. 
     <b>bioRxiv</b>, 607671. <a href="https://www.biorxiv.org/content/10.1101/607671v2">https://www.biorxiv.org/content/10.1101/607671v2</a>
-- Wynn J., et al., (2020). Encoding and retreival eye movements mediateage differences in pattern completion. 
+- Wynn J., et al., (2020). Encoding and retreival eye movements mediateage 
+    differences in pattern completion. 
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/mdx3f/">https://psyarxiv.com/mdx3f/</a>
-- Ehlers, M., et al., (2020). Natural variations in brain morphology do not account for inter-individual 
+- Ehlers, M., et al., (2020). Natural variations in brain morphology do not 
+    account for inter-individual 
     differences in defensive responding during fear acquisition training and extinction. 
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/q2kyf/">https://psyarxiv.com/q2kyf/</a>
-- Uhlig, M., & Gaebler, M. (2020, July 27). Rapid brain changes following acute psychosocial stress. 
+- Uhlig, M., & Gaebler, M. (2020, July 27). Rapid brain changes following 
+    acute psychosocial stress. 
     Retrieved from <a href="osf.io/vw2zb/">osf.io/vw2zb</a>
-- Bejjani, C., & Egner, T. (2020). How reinforcement shapes the binding of stimulus-control associations. 
+- Bejjani, C., & Egner, T. (2020). How reinforcement shapes the binding of 
+    stimulus-control associations. 
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/cdpxh/">https://psyarxiv.com/cdpxh/</a>
 - Wiedemann (2020). lcsm: Univariate and Bivariate Latent Change Score Modeling.
     <b>CRAN</b> <a href="https://cran.r-project.org/web/packages/lcsm/vignettes/v0-longitudinal-plots.html">https://cran.r-project.org/web/packages/lcsm/vignettes/v0-longitudinal-plots.html</a>
