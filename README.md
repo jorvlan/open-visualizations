@@ -13,6 +13,10 @@ van Langen, J. (2020). Open-visualizations in R and Python.
 
 This repository has been cited by:
 <pre>
+- Mosley, P., et al., (2020). A Randomised, Double-Blind, Sham-Controlled 
+    Trial of Deep Brain Stimulation of the Bed Nucleus of the Stria Terminalis 
+    for Treatment-Resistant Obsessive-Compulsive Disorder. 
+    <b>medRxiv</b>. <a href="https://www.medrxiv.org/content/10.1101/2020.10.24.20218024v1">https://www.medrxiv.org/content/10.1101/2020.10.24.20218024v1</a>
 - Kuhrt, D., et al., (2020). An immersive first-person navigation task for 
     abstract knowledge acquisition. 
     <b>bioRxiv</b>. <a href="https://www.biorxiv.org/content/10.1101/2020.07.17.208900v1">https://www.biorxiv.org/content/10.1101/2020.07.17.208900v1</a>
