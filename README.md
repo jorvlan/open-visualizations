@@ -48,7 +48,7 @@ This repository has been cited by:
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/q2kyf/">https://psyarxiv.com/q2kyf/</a>
 - Uhlig, M., & Gaebler, M. (2020, July 27). Rapid brain changes following 
     acute psychosocial stress. 
-    <b>OSF</b> <a href="osf.io/vw2zb/">osf.io/vw2zb</a>
+    <b>OSF</b> <a href="https://osf.io/vw2zb/">https://osf.io/vw2zb/</a>
 - Bejjani, C., & Egner, T. (2020). How reinforcement shapes the binding of 
     stimulus-control associations. 
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/cdpxh/">https://psyarxiv.com/cdpxh/</a>
