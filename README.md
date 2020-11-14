@@ -13,6 +13,8 @@ van Langen, J. (2020). Open-visualizations in R and Python.
 
 This repository has been cited by:
 <pre>
+- Bejjani, C., et al., (2020). Minimal impact of consolidation on learned switch-readiness.
+    <b>bioRxiv</b>. <a href="https://psyarxiv.com/5ewj6/">https://psyarxiv.com/5ewj6/</a>
 - Mosley, P., et al., (2020). A Randomised, Double-Blind, Sham-Controlled 
     Trial of Deep Brain Stimulation of the Bed Nucleus of the Stria Terminalis 
     for Treatment-Resistant Obsessive-Compulsive Disorder. 
