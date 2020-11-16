@@ -13,6 +13,9 @@ van Langen, J. (2020). Open-visualizations in R and Python.
 
 This repository has been cited by:
 <pre>
+- Ehlers, M.R., et al., (2020) Revisiting potential associations between brain morphology, 
+    fear acquisition and extinction through new data and a literature review. 
+    <b>Scientific Reports</b>. <a href="https://doi.org/10.1038/s41598-020-76683-1">https://doi.org/10.1038/s41598-020-76683-1</a>
 - Bejjani, C., et al., (2020). Minimal impact of consolidation on learned switch-readiness.
     <b>bioRxiv</b>. <a href="https://psyarxiv.com/5ewj6/">https://psyarxiv.com/5ewj6/</a>
 - Mosley, P., et al., (2020). A Randomised, Double-Blind, Sham-Controlled 
@@ -44,7 +47,7 @@ This repository has been cited by:
 - Wynn J., et al., (2020). Encoding and retreival eye movements mediateage 
     differences in pattern completion. 
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/mdx3f/">https://psyarxiv.com/mdx3f/</a>
-- Ehlers, M., et al., (2020). Natural variations in brain morphology do not 
+- Ehlers, M.R, et al., (2020). Natural variations in brain morphology do not 
     account for inter-individual 
     differences in defensive responding during fear acquisition training and extinction. 
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/q2kyf/">https://psyarxiv.com/q2kyf/</a>
