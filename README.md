@@ -11,7 +11,7 @@ van Langen, J. (2020). Open-visualizations in R and Python.
 <a href="https://github.com/jorvlan/open-visualizations">https://github.com/jorvlan/open-visualizations</a>
 </pre>
 
-This repository has been cited by:
+This repository has been used by:
 <pre>
 - Ehlers, M.R., et al., (2020) Revisiting potential associations between brain morphology, 
     fear acquisition and extinction through new data and a literature review. 
