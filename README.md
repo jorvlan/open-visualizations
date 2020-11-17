@@ -13,17 +13,23 @@ van Langen, J. (2020). Open-visualizations in R and Python.
 
 This repository has been used by:
 <pre>
-- Ehlers, M.R., et al., (2020) Revisiting potential associations between brain morphology, 
+- Wiwad, D., et al., (2020).
+    Recognizing the Impact of Covid-19 on the Poor Alters Attitudes Towards Poverty and Inequality.
+    <b>PsyArXiv</b>. <a href="https://psyarxiv.com/geyt4/">https://psyarxiv.com/geyt4/</a>
+- Ehlers, M.R., et al., (2020). 
+    Revisiting potential associations between brain morphology, 
     fear acquisition and extinction through new data and a literature review. 
     <b>Scientific Reports</b>. <a href="https://doi.org/10.1038/s41598-020-76683-1">https://doi.org/10.1038/s41598-020-76683-1</a>
-- Bejjani, C., et al., (2020). Minimal impact of consolidation on learned switch-readiness.
+- Bejjani, C., et al., (2020). 
+    Minimal impact of consolidation on learned switch-readiness.
     <b>bioRxiv</b>. <a href="https://psyarxiv.com/5ewj6/">https://psyarxiv.com/5ewj6/</a>
-- Mosley, P., et al., (2020). A Randomised, Double-Blind, Sham-Controlled 
+- Mosley, P., et al., (2020). 
+    A Randomised, Double-Blind, Sham-Controlled 
     Trial of Deep Brain Stimulation of the Bed Nucleus of the Stria Terminalis 
     for Treatment-Resistant Obsessive-Compulsive Disorder. 
     <b>medRxiv</b>. <a href="https://www.medrxiv.org/content/10.1101/2020.10.24.20218024v1">https://www.medrxiv.org/content/10.1101/2020.10.24.20218024v1</a>
-- Kuhrt, D., et al., (2020). An immersive first-person navigation task for 
-    abstract knowledge acquisition. 
+- Kuhrt, D., et al., (2020). 
+    An immersive first-person navigation task for abstract knowledge acquisition. 
     <b>bioRxiv</b>. <a href="https://www.biorxiv.org/content/10.1101/2020.07.17.208900v1">https://www.biorxiv.org/content/10.1101/2020.07.17.208900v1</a>
 - Hatano, A., et al., (2020).
     Thinking about thinking: People Underestimate Intrinsically Motivating Experiences of Waiting
@@ -40,24 +46,25 @@ This repository has been used by:
     Inhibition and Strategy Use in Parkinson's Disease: Initiation and Inhibition after 
      STN-DBS for PD. 
     <b>NeuroImage</b>, 117352. <a href="https://doi.org/10.1016/j.neuroimage.2020.117352">https://doi.org/10.1016/j.neuroimage.2020.117352</a>
-- Genc, S., et al., (2020). Longitudinal white matter development in child-ren 
-    is associated with puberty, 
+- Genc, S., et al., (2020). 
+    Longitudinal white matter development in child-ren is associated with puberty, 
     attentional difficulties and mental health. 
     <b>bioRxiv</b>, 607671. <a href="https://www.biorxiv.org/content/10.1101/607671v2">https://www.biorxiv.org/content/10.1101/607671v2</a>
-- Wynn J., et al., (2020). Encoding and retreival eye movements mediateage 
-    differences in pattern completion. 
+- Wynn J., et al., (2020). 
+    Encoding and retreival eye movements mediateage differences in pattern completion. 
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/mdx3f/">https://psyarxiv.com/mdx3f/</a>
-- Ehlers, M.R, et al., (2020). Natural variations in brain morphology do not 
-    account for inter-individual 
+- Ehlers, M.R, et al., (2020). 
+    Natural variations in brain morphology do not account for inter-individual 
     differences in defensive responding during fear acquisition training and extinction. 
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/q2kyf/">https://psyarxiv.com/q2kyf/</a>
-- Uhlig, M., & Gaebler, M. (2020, July 27). Rapid brain changes following 
-    acute psychosocial stress. 
+- Uhlig, M., & Gaebler, M. (2020, July 27). 
+    Rapid brain changes following acute psychosocial stress. 
     <b>OSF</b> <a href="https://osf.io/vw2zb/">https://osf.io/vw2zb/</a>
-- Bejjani, C., & Egner, T. (2020). How reinforcement shapes the binding of 
-    stimulus-control associations. 
+- Bejjani, C., & Egner, T. (2020). 
+    How reinforcement shapes the binding of stimulus-control associations. 
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/cdpxh/">https://psyarxiv.com/cdpxh/</a>
-- Wiedemann (2020). lcsm: Univariate and Bivariate Latent Change Score Modeling.
+- Wiedemann (2020). 
+    lcsm: Univariate and Bivariate Latent Change Score Modeling.
     <b>CRAN</b> <a href="https://cran.r-project.org/web/packages/lcsm/vignettes/v0-longitudinal-plots.html">https://cran.r-project.org/web/packages/lcsm/vignettes/v0-longitudinal-plots.html</a>
 </pre> 
 
