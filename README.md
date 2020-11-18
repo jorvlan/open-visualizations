@@ -3,7 +3,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3715576.svg)](https://doi.org/10.5281/zenodo.3715576)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jorvlan/open-visualizations/master)
 # open-visualizations
-## This repository is now also available as a R package, please see [openvis](https://www.github.com/jorvlan/openvis)
+
 
 If you use this repository for your research, please cite it, thank you.
 
@@ -11,6 +11,8 @@ If you use this repository for your research, please cite it, thank you.
 van Langen, J. (2020). Open-visualizations in R and Python. 
 <a href="https://github.com/jorvlan/open-visualizations">https://github.com/jorvlan/open-visualizations</a>
 </pre>
+
+Open-visualizaitons is now also available as a R package, please see [openvis](https://www.github.com/jorvlan/openvis)
 
 This repository has been used by:
 <pre>
