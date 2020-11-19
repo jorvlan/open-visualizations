@@ -14,6 +14,9 @@ van Langen, J. (2020). Open-visualizations in R and Python.
 
 This repository has been used by:
 <pre>
+- Wiwad, D. et al., (2020).
+    The impact of COVID-19 on attitudes toward poverty and inequality.
+    <b>Journal of Experimental Social Psychology</b>. <a href="https://doi.org/10.1016/j.jesp.2020.104083">https://doi.org/10.1016/j.jesp.2020.104083</a>
 - Wiwad, D., et al., (2020).
     Recognizing the Impact of Covid-19 on the Poor Alters Attitudes Towards Poverty and Inequality.
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/geyt4/">https://psyarxiv.com/geyt4/</a>
