@@ -15,6 +15,9 @@ van Langen, J. (2020). Open-visualizations in R and Python.
 
 This repository has been used by:
 <pre>
+- Weiss, B., et al., (2020). 
+    Examining Changes in Personality Following Shamanic Ceremonial Use of Ayahuasca.
+    <b>Research Square</b>. <a href="https://www.researchsquare.com/article/rs-111130/v1">https://www.researchsquare.com/article/rs-111130/v1</a>
 - Wiwad, D. et al., (2020).
     The impact of COVID-19 on attitudes toward poverty and inequality.
     <b>Journal of Experimental Social Psychology</b>. <a href="https://doi.org/10.1016/j.jesp.2020.104083">https://doi.org/10.1016/j.jesp.2020.104083</a>
