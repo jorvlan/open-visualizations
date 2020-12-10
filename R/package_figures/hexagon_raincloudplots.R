@@ -16,7 +16,7 @@ raincloud_2 <- raincloud_1x1_repmes(
   fills = (c('dodgerblue', 'darkorange')),
   line_color = 'gray',
   line_alpha = .6,
-  size = 2,
+  size = 1,
   alpha = .6,
   align_clouds = FALSE) +
   
@@ -32,8 +32,9 @@ raincloud_3 <- raincloud_2 + theme_void() + theme_transparent()
 imgurl <- system.file("figures/rainclouds5.png", package="hexSticker")
 imgurl <- "https://github.com/jorvlan/open-visualizations/blob/master/R/package_figures/Dia1.png"
 
-s <- sticker(raincloud_3, package="Raincloudplots", p_size=20, s_x=1, s_y=.8, s_width=1.6, s_height = .8, h_fill="white", h_color="darkorange",p_color = "dodgerblue",
-        filename="C:/Users/jorvlan/Documents/rainclouds6.png")
+s <- sticker(raincloud_3, package="Raincloudplots", p_size=36, s_x=1, s_y=.8, s_width=1.8, s_height = .9, h_fill="#F6FFFF", h_size = 2, h_color="darkorange", p_color = "dodgerblue",
+        filename="C:/Users/jorvlan/Documents/rainclouds_highres.png", dpi = 600)
 s
 
 
+library(raincloudplots)
