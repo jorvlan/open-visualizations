@@ -54,7 +54,7 @@ This repository has been used by:
 - Mosley, P., et al.,(2020). 
     Subthalamic Deep Brain Stimulation Identifies Frontal Networks Supporting Initiation, 
     Inhibition and Strategy Use in Parkinson's Disease: Initiation and Inhibition after 
-     STN-DBS for PD. 
+    STN-DBS for PD. 
     <b>NeuroImage</b>, 117352. <a href="https://doi.org/10.1016/j.neuroimage.2020.117352">https://doi.org/10.1016/j.neuroimage.2020.117352</a>
 - Genc, S., et al., (2020). 
     Longitudinal white matter development in child-ren is associated with puberty, 
