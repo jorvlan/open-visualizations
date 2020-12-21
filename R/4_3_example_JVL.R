@@ -27,8 +27,9 @@ colnames(plotdata_wide)<-c('cog1','cog2','cog3','group')
 
 plotdata_long<-melt(plotdata_wide)
 f1 <- ggplot(plotdata_long,aes(value,group=group,fill=group))+
-  geom_jitter(data = plotdata_long, aes(value,y=-0.01, color=group), height = 0.005, alpha = .3) + ##added
-  geom_density(adjust=2,alpha=.6)+
+  geom_jitter(data = plotdata_long, aes(value,y=-0.01, color=group), height = 0.005, alpha = .5) + ##added
+  geom_density(adjust=2,alpha=.1)+
+  geom_histogram(aes(y=..density..),binwidth=5, alpha = .4) +
   facet_grid(group~variable)+
   theme_classic(base_size=22)
 f1
@@ -55,3 +56,6 @@ capabilities()
 png("abc", type = "cairo")
 
 dev.off()
+
+data = d %>% filter(x =="1"), aes(x = xj), color = 'dodgerblue', size = 1.5, 
+           alpha = .6) +
