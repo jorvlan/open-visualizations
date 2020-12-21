@@ -30,6 +30,7 @@ f1 <- ggplot(plotdata_long,aes(value,group=group,fill=group))+
   geom_jitter(data = plotdata_long, aes(value,y=-0.01, color=group), height = 0.005, alpha = .5) + ##added
   geom_density(adjust=2,alpha=.1)+
   geom_histogram(aes(y=..density..),binwidth=5, alpha = .4) +
+  geom_boxplot(aes(x = value, y = 0, fill = group),outlier.shape = NA, alpha = .5, width = .005, colour = "black")+
   facet_grid(group~variable)+
   theme_classic(base_size=22)
 f1
