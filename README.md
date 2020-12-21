@@ -81,8 +81,8 @@ This repository has been used by:
 Visualizations based on best open science practices.
 # Made in R
 ![Raincloud example](R/figure19.png)
-# Made in R
-![Raincloud example](R/Rplot.png) (credit to R. Kievit)
+# Made in R (credit to R. Kievit).
+![Raincloud example](R/Rplot.png)
 # Made in R
 ![Raincloud example](R/figure17.png)
 ## Taken from the R package development version
