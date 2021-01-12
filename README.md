@@ -13,10 +13,19 @@ van Langen, J. (2020). Open-visualizations in R and Python.
 
 
 This repository has been used by:
+
+### 2021
 <pre>
 - Altay, S., et al., (2021). Information Delivered by a Chatbot 
     Has a Positive Impact on COVID-19 Vaccines Attitudes and Intentions.
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/eb2gt/">https://psyarxiv.com/eb2gt/</a>
+- Pálffy, Z., et al., (2021). Cross-modal auditory priors 
+    drive the perception of bistable visual stimuli with 
+    reliable differences between individuals. <b>PsyArXiv</b>. <a href="https://psyarxiv.com/kj5cf/">https://psyarxiv.com/kj5cf/</a>
+</pre>
+
+### 2020    
+<pre>
 - Daeglau, M., et al., (2020). Motor Imagery EEG neurofeedback skill acquisition 
     in the context of declarative interference and sleep. 
     <b>bioRxiv</b>. <a href="https://doi.org/10.1101/2020.12.11.420919">https://doi.org/10.1101/2020.12.11.420919</a> 
