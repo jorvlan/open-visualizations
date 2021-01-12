@@ -16,8 +16,6 @@ This repository has been used by:
 
 ### 2021
 <pre>
-- Plotnine: A grammar of graphics for Python. 
-    <b>GitHub</b>. <a href="https://github.com/has2k1/plotnine">https://github.com/has2k1/plotnine</a>
 - Pálffy, Z., et al., (2021). Cross-modal auditory priors drive 
     the perception of bistable visual stimuli with reliable differences between individuals. 
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/kj5cf/">https://psyarxiv.com/kj5cf/</a>
@@ -28,6 +26,9 @@ This repository has been used by:
 
 ### 2020    
 <pre>
+- Plotnine: A grammar of graphics for Python (2020). 
+    <b>GitHub</b>. <a href="https://github.com/has2k1/plotnine">https://github.com/has2k1/plotnine</a>
+    <b>readthedocs</b>. <a href="https://plotnine.readthedocs.io/en/stable/">https://plotnine.readthedocs.io/en/stable/</a>
 - Daeglau, M., et al., (2020). Motor Imagery EEG neurofeedback skill acquisition 
     in the context of declarative interference and sleep. 
     <b>bioRxiv</b>. <a href="https://doi.org/10.1101/2020.12.11.420919">https://doi.org/10.1101/2020.12.11.420919</a> 
