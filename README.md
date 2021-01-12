@@ -19,9 +19,8 @@ This repository has been used by:
 - Altay, S., et al., (2021). Information Delivered by a Chatbot 
     Has a Positive Impact on COVID-19 Vaccines Attitudes and Intentions.
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/eb2gt/">https://psyarxiv.com/eb2gt/</a>
-- Pálffy, Z., et al., (2021). Cross-modal auditory priors 
-    drive the perception of bistable visual stimuli with 
-    reliable differences between individuals. 
+- Pálffy, Z., et al., (2021). Cross-modal auditory priors drive 
+    the perception of bistable visual stimuli with reliable differences between individuals. 
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/kj5cf/">https://psyarxiv.com/kj5cf/</a>
 </pre>
 
