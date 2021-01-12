@@ -21,7 +21,8 @@ This repository has been used by:
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/eb2gt/">https://psyarxiv.com/eb2gt/</a>
 - Pálffy, Z., et al., (2021). Cross-modal auditory priors 
     drive the perception of bistable visual stimuli with 
-    reliable differences between individuals. <b>PsyArXiv</b>. <a href="https://psyarxiv.com/kj5cf/">https://psyarxiv.com/kj5cf/</a>
+    reliable differences between individuals. 
+    <b>PsyArXiv</b>. <a href="https://psyarxiv.com/kj5cf/">https://psyarxiv.com/kj5cf/</a>
 </pre>
 
 ### 2020    
