@@ -119,6 +119,7 @@ This repository currently includes visualizations made with:
 - Python (.ipynb)
 - R (.rmd)
 
+<img src="https://github.com/jorvlan/open-visualizations/blob/master/R/package_figures/rainclouds_highres.png" width="150" height="160" align="center"/>
 
 ## Update 15 January 2021: 
 Now there is a fully functional R-package ['raincloudplots'](https://github.com/jorvlan/raincloudplots) to make it even easier to create these visualizations for your research.
@@ -128,7 +129,7 @@ The package has been incorporated in the following paper (in press):
     Raincloud plots: a multi-platform tool for robust data visualization (Version 2). 
     <b>Wellcome open research</b>.
 </pre>
-<img src="https://github.com/jorvlan/open-visualizations/blob/master/R/package_figures/rainclouds_highres.png" width="150" height="160" align="right"/>
+
 
 
 
