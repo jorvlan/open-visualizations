@@ -119,6 +119,14 @@ This repository currently includes visualizations made with:
 - Python (.ipynb)
 - R (.rmd)
 
+## Update 15 January 2021:
+Now there is a fully functional R-package 'raincloudplots' to make it even easier to create these visualizations for your research.
+The package has been incorporated in the following paper (in press):
+<pre>
+Allen, M., Poggiali, D., Whitaker, K., Marshall, T. R., van Langen, J., & Kievit, R. A. (2021). 
+Raincloud plots: a multi-platform tool for robust data visualization (Version 2). <b>Wellcome open research</b>.
+</pre>
+
 ## Update 10 Augustus 2020:
 Development of a R package has started and a first version is expected to be completed by September 2020.
 
