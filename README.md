@@ -124,12 +124,13 @@ This repository currently includes visualizations made with:
 Now there is a fully functional R-package ['raincloudplots'](https://github.com/jorvlan/raincloudplots) to make it even easier to create these visualizations for your research.
 The package has been incorporated in the following paper (in press):
 <pre>
-Allen, M., Poggiali, D., Whitaker, K., Marshall, T. R., <b>van Langen, J.</b>, & Kievit, R. A. (2021). 
-Raincloud plots: a multi-platform tool for robust data visualization (Version 2). 
-<b>Wellcome open research</b>.
+- Allen, M., Poggiali, D., Whitaker, K., Marshall, T. R., <b>van Langen, J.</b>, & Kievit, R. A. (2021). 
+    Raincloud plots: a multi-platform tool for robust data visualization (Version 2). 
+    <b>Wellcome open research</b>.
 </pre>
-
 <img src="https://github.com/jorvlan/open-visualizations/blob/master/R/package_figures/rainclouds_highres.png" width="150" height="160" align="right"/>
+
+
 
 ## Update 10 Augustus 2020:
 Development of a R package has started and a first version is expected to be completed by September 2020.
