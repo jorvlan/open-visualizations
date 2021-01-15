@@ -119,7 +119,7 @@ This repository currently includes visualizations made with:
 - Python (.ipynb)
 - R (.rmd)
 
-## Update 15 January 2021:
+## Update 15 January 2021: <img src="https://github.com/jorvlan/open-visualizations/blob/master/R/package_figures/rainclouds_highres.png" width="150" height="160" align="right"/>
 Now there is a fully functional R-package ['raincloudplots'](https://github.com/jorvlan/raincloudplots) to make it even easier to create these visualizations for your research.
 The package has been incorporated in the following paper (in press):
 <pre>
