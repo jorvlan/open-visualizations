@@ -120,7 +120,7 @@ This repository currently includes visualizations made with:
 - R (.rmd)
 
 ## Update 15 January 2021:
-Now there is a fully functional R-package 'raincloudplots' to make it even easier to create these visualizations for your research.
+Now there is a fully functional R-package ['raincloudplots'](https://github.com/jorvlan/raincloudplots) to make it even easier to create these visualizations for your research.
 The package has been incorporated in the following paper (in press):
 <pre>
 Allen, M., Poggiali, D., Whitaker, K., Marshall, T. R., van Langen, J., & Kievit, R. A. (2021). 
