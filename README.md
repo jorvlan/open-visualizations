@@ -7,7 +7,7 @@
 If you use this repository for your research, please cite it, thank you.
 
 <pre>
-van Langen, J. (2020). Open-visualizations in R and Python. 
+- van Langen, J. (2020). Open-visualizations in R and Python. 
 <a href="https://github.com/jorvlan/open-visualizations">https://github.com/jorvlan/open-visualizations</a>
 </pre>
 
