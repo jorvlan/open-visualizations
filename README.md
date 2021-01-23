@@ -128,7 +128,7 @@ Now there is a fully functional R-package ['raincloudplots'](https://github.com/
 The package has been incorporated in the following paper (in press):
 <pre>
 - Allen, M., Poggiali, D., Whitaker, K., Marshall, T. R., <b>van Langen, J.</b>, & Kievit, R. A. (2021). 
-    Raincloud plots: a multi-platform tool for robust data visualization (Version 2). 
+    Raincloud plots: a multi-platform tool for robust data visualization. 
     <b>Wellcome open research</b>. <a href="https://wellcomeopenresearch.org/articles/4-63/v2">https://wellcomeopenresearch.org/articles/4-63/v2/</a>
 </pre>
 
