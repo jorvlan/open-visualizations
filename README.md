@@ -26,6 +26,8 @@ This repository has been used by:
 
 ### 2020    
 <pre>
+- Petzka, M., et al., (2020). Does sleep-dependent consolidation favour weak memories?
+    <b>Cortex</b>, 134, 65-75. <a href="https://doi.org/10.1016/j.cortex.2020.10.005">https://doi.org/10.1016/j.cortex.2020.10.005</a>
 - Plotnine: A grammar of graphics for Python (2020). 
     <b>GitHub</b>. <a href="https://github.com/has2k1/plotnine">https://github.com/has2k1/plotnine</a>
     <b>readthedocs</b>. <a href="https://plotnine.readthedocs.io/en/stable/">https://plotnine.readthedocs.io/en/stable/</a>
