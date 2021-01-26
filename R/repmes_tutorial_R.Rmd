@@ -5,9 +5,10 @@ date: '`r format(Sys.time(), "%B %d, %Y")`'
 output:
   pdf_document: default
   keep_md: yes
+  html_document:
+    df_print: paged
 urlcolor: blue
 ---
-
 
 ## Background
 
@@ -56,11 +57,9 @@ Make sure you have the packages that are needed for this tutorial.
 
 ```{r install packages, include = TRUE, message = FALSE, eval = FALSE}
 packages <- c("plyr", "lattice", "ggplot2", "dplyr", "readr", "rmarkdown","Rmisc")
-
 if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
   install.packages(setdiff(packages, rownames(installed.packages())))  
 }
-
 if (!require(devtools)) {
     install.packages("devtools")
 }
@@ -79,19 +78,15 @@ library("rmarkdown")
 library("Rmisc")
 library("devtools")
 library("gghalves")
-
-
 # width and height variables for saved plots
 w = 6
 h = 4
-
 # Define limits of y-axis
 y_lim_min = 4
 y_lim_max = 7.5
-
 # Make the figure folder if it doesn't exist yet
 dir.create('../tutorial_R/figs_repmes/', showWarnings = FALSE)
-
+save_image = FALSE
 ```
 
 
@@ -117,7 +112,7 @@ d <- data.frame(y = c(before, after),
 
 Let's create a first very basic figure only showing the individual datapoints.
 
-```{r figure 1, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE }
+```{r figure 1, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
 f1 <- ggplot(data=d, aes(y=y)) +
   
    #Add geom_() objects
@@ -129,10 +124,12 @@ f1 <- ggplot(data=d, aes(y=y)) +
    ggtitle('Figure 1: Repeated measures individual datapoints') +
    theme_classic() +
    coord_cartesian(ylim=c(y_lim_min, y_lim_max))
-
 f1
 
-ggsave('../tutorial_R/figs_repmes/figure1.png', width = w, height = h)
+if (save_image == TRUE) {
+ggsave('../tutorial_R/figs_repmes/figure1.png', width = w, height = h, dpi = 150, units = 'in')
+}
+
 ```
 
 ## Figure 2
@@ -152,11 +149,11 @@ f2 <- ggplot(data=d, aes(y=y)) +
    ggtitle('Figure 2: Repeated measures with connecting lines') +
    theme_classic()+
    coord_cartesian(ylim=c(y_lim_min, y_lim_max))
-
 f2
 
+if (save_image == TRUE) {
 ggsave('../tutorial_R/figs_repmes/figure2.png', width = w, height = h)
-
+}
 ```
 
 ## Figure 3
@@ -183,10 +180,11 @@ f3 <- ggplot(data=d, aes(y=y)) +
    ggtitle('Figure 3: Repeated measures with jitter and connections') +
    theme_classic()+
    coord_cartesian(ylim=c(y_lim_min, y_lim_max))
-
 f3
 
+if (save_image == TRUE) {
 ggsave('../tutorial_R/figs_repmes/figure3.png', width = w, height = h)
+}
 ```
 
 ## Figure 4
@@ -210,10 +208,11 @@ f4 <- ggplot(data=d, aes(y=y)) +
    ggtitle('Figure 4: Repeated measures with jittered datapoints and connections') +
    theme_classic()+
    coord_cartesian(ylim=c(y_lim_min, y_lim_max))
-
 f4
 
+if (save_image == TRUE) {
 ggsave('../tutorial_R/figs_repmes/figure4.png', width = w, height = h)
+}
 ```
 
 
@@ -222,7 +221,6 @@ ggsave('../tutorial_R/figs_repmes/figure4.png', width = w, height = h)
 Let's add box- and violinplots to create `raincloud` like plots.
 
 ```{r figure 5, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
-
 f5 <- ggplot(data = d, aes(y = y)) +
   
    #Add geom_() objects
@@ -257,16 +255,15 @@ f5 <- ggplot(data = d, aes(y = y)) +
    ggtitle('Figure 5: Repeated measures with box- and violin plots') +
    theme_classic()+
    coord_cartesian(ylim=c(y_lim_min, y_lim_max))
-
 f5
 
+if (save_image == TRUE) {
 ggsave('../tutorial_R/figs_repmes/figure5.png', width = w, height = h)
-
+}
 ```
 ## Figure 5b
 
 ```{r figure 5b, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
-
 f5b <- ggplot(data = d, aes(y = y)) +
   
    #Add geom_() objects
@@ -301,16 +298,14 @@ f5b <- ggplot(data = d, aes(y = y)) +
    ggtitle('Figure 5b: Repeated measures with box- and violin plots') +
    theme_classic()+
    coord_cartesian(ylim=c(y_lim_min, y_lim_max))
-
 f5b
 
+if (save_image == TRUE) {
 ggsave('../tutorial_R/figs_repmes/figure5b.png', width = w, height = h)
-
-
+}
 ```
 
 ```{r figure 5c, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
-
 f5c <- ggplot(data = d, aes(y = y)) +
   
    #Add geom_() objects
@@ -345,12 +340,11 @@ f5c <- ggplot(data = d, aes(y = y)) +
    ggtitle('Figure 5c: Repeated measures with box- and violin plots') +
    theme_classic()+
    coord_cartesian(ylim=c(y_lim_min, y_lim_max))
-
 f5c
 
+if (save_image == TRUE) {
 ggsave('../tutorial_R/figs_repmes/figure5c.png', width = w, height = h)
-
-
+}
 ```
 
 
@@ -377,7 +371,6 @@ score_se_1 <- score_sd_1/sqrt(n) #-> adjust your n
 score_se_2 <- score_sd_2/sqrt(n) #-> adjust your n
 score_ci_1 <- CI(d$y[1:50], ci = 0.95)
 score_ci_2 <- CI(d$y[51:100], ci = 0.95)
-
 #Create data frame with 2 rows and 7 columns containing the descriptives
 group <- c("x", "z")
 N <- c(50, 50)
@@ -386,7 +379,6 @@ score_median <- c(score_median1, score_median2)
 sd <- c(score_sd_1, score_sd_2)
 se <- c(score_se_1, score_se_2)
 ci <- c((score_ci_1[1] - score_ci_1[3]), (score_ci_2[1] - score_ci_2[3]))
-
 #Create the dataframe
 summary_df <- data.frame(group, N, score_mean, score_median, sd, se, ci)
 ```
@@ -427,7 +419,7 @@ f6 <- ggplot(data = d, aes(y = y)) +
      position = position_nudge(x = -.13), color = "dodgerblue", alpha = .6, size = 1.5) +
   
    geom_errorbar(data = d %>% filter(x=="1"), aes(x = x, y = score_mean[1], 
-     ymin = score_mean[1]-ci[1], ymax = score_mean[1]+ci[1]), 
+     ymin = score_ci_1[3], ymax = score_ci_1[1]), 
      position = position_nudge(-.13), 
      color = "dodgerblue", width = 0.05, size = 0.4, alpha = .5) + 
   
@@ -435,8 +427,8 @@ f6 <- ggplot(data = d, aes(y = y)) +
     position = position_nudge(x = .13), color = "darkorange", alpha = .6, size = 1.5)+ 
  
    geom_errorbar(data = d %>% filter(x=="2"), aes(x = x, y = score_mean[2], 
-    ymin = score_mean[2]-ci[2], 
-    ymax = score_mean[2]+ci[2]), position = position_nudge(.13), color = "darkorange", 
+    ymin = score_ci_2[3], 
+    ymax = score_ci_2[1]), position = position_nudge(.13), color = "darkorange", 
     width = 0.05, size = 0.4, alpha = .5) +
   
   
@@ -446,11 +438,11 @@ f6 <- ggplot(data = d, aes(y = y)) +
    ggtitle('Figure 6: Repeated measures with box- and violin plots') +
    theme_classic()+
    coord_cartesian(ylim=c(y_lim_min, y_lim_max))
-
 f6
 
+if (save_image == TRUE) {
 ggsave('../tutorial_R/figs_repmes/figure6.png', width = w, height = h)
-
+}
 ```
 
 ## Figure 7
@@ -461,7 +453,6 @@ Note these coordinates can be calculated as 1 - position_nudge() for the first v
 
 ```{r figure 7,  include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
 x_tick_means <- c(.87, 2.13)
-
 f7 <- ggplot(data = d, aes(y = y)) +
   
    #Add geom_() objects
@@ -493,7 +484,7 @@ f7 <- ggplot(data = d, aes(y = y)) +
      position = position_nudge(x = -.13), color = "dodgerblue", alpha = .6, size = 1.5) +
   
    geom_errorbar(data = d %>% filter(x=="1"), aes(x = x, y = score_mean[1], 
-     ymin = score_mean[1]-ci[1], ymax = score_mean[1]+ci[1]), 
+     ymin = score_ci_1[3], ymax = score_ci_1[1]), 
      position = position_nudge(-.13), 
      color = "dodgerblue", width = 0.05, size = 0.4, alpha = .6) + 
   
@@ -501,8 +492,8 @@ f7 <- ggplot(data = d, aes(y = y)) +
     position = position_nudge(x = .13), color = "darkorange", alpha = .6, size = 1.5)+ 
  
    geom_errorbar(data = d %>% filter(x=="2"), aes(x = x, y = score_mean[2], 
-    ymin = score_mean[2]-ci[2], 
-    ymax = score_mean[2]+ci[2]), position = position_nudge(.13), color = "darkorange", 
+    ymin = score_ci_2[3], 
+    ymax = score_ci_2[1]), position = position_nudge(.13), color = "darkorange", 
     width = 0.05, size = 0.4, alpha = .6) +
   
   #Add a line connecting the two means
@@ -515,11 +506,11 @@ f7 <- ggplot(data = d, aes(y = y)) +
    ggtitle('Figure 7: Repeated measures with box- and violin plots and means + ci ') +
    theme_classic()+
    coord_cartesian(ylim=c(y_lim_min, y_lim_max))
-
 f7
 
+if (save_image == TRUE) {
 ggsave('../tutorial_R/figs_repmes/figure7.png', width = w, height = h)
-
+}
 ```
 
 ## 2 x 2 repeated measures rainclouds in a #butterfly fashion
@@ -536,7 +527,6 @@ d <- data.frame(y = c(before, after),
                x = rep(c(1,2), each=n),
                z = rep(c(3,4), each=n), 
                id = factor(rep(1:n,2))) 
-
 set.seed(321)
 d$xj <- jitter(d$x, amount = .09) 
 d$xj_2 <- jitter(d$z, amount = .09)
@@ -598,7 +588,7 @@ f8 <- ggplot(data = d, aes(y = y)) +
      position = position_nudge(x = -.13), color = "dodgerblue", alpha = .6, size = 1.5) +
   
    geom_errorbar(data = d %>% filter(x=="1"), aes(x = x, y = score_mean[1], 
-     ymin = score_mean[1]-ci[1], ymax = score_mean[1]+ci[1]), 
+     ymin = score_ci_1[3], ymax = score_ci_1[1]), 
      position = position_nudge(-.13), 
      color = "dodgerblue", width = 0.05, size = 0.4, alpha = .6) + 
   
@@ -606,23 +596,20 @@ f8 <- ggplot(data = d, aes(y = y)) +
     position = position_nudge(x = -1.1), color = "darkorange", alpha = .6, size = 1.5)+ 
  
    geom_errorbar(data = d %>% filter(x=="2"), aes(x = x, y = score_mean[2], 
-    ymin = score_mean[2]-ci[2], 
-    ymax = score_mean[2]+ci[2]), position = position_nudge(x = -1.1), color = "darkorange", 
+    ymin = score_ci_2[3],  
+    ymax = score_ci_2[1]), position = position_nudge(x = -1.1), color = "darkorange", 
     width = 0.05, size = 0.4, alpha = .6) +
-
    geom_point(data = d %>% filter(z=="3"), aes(x = z, y = score_mean[1]), 
     position = position_nudge(x = 1.15), color = "dodgerblue", alpha = .5) +
   
    geom_errorbar(data = d %>% filter(z=="3"), aes(x = z, y = score_mean[1], 
-    ymin = score_mean[1]-ci[1], 
-    ymax = score_mean[1]+ci[1]), position = position_nudge(1.15), 
+    ymin = score_ci_1[3], 
+    ymax = score_ci_1[1]), position = position_nudge(1.15), 
     color = "dodgerblue", width = 0.05, size = 0.4, alpha = .5)+ 
-
    geom_point(data = d %>% filter(z=="4"), aes(x = z, y = score_mean[2]), 
     position = position_nudge(x = .15), color = "darkorange", alpha = .5)+
-
    geom_errorbar(data = d %>% filter(z=="4"), aes(x = z, y = score_mean[2], 
-    ymin = score_mean[2]-ci[2], ymax = score_mean[2]+ci[2]), position = position_nudge(.15), 
+    ymin = score_ci_2[3], ymax = score_ci_2[1]), position = position_nudge(.15), 
     color = "darkorange", width = 0.05, size = 0.4, alpha = .5)+
   
   
@@ -633,10 +620,11 @@ f8 <- ggplot(data = d, aes(y = y)) +
    ggtitle('Figure 8: 2 x 2 Repeated measures with box- and violin plots') +
    theme_classic()+
    coord_cartesian(ylim=c(y_lim_min, y_lim_max))
-
 f8
 
+if (save_image == TRUE) {
 ggsave('../tutorial_R/figs_repmes/figure8.png', width = w, height = h)
+}
 ```
 
 ## Figure 9
@@ -647,7 +635,6 @@ Finally, let's add lines that connect the means of each group.
 #First we must again define the x-coordinates of the means.
 x_tick_means_x <- c(.87, 2.13) #same as above
 x_tick_means_z <- c(2.87, 4.13) #just add 2 for each tick
-
 f9 <- ggplot(data = d, aes(y = y)) +
   
    #Add geom_() objects
@@ -702,7 +689,7 @@ f9 <- ggplot(data = d, aes(y = y)) +
      position = position_nudge(x = -.13), color = "dodgerblue", alpha = .6, size = 1.5) +
   
    geom_errorbar(data = d %>% filter(x=="1"), aes(x = x, y = score_mean[1], 
-     ymin = score_mean[1]-ci[1], ymax = score_mean[1]+ci[1]), 
+     ymin = score_ci_1[3], ymax = score_ci_1[1]), 
      position = position_nudge(-.13), 
      color = "dodgerblue", width = 0.05, size = 0.4, alpha = .6) + 
   
@@ -710,23 +697,20 @@ f9 <- ggplot(data = d, aes(y = y)) +
     position = position_nudge(x = .13), color = "darkorange", alpha = .6, size = 1.5)+ 
  
    geom_errorbar(data = d %>% filter(x=="2"), aes(x = x, y = score_mean[2], 
-    ymin = score_mean[2]-ci[2], 
-    ymax = score_mean[2]+ci[2]), position = position_nudge(x = .13), color = "darkorange", 
+    ymin = score_ci_2[3],   
+    ymax = score_ci_2[1]), position = position_nudge(x = .13), color = "darkorange", 
     width = 0.05, size = 0.4, alpha = .6) +
-
    geom_point(data = d %>% filter(z=="3"), aes(x = z, y = score_mean[1]), 
     position = position_nudge(x = -.13), color = "dodgerblue", alpha = .5) +
   
    geom_errorbar(data = d %>% filter(z=="3"), aes(x = z, y = score_mean[1], 
-    ymin = score_mean[1]-ci[1], 
-    ymax = score_mean[1]+ci[1]), position = position_nudge(-.13), 
+    ymin = score_ci_1[3], 
+    ymax = score_ci_1[1]), position = position_nudge(-.13), 
     color = "dodgerblue", width = 0.05, size = 0.4, alpha = .5)+ 
-
    geom_point(data = d %>% filter(z=="4"), aes(x = z, y = score_mean[2]), 
     position = position_nudge(x = .13), color = "darkorange", alpha = .5)+
-
    geom_errorbar(data = d %>% filter(z=="4"), aes(x = z, y = score_mean[2], 
-    ymin = score_mean[2]-ci[2], ymax = score_mean[2]+ci[2]), 
+    ymin = score_ci_2[3], ymax = score_ci_2[1]),
     position = position_nudge(.13), 
     color = "darkorange", width = 0.05, size = 0.4, alpha = .5)+
   
@@ -743,11 +727,11 @@ f9 <- ggplot(data = d, aes(y = y)) +
    ggtitle('Figure 9: 2 x 2 Repeated measures with box- and violin plots') +
    theme_classic()+
    coord_cartesian(ylim=c(y_lim_min, y_lim_max))
-
 f9
 
+if (save_image == TRUE) {
 ggsave('../tutorial_R/figs_repmes/figure9.png', width = w, height = h)
-
+}
 ```
 ## Figure 10
 
@@ -760,10 +744,8 @@ n <- length(before)
 d <- data.frame(y = c(before, during, after),
                x = rep(c(1,2,3), each=n),
                id = factor(rep(1:n,3)))
-
 set.seed(321)
 d$xj <- jitter(d$x, amount = .09) 
-
 f10 <- ggplot(data=d, aes(y=y)) +
   
    #Add geom_() objects
@@ -782,17 +764,14 @@ f10 <- ggplot(data=d, aes(y=y)) +
    ggtitle('Figure 10: Repeated measures with jittered datapoints and connections') +
    theme_classic()+
    coord_cartesian(ylim=c(3.5, 7.5))
-
 f10
 
+if (save_image == TRUE) {
 ggsave('../tutorial_R/figs_repmes/figure10.png', width = w, height = h)
-
-
-
+}
 ```
 
 ```{r figure 11, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
-
 before = iris$Sepal.Width[1:50]
 during = iris$Sepal.Length[51:100]
 after = iris$Sepal.Length[1:50]
@@ -800,11 +779,8 @@ n <- length(before)
 d <- data.frame(y = c(before, during, after),
                x = rep(c(1,2,3), each=n),
                id = factor(rep(1:n,3)))
-
 set.seed(321)
 d$xj <- jitter(d$x, amount = .09) 
-
-
 f11 <- ggplot(data=d, aes(y=y)) +
   
    #Add geom_() objects
@@ -835,11 +811,14 @@ f11 <- ggplot(data=d, aes(y=y)) +
    ggtitle('Figure 11: Repeated measures with jittered datapoints and connections') +
    theme_classic()+
    coord_cartesian(ylim=c(2.3, 7.2))
-
 f11
 
+if (save_image == TRUE) {
 ggsave('../tutorial_R/figs_repmes/figure11.png', width = w, height = h)
+}
 ```
+
+
 ```{r figure 12, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
 f12 <- ggplot(data=d, aes(y=y)) +
   
@@ -871,10 +850,11 @@ f12 <- ggplot(data=d, aes(y=y)) +
    ggtitle('Figure 12: Repeated measures with jittered datapoints and connections') +
    theme_classic()+
    coord_cartesian(ylim=c(2.3, 7.2))
-
 f12
 
+if (save_image == TRUE) {
 ggsave('../tutorial_R/figs_repmes/figure12.png', width = w, height = h)
+}
 ```
 
 
@@ -888,12 +868,10 @@ d <- data.frame(y = c(before, during, after),
                x = rep(c(1,2,3), each=n),
                z = rep(c(4,5,6), each=n), 
                id = factor(rep(1:n,3)))
-
 set.seed(321)
 d$xj <- jitter(d$x, amount = .09) 
 d$xj_2 <- jitter(d$z, amount = .09)
 #d$xj_3 <- jitter(d$a, amount = .09)
-
 f13 <- ggplot(data=d, aes(y=y)) +
   
    #Add geom_() objects
@@ -945,11 +923,14 @@ f13 <- ggplot(data=d, aes(y=y)) +
    ggtitle('Figure 13: Repeated measures with jittered datapoints and connections') +
    theme_classic()+
    coord_cartesian(ylim=c(2.3, 7.2))
-
 f13
 
+if (save_image == TRUE) {
 ggsave('../tutorial_R/figs_repmes/figure13.png', width = w, height = h)
+}
 ```
+
+
 ```{r figure 14, include = TRUE, eval = TRUE, echo = TRUE, message = FALSE}
 f14 <- ggplot(data=d, aes(y=y)) +
   
@@ -1002,12 +983,12 @@ f14 <- ggplot(data=d, aes(y=y)) +
    ggtitle('Figure 14: Repeated measures with jittered datapoints and connections') +
    theme_classic()+
    coord_cartesian(ylim=c(2.3, 7.2))
-
 f14
 
+if (save_image == TRUE) {
 ggsave('../tutorial_R/figs_repmes/figure14.png', width = w, height = h)
+}
 ```
-
 
 ## General remarks / tips
 
@@ -1016,20 +997,15 @@ ggsave('../tutorial_R/figs_repmes/figure14.png', width = w, height = h)
 - If you want to save your figures in a high-quality manner (> GB) for e.g., publications, you could save your figure with a `.tiff` extension and add `dpi=` as used in the following line of code:
 
 ```{r high-quality figure, include = TRUE, echo = TRUE, eval = FALSE}
-
 ggsave("figure.tiff", height=h, width=w, units='in', dpi=600)
-
 ```
 
 - If for some reason your code does not work due to e.g., an update in a package, you could use the following line of code to unload and load that package again.
 
 ```{r package reload, include = TRUE, echo = TRUE, eval = FALSE}
-
 if("package_name" %in% (.packages())){
   detach('package:package_name', unload=TRUE)}
-
 library("package_name")
-
 ```
 
 You have reached the end of this document.
