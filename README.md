@@ -31,6 +31,9 @@ This repository has been used by:
 - Plotnine: A grammar of graphics for Python (2020). 
     <b>GitHub</b>. <a href="https://github.com/has2k1/plotnine">https://github.com/has2k1/plotnine</a>
     <b>readthedocs</b>. <a href="https://plotnine.readthedocs.io/en/stable/">https://plotnine.readthedocs.io/en/stable/</a>
+- Burley, D. T., et al., (2020). Childhood conduct problems are associated with reduced 
+    white matter fibre density and morphology. 
+    <b>Journal of Affective Disorders</b>. <a href="https://doi.org/10.1016/j.jad.2020.11.098">https://doi.org/10.1016/j.jad.2020.11.098</a>
 - Daeglau, M., et al., (2020). Motor Imagery EEG neurofeedback skill acquisition 
     in the context of declarative interference and sleep. 
     <b>bioRxiv</b>. <a href="https://doi.org/10.1101/2020.12.11.420919">https://doi.org/10.1101/2020.12.11.420919</a> 
