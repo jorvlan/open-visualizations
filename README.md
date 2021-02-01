@@ -30,7 +30,7 @@ This repository has been used by:
 <pre>
 - Legrand, N., et al., (2020). Emotional metacognition: stimulus valence modulates 
     cardiac arousal and metamemory.
-    <b>Cognition and Emotion</b>, 1-17. <a href="https://www.tandfonline.com/doi/full/10.1080/02699931.2020.1859993">https://www.tandfonline.com/doi/full/10.1080/02699931.2020.1859993</a>
+    <b>Cognition and Emotion</b>, 1-17. <a href="https://doi.org/10.1080/02699931.2020.1859993">https://doi.org/10.1080/02699931.2020.1859993</a>
 - Petzka, M., et al., (2020). Does sleep-dependent consolidation favour weak memories?
     <b>Cortex</b>, 134, 65-75. <a href="https://doi.org/10.1016/j.cortex.2020.10.005">https://doi.org/10.1016/j.cortex.2020.10.005</a>
 - Plotnine: A grammar of graphics for Python (2020). 
