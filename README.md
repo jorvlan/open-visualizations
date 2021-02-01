@@ -16,6 +16,8 @@ This repository has been used by:
 
 ### 2021
 <pre>
+- Somasundaram, V., et al., (2021). Contingency learning is not modulated by cognitive control demands.
+    <b>PsyArXiv</b>. <a href="https://psyarxiv.com/z5ngw/">https://psyarxiv.com/z5ngw/</a>
 - Pálffy, Z., et al., (2021). Cross-modal auditory priors drive 
     the perception of bistable visual stimuli with reliable differences between individuals. 
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/kj5cf/">https://psyarxiv.com/kj5cf/</a>
