@@ -45,7 +45,7 @@ sticker <- function(subplot, s_x=.8, s_y=.75, s_width=.4, s_height=.5,
   imgurl <- "https://github.com/jorvlan/open-visualizations/blob/master/R/package_figures/Dia1.png"
   
   s <- sticker(raincloud_3, package="Raincloudplots", p_size=34, s_x=1, s_y=.8, s_width=1.8, 
-               s_height = .9, h_fill="#F6FFFF", h_size = 2, h_color="darkorange", p_color = "dodgerblue", url = "github.com/jorvlan/raincloudplots", u_size = 6,
+               s_height = .9, h_fill="#F6FFFF", h_size = 2, h_color="darkorange", p_color = "dodgerblue", url = "github.com/RainCloudPlots/RainCloudPlots", u_size = 7.5,
                u_color = "dodgerblue", white_around_sticker = TRUE,
                filename="C:/Users/jorvlan/Documents/rainclouds_highres.png", dpi = 600)
   s
