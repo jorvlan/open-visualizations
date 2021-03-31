@@ -117,17 +117,22 @@ Visualizations based on best open science practices.
 # Made in R (credit to R. Kievit).
 ![Raincloud example](R/Rplot02.png)
 # Made in R
+![Raincloud example](R/testplot.jpeg)
+# Made in R
 ![Raincloud example](R/figure17.png)
-## Taken from the R package development version
+# Made in R
 ![Raincloud example](R/figure5_1.png)
-## Taken from the R package development version
+# Made in R
 ![Raincloud example](R/figure3_1.png)
-## Taken from the R package development version
+# Made in R
 ![Raincloud example](R/figure4_1.png)
-## Taken from the R package development version
+# Made in R
 ![Raincloud example](R/figure10e.png)
+# Made in R
 ![Raincloud example](R/figure10d.png)
+# Made in R
 ![Raincloud example](R/figure5c.png)
+# Made in R
 ![Raincloud example2](R/figure6.png)
 
 # Made in Python
