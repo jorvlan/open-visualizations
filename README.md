@@ -16,6 +16,10 @@ This repository has been used by:
 
 ### 2021
 <pre>
+- Mosley, P.E., et al., A randomised, double-blind, sham-controlled trial of deep brain stimulation 
+    of the bed nucleus of the stria terminalis for treatment-resistant obsessive-compulsive disorder. 
+    <b>Translational Psychiatry</b>. 11, 190 (2021). 
+    <a href="https://doi.org/10.1038/s41398-021-01307-9">https://doi.org/10.1038/s41398-021-01307-9</a>
 - Hur, J., et al., (2021). Anxiety-related frontocortical activity is associated with 
     dampened stressor reactivity in the real world.
     <b>bioRxiv</b>. <a href="https://doi.org/10.1101/2021.03.17.435791">https://doi.org/10.1101/2021.03.17.435791</a>
