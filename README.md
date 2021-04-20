@@ -16,7 +16,7 @@ This repository has been used by:
 
 ### 2021
 <pre>
-- Mosley, P.E., et al., A randomised, double-blind, s
+- Mosley, P.E., et al., A randomised, double-blind,
     sham-controlled trial of deep brain stimulation 
     of the bed nucleus of the stria terminalis for treatment-resistant obsessive-compulsive disorder. 
     <b>Translational Psychiatry</b>. 11, 190 (2021). 
