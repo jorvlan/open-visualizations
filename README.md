@@ -30,7 +30,8 @@ This repository has been used by:
     <a href="https://doi.org/10.1038/s41598-021-84599-7">https://doi.org/10.1038/s41598-021-84599-7</a>
 - JASP Team (2021). JASP - A Fresh Way to Do Statistics [Computer software].
     <a href="https://jasp-stats.org/">https://jasp-stats.org/</a>
-- Somasundaram, V., et al., (2021). Contingency learning is not modulated by cognitive control demands.
+- Somasundaram, V., et al., (2021). Contingency learning is not modulated by 
+    cognitive control demands.
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/z5ngw/">https://psyarxiv.com/z5ngw/</a>
 - Pálffy, Z., et al., (2021). Cross-modal auditory priors drive 
     the perception of bistable visual stimuli with reliable differences between individuals. 
