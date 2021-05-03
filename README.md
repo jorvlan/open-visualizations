@@ -16,6 +16,9 @@ This repository has been used by:
 
 ### 2021
 <pre>
+- Voulgaropoulou, S., et al., (2021). Asymmetric effects of acute stress on cost and benefit learning.
+    <b>bioRxiv</b>. 
+    <a href="https://doi.org/10.1101/2021.04.25.441347">https://doi.org/10.1101/2021.04.25.441347</a>
 - Mosley, P.E., et al., A randomised, double-blind,
     sham-controlled trial of deep brain stimulation 
     of the bed nucleus of the stria terminalis for treatment-resistant obsessive-compulsive disorder. 
