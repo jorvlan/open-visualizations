@@ -16,6 +16,9 @@ This repository has been used by:
 
 ### 2021
 <pre>
+- Allen, M., et al., (2021). Raincloud plots: A multi-platform tool for robust data visualization.
+    <b>Wellcome Open Research</b>.
+    <a href="https://wellcomeopenresearch.org/articles/4-63/v2">https://wellcomeopenresearch.org/articles/4-63/v2</a/>
 - Kuhn, M., et al., (2021). Navigating the manifold of skin conductance response 
     quantification approaches.
     <b>PsyArXiv</b>.
