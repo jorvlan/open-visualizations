@@ -16,6 +16,10 @@ This repository has been used by:
 
 ### 2021
 <pre>
+- Kuhn, M., et al., (2021). Navigating the manifold of skin conductance response 
+    quantification approaches.
+    <b>PsyArXiv</b>.
+    <a href="https://psyarxiv.com/9h2kd">https://psyarxiv.com/9h2kd</a>
 - Voulgaropoulou, S., et al., (2021). Asymmetric effects of acute stress on cost and benefit learning.
     <b>bioRxiv</b>. 
     <a href="https://doi.org/10.1101/2021.04.25.441347">https://doi.org/10.1101/2021.04.25.441347</a>
