@@ -16,11 +16,11 @@ This repository has been used by:
 
 ### 2021
 <pre>
-<b>*</b> Bellmund, J., et al., (2021). Structuring time: The hippocampus constructs 
+<b>1</b> Bellmund, J., et al., (2021). Structuring time: The hippocampus constructs 
     sequence memories that generalize temporal relations across experiences.
     <b>bioRxiv</b>.
     <a href="https://doi.org/10.1101/2021.04.23.440002">https://doi.org/10.1101/2021.04.23.440002</a>
-<b>*</b> Allen, M., et al., (2021). Raincloud plots: A multi-platform tool for robust data visualization
+<b>2</b> Allen, M., et al., (2021). Raincloud plots: A multi-platform tool for robust data visualization
     [version 2; peer review: 2 approved].
     <b>Wellcome Open Research</b>.
     <a href="https://wellcomeopenresearch.org/articles/4-63/v2">https://wellcomeopenresearch.org/articles/4-63/v2</a/>
