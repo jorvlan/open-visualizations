@@ -16,11 +16,11 @@ This repository has been used by:
 
 ### 2021
 <pre>
-<b>1.</b> Bellmund, J., et al., (2021). Structuring time: The hippocampus constructs 
+<b>*</b> Bellmund, J., et al., (2021). Structuring time: The hippocampus constructs 
     sequence memories that generalize temporal relations across experiences.
     <b>bioRxiv</b>.
     <a href="https://doi.org/10.1101/2021.04.23.440002">https://doi.org/10.1101/2021.04.23.440002</a>
-<b>2.</b> Allen, M., et al., (2021). Raincloud plots: A multi-platform tool for robust data visualization
+<b>*</b> Allen, M., et al., (2021). Raincloud plots: A multi-platform tool for robust data visualization
     [version 2; peer review: 2 approved].
     <b>Wellcome Open Research</b>.
     <a href="https://wellcomeopenresearch.org/articles/4-63/v2">https://wellcomeopenresearch.org/articles/4-63/v2</a/>
@@ -58,77 +58,77 @@ This repository has been used by:
 
 ### 2020    
 <pre>
-- Legrand, N., et al., (2020). Emotional metacognition: stimulus valence modulates 
+<b>*</b> Legrand, N., et al., (2020). Emotional metacognition: stimulus valence modulates 
     cardiac arousal and metamemory.
     <b>Cognition and Emotion</b>, 1-17. <a href="https://doi.org/10.1080/02699931.2020.1859993">https://doi.org/10.1080/02699931.2020.1859993</a>
-- Petzka, M., et al., (2020). Does sleep-dependent consolidation favour weak memories?
+<b>*</b> Petzka, M., et al., (2020). Does sleep-dependent consolidation favour weak memories?
     <b>Cortex</b>, 134, 65-75. <a href="https://doi.org/10.1016/j.cortex.2020.10.005">https://doi.org/10.1016/j.cortex.2020.10.005</a>
-- Plotnine: A grammar of graphics for Python (2020). 
+<b>*</b> Plotnine: A grammar of graphics for Python (2020). 
     <b>GitHub</b>. <a href="https://github.com/has2k1/plotnine">https://github.com/has2k1/plotnine</a>
     <b>readthedocs</b>. <a href="https://plotnine.readthedocs.io/en/stable/">https://plotnine.readthedocs.io/en/stable/</a>
-- Burley, D. T., et al., (2020). Childhood conduct problems are associated with reduced 
+<b>*</b> Burley, D. T., et al., (2020). Childhood conduct problems are associated with reduced 
     white matter fibre density and morphology. 
     <b>Journal of Affective Disorders</b>. <a href="https://doi.org/10.1016/j.jad.2020.11.098">https://doi.org/10.1016/j.jad.2020.11.098</a>
-- Daeglau, M., et al., (2020). Motor Imagery EEG neurofeedback skill acquisition 
+<b>*</b> Daeglau, M., et al., (2020). Motor Imagery EEG neurofeedback skill acquisition 
     in the context of declarative interference and sleep. 
     <b>bioRxiv</b>. <a href="https://doi.org/10.1101/2020.12.11.420919">https://doi.org/10.1101/2020.12.11.420919</a> 
-- Weiss, B., et al., (2020). 
+<b>*</b> Weiss, B., et al., (2020). 
     Examining Changes in Personality Following Shamanic Ceremonial Use of Ayahuasca.
     <b>Research Square</b>. <a href="https://www.researchsquare.com/article/rs-111130/v1">https://www.researchsquare.com/article/rs-111130/v1</a>
-- Wiwad, D. et al., (2020).
+<b>*</b> Wiwad, D. et al., (2020).
     The impact of COVID-19 on attitudes toward poverty and inequality.
     <b>Journal of Experimental Social Psychology</b>. <a href="https://doi.org/10.1016/j.jesp.2020.104083">https://doi.org/10.1016/j.jesp.2020.104083</a>
-- Wiwad, D., et al., (2020).
+<b>*</b> Wiwad, D., et al., (2020).
     Recognizing the Impact of Covid-19 on the Poor Alters Attitudes Towards Poverty and Inequality.
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/geyt4/">https://psyarxiv.com/geyt4/</a>
-- Ehlers, M.R., et al., (2020). 
+<b>*</b> Ehlers, M.R., et al., (2020). 
     Revisiting potential associations between brain morphology, 
     fear acquisition and extinction through new data and a literature review. 
     <b>Scientific Reports</b>. <a href="https://doi.org/10.1038/s41598-020-76683-1">https://doi.org/10.1038/s41598-020-76683-1</a>
-- Bejjani, C., et al., (2020). 
+<b>*</b> Bejjani, C., et al., (2020). 
     Minimal impact of consolidation on learned switch-readiness.
     <b>bioRxiv</b>. <a href="https://psyarxiv.com/5ewj6/">https://psyarxiv.com/5ewj6/</a>
-- Mosley, P., et al., (2020). 
+<b>*</b> Mosley, P., et al., (2020). 
     A Randomised, Double-Blind, Sham-Controlled 
     Trial of Deep Brain Stimulation of the Bed Nucleus of the Stria Terminalis 
     for Treatment-Resistant Obsessive-Compulsive Disorder. 
     <b>medRxiv</b>. <a href="https://www.medrxiv.org/content/10.1101/2020.10.24.20218024v1">https://www.medrxiv.org/content/10.1101/2020.10.24.20218024v1</a>
-- Kuhrt, D., et al., (2020). 
+<b>*</b> Kuhrt, D., et al., (2020). 
     An immersive first-person navigation task for abstract knowledge acquisition. 
     <b>bioRxiv</b>. <a href="https://www.biorxiv.org/content/10.1101/2020.07.17.208900v1">https://www.biorxiv.org/content/10.1101/2020.07.17.208900v1</a>
-- Hatano, A., et al., (2020).
+<b>*</b> Hatano, A., et al., (2020).
     Thinking about thinking: People Underestimate Intrinsically Motivating Experiences of Waiting
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/r6mde">https://psyarxiv.com/r6mde</a>
-- Medel, V., et al., (2020). 
+<b>*</b> Medel, V., et al., (2020). 
     Complexity and 1/f slope jointly reflect cortical states across different E/I balances. 
     <b>bioRxiv</b>. <a href="https://doi.org/10.1101/2020.09.15.298497">https://doi.org/10.1101/2020.09.15.298497</a>
-- Genc, S., et al., (2020). 
+<b>*</b> Genc, S., et al., (2020). 
     Longitudinal patterns of white matter fibre density and morphology in children 
     is associated with age and pubertal stage. 
     <b>Developmental Cognitive Neuroscience</b>, 100853. <a href="https://doi.org/10.1016/j.dcn.2020.100853">https://doi.org/10.1016/j.dcn.2020.100853</a>
-- Mosley, P., et al.,(2020). 
+<b>*</b> Mosley, P., et al.,(2020). 
     Subthalamic Deep Brain Stimulation Identifies Frontal Networks Supporting Initiation, 
     Inhibition and Strategy Use in Parkinson's Disease: Initiation and Inhibition after 
     STN-DBS for PD. 
     <b>NeuroImage</b>, 117352. <a href="https://doi.org/10.1016/j.neuroimage.2020.117352">https://doi.org/10.1016/j.neuroimage.2020.117352</a>
-- Genc, S., et al., (2020). 
+<b>*</b> Genc, S., et al., (2020). 
     Longitudinal white matter development in child-ren is associated with puberty, 
     attentional difficulties and mental health. 
     <b>bioRxiv</b>, 607671. <a href="https://www.biorxiv.org/content/10.1101/607671v2">https://www.biorxiv.org/content/10.1101/607671v2</a>
-- Wynn J., et al., (2020). 
+<b>*</b> Wynn J., et al., (2020). 
     Encoding and retreival eye movements mediateage differences in pattern completion. 
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/mdx3f/">https://psyarxiv.com/mdx3f/</a>
-- Ehlers, M.R, et al., (2020). 
+<b>*</b> Ehlers, M.R, et al., (2020). 
     Natural variations in brain morphology do not account for inter-individual 
     differences in defensive responding during fear acquisition training and extinction. 
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/q2kyf/">https://psyarxiv.com/q2kyf/</a>
-- Uhlig, M., & Gaebler, M. (2020, July 27). 
+<b>*</b> Uhlig, M., & Gaebler, M. (2020, July 27). 
     Rapid brain changes following acute psychosocial stress. 
     <b>OSF</b> <a href="https://osf.io/vw2zb/">https://osf.io/vw2zb/</a>
-- Bejjani, C., & Egner, T. (2020). 
+<b>*</b> Bejjani, C., & Egner, T. (2020). 
     How reinforcement shapes the binding of stimulus-control associations. 
     <b>PsyArXiv</b>. <a href="https://psyarxiv.com/cdpxh/">https://psyarxiv.com/cdpxh/</a>
-- Wiedemann (2020). 
+<b>*</b> Wiedemann (2020). 
     lcsm: Univariate and Bivariate Latent Change Score Modeling.
     <b>CRAN</b> <a href="https://cran.r-project.org/web/packages/lcsm/vignettes/v0-longitudinal-plots.html">https://cran.r-project.org/web/packages/lcsm/vignettes/v0-longitudinal-plots.html</a>
 </pre> 
