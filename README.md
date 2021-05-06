@@ -20,7 +20,8 @@ This repository has been used by:
     sequence memories that generalize temporal relations across experiences.
     <b>bioRxiv</b>.
     <a href="https://doi.org/10.1101/2021.04.23.440002">https://doi.org/10.1101/2021.04.23.440002</a>
-- Allen, M., et al., (2021). Raincloud plots: A multi-platform tool for robust data visualization
+    
+* Allen, M., et al., (2021). Raincloud plots: A multi-platform tool for robust data visualization
     [version 2; peer review: 2 approved].
     <b>Wellcome Open Research</b>.
     <a href="https://wellcomeopenresearch.org/articles/4-63/v2">https://wellcomeopenresearch.org/articles/4-63/v2</a/>
