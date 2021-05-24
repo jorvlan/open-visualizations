@@ -16,6 +16,10 @@ This repository has been used by:
 
 ### 2021
 <pre>
+<b>*</b> Wynn, J.S., et al., (2021). Encoding and retrieval eye movements 
+    mediate age differences in pattern completion. 
+    <b>Cognition</b>. 
+    <a href="https://doi.org/10.1016/j.cognition.2021.104746">https://doi.org/10.1016/j.cognition.2021.104746</a>
 <b>*</b> Bellmund, J., et al., (2021). Structuring time: The hippocampus constructs 
     sequence memories that generalize temporal relations across experiences.
     <b>bioRxiv</b>.
@@ -23,7 +27,7 @@ This repository has been used by:
 <b>*</b> Allen, M., et al., (2021). Raincloud plots: A multi-platform tool for robust data visualization
     [version 2; peer review: 2 approved].
     <b>Wellcome Open Research</b>.
-    <a href="https://wellcomeopenresearch.org/articles/4-63/v2">https://wellcomeopenresearch.org/articles/4-63/v2</a/>
+    <a href="https://wellcomeopenresearch.org/articles/4-63/v2">https://wellcomeopenresearch.org/articles/4-63/v2</a>
 <b>*</b> Kuhn, M., et al., (2021). Navigating the manifold of skin conductance response 
     quantification approaches.
     <b>PsyArXiv</b>.
