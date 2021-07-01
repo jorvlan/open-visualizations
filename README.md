@@ -16,6 +16,10 @@ This repository has been used by:
 
 ### 2021
 <pre>
+<b>*</b> Bejjani, C., et al., (2021). Evaluating the learning of stimulus-control associations 
+    through incidental memory of reinforcement events. 
+    <b>Journal of Experimental Psychology: Learning, Memory, and Cognition</b>. 
+    <a href="https://doi.org/10.1037/xlm0001058">https://doi.org/10.1037/xlm0001058</a>
 <b>*</b> Wynn, J.S., et al., (2021). Encoding and retrieval eye movements 
     mediate age differences in pattern completion. 
     <b>Cognition</b>. 
