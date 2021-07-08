@@ -144,7 +144,7 @@ This repository has been used by:
 Visualizations based on best open science practices.
 # Made in R
 ![Raincloud example](R/figure19.png)
-# Made in R (credit to R. Kievit).
+# Made in R
 ![Raincloud example](R/Rplot02.png)
 # Made in R
 ![Raincloud example](R/testplot.jpeg)
