@@ -16,6 +16,12 @@ This repository has been used by:
 
 ### 2021
 <pre>
+<b>*</b> Trupp, M., et al., (2021). Can a brief interaction with online, 
+    digital art improve wellbeing?: 
+    A comparative study of the impact of online art and culture presentations 
+    on mood, state-anxiety, subjective wellbeing, and loneliness.
+    <b>PsyArXiv</b>.
+    <a href="https://psyarxiv.com/93atj/">https://psyarxiv.com/93atj/</a>
 <b>*</b> Bejjani, C., et al., (2021). Evaluating the learning of stimulus-control associations 
     through incidental memory of reinforcement events. 
     <b>Journal of Experimental Psychology: Learning, Memory, and Cognition</b>. 
