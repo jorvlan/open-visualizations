@@ -16,6 +16,11 @@ This repository has been used by:
 
 ### 2021
 <pre>
+<b>*</b> Heirene, R., et al., (2021). 
+    Accuracy of self-reported gambling frequency and outcomes: 
+    Comparisons with account data.
+    <b>PsyArXiv</b>.
+    <a href="https://psyarxiv.com/5hs7j/">https://psyarxiv.com/5hs7j/</a>
 <b>*</b> Jambazova, A. A. (2021). Studying the behavioural, physiological, 
     and neural indices of associative learning in multi-trial paradigms: 
     methodological and analytical considerations 
