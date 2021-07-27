@@ -16,6 +16,11 @@ This repository has been used by:
 
 ### 2021
 <pre>
+<b>*</b> Jambazova, A. A. (2021). Studying the behavioural, physiological, 
+    and neural indices of associative learning in multi-trial paradigms: 
+    methodological and analytical considerations 
+    <b>(Doctoral dissertation, University of Glasgow)</b>.
+    <a href="http://theses.gla.ac.uk/82335/">http://theses.gla.ac.uk/82335/</a>
 <b>*</b> Trupp, M., et al., (2021). Can a brief interaction with online, 
     digital art improve wellbeing?: 
     A comparative study of the impact of online art and culture presentations 
