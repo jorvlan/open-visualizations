@@ -1,0 +1,10 @@
+cff-version: 1.0.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: van Langen
+    given-names: Jordy
+    orcid: https://orcid.org/0000-0003-2504-2381
+title: "Open-visualizations in R and Python"
+version: 1.0.0
+doi: https://github.com/jorvlan/open-visualizations
+date-released: 2020-02-29
