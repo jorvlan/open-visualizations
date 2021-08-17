@@ -16,6 +16,10 @@ This repository has been used by:
 
 ### 2021
 <pre>
+<b>*</b> Kang, M. S., & Chiu, Y. C. (2021). 
+    Proactive and reactive metacontrol in task switching. 
+    <b>Memory & Cognition</b>, 1-16.
+    <a href="https://doi.org/10.3758/s13421-021-01189-8">https://doi.org/10.3758/s13421-021-01189-8</a>
 <b>*</b> Heirene, R., et al., (2021). 
     Accuracy of self-reported gambling frequency and outcomes: 
     Comparisons with account data.
