@@ -16,6 +16,11 @@ This repository has been used by:
 
 ### 2021
 <pre>
+<b>*</b> Schleider, J. L., et al., (2021). 
+    Single-session interventions for adolescent depression 
+    in the context of COVID-19: A nationwide randomized-controlled trial.
+    <b>PsyArXiv</b>
+    <a href"https://psyarxiv.com/ved4p/">https://psyarxiv.com/ved4p/</a>
 <b>*</b> Kang, M. S., & Chiu, Y. C. (2021). 
     Proactive and reactive metacontrol in task switching. 
     <b>Memory & Cognition</b>, 1-16.
