@@ -16,6 +16,10 @@ This repository has been used by:
 
 ### 2021
 <pre>
+<b>*</b> Motyka, P., et al., (2021). Perceptual Awareness of Optic Flows 
+    Paced Optimally and Non-optimally to Walking Speed. 
+    <b>Perception</b>, 03010066211034368.
+    <a href="https://doi.org/10.1177/03010066211034368">https://doi.org/10.1177/03010066211034368</a>
 <b>*</b> Schleider, J. L., et al., (2021). 
     Single-session interventions for adolescent depression 
     in the context of COVID-19: A nationwide randomized-controlled trial.
