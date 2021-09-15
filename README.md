@@ -16,6 +16,12 @@ This repository has been used by:
 
 ### 2021
 <pre>
+<b>*</b> Suetani, S., et al., (2021). 
+    Impairments in goal-directed action and reversal learning 
+    in a proportion of individuals with psychosis: 
+    evidence for differential phenotypes in early and persistent psychosis. 
+    <b>medRxiv</b>.
+    <a href="https://doi.org/10.1101/2021.08.31.21262937">https://doi.org/10.1101/2021.08.31.21262937</a>
 <b>*</b> Motyka, P., et al., (2021). Perceptual Awareness of Optic Flows 
     Paced Optimally and Non-optimally to Walking Speed. 
     <b>Perception</b>, 03010066211034368.
