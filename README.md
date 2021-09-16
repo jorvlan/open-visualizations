@@ -16,6 +16,11 @@ This repository has been used by:
 
 ### 2021
 <pre>
+<b>*</b> Callaghan, B., et al., (2021). 
+    Testing the efficacy of three informational interventions 
+    for reducing misperceptions of the Black–White wealth gap. 
+    <b>Proceedings of the National Academy of Sciences</b>, 118(38).
+    <a href="https://doi.org/10.1073/pnas.2108875118">https://doi.org/10.1073/pnas.2108875118</a> 
 <b>*</b> Suetani, S., et al., (2021). 
     Impairments in goal-directed action and reversal learning 
     in a proportion of individuals with psychosis: 
