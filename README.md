@@ -96,6 +96,7 @@ This repository has been used by:
     <b>Scientific Reports</b>. 11, 5612. 
     <a href="https://doi.org/10.1038/s41598-021-84599-7">https://doi.org/10.1038/s41598-021-84599-7</a>
 <b>*</b> JASP Team (2021). JASP - A Fresh Way to Do Statistics [Computer software].
+    <b>Release version 0.15</b>.
     <a href="https://jasp-stats.org/">https://jasp-stats.org/</a>
 <b>*</b> Somasundaram, V., et al., (2021). Contingency learning is not modulated by 
     cognitive control demands.
