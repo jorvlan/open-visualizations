@@ -16,6 +16,10 @@ This repository has been used by:
 
 ### 2021
 <pre>
+<b>*</b> Garcia, J. M. (2021). 
+    Spanish Translation and Validation of the Medication Management Ability Assessment. 
+    <b>Senior Honors Thesis / University of Houston Libraries</b>.
+    <a href="https://uh-ir.tdl.org/handle/10657/8249">https://uh-ir.tdl.org/handle/10657/8249</a>
 <b>*</b> Callaghan, B., et al., (2021). 
     Testing the efficacy of three informational interventions 
     for reducing misperceptions of the Black–White wealth gap. 
