@@ -20,7 +20,7 @@ This repository has been used by:
     Event-related desynchronization in motor imagery with EEG neurofeedback 
     in the context of declarative interference and sleep. 
     <b>Neuroimage: Reports</b>, 1(4), 100058.
-    a href="https://doi.org/10.1016/j.ynirp.2021.100058">https://doi.org/10.1016/j.ynirp.2021.100058</a>
+    <a href="https://doi.org/10.1016/j.ynirp.2021.100058">https://doi.org/10.1016/j.ynirp.2021.100058</a>
 <b>*</b> Garcia, J. M. (2021). 
     Spanish Translation and Validation of the Medication Management Ability Assessment. 
     <b>Senior Honors Thesis / University of Houston Libraries</b>.
