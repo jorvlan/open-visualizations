@@ -16,6 +16,10 @@ This repository has been used by:
 
 ### 2021
 <pre>
+<b>*</b> Uhlig, M., et al., (2021).
+    Rapid volumetric brain changes after acute psychosocial stress.
+    <b>bioRxiv</b>.
+    <a href="https://doi.org/10.1101/2021.12.01.470604">https://doi.org/10.1101/2021.12.01.470604</a>
 <b>*</b> Daeglau, M., et al., (2021). 
     Event-related desynchronization in motor imagery with EEG neurofeedback 
     in the context of declarative interference and sleep. 
