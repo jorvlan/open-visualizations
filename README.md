@@ -16,6 +16,10 @@ This repository has been used by:
 
 ### 2021
 <pre>
+<b>*</b> Yesilaltay, S. (2021).
+    Understanding misinformation and fighting for information.
+    <b>(Doctoral dissertation, Université Paris sciences et lettres)</b>.
+    <a href="https://www.theses.fr/2021UPSLE004">https://www.theses.fr/2021UPSLE004</a>
 <b>*</b> Uhlig, M., et al., (2021).
     Rapid volumetric brain changes after acute psychosocial stress.
     <b>bioRxiv</b>.
