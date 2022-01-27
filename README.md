@@ -13,7 +13,13 @@ If you use this repository for your research, please cite it, thank you.
 
 
 This repository has been used by:
-
+### 2022
+<pre>
+<b>*</b> Vicente-Mampel, J., et al., (2022). 
+    Effects of ankle position during the Nordic Hamstring exercise on range of motion, 
+    heel contact force and hamstring muscle activation. 
+    <b>Sports Biomechanics</b>, 1-13.
+    <a href="https://doi.org/10.1080/14763141.2021.2025416">https://doi.org/10.1080/14763141.2021.2025416</a>
 ### 2021
 <pre>
 <b>*</b> Yesilaltay, S. (2021).
