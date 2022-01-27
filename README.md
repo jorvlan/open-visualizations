@@ -20,6 +20,8 @@ This repository has been used by:
     heel contact force and hamstring muscle activation. 
     <b>Sports Biomechanics</b>, 1-13.
     <a href="https://doi.org/10.1080/14763141.2021.2025416">https://doi.org/10.1080/14763141.2021.2025416</a>
+ </pre>
+ 
 ### 2021
 <pre>
 <b>*</b> Yesilaltay, S. (2021).
