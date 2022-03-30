@@ -15,6 +15,11 @@ If you use this repository for your research, please cite it, thank you.
 This repository has been used by:
 ### 2022
 <pre>
+<b>*</b> Roberts, G., et al., (2022).
+    Longitudinal Changes in Structural Connectivity in Young People 
+    at High Genetic Risk for Bipolar Disorder.
+    <b>The American Journal of Psychiatry</b>.
+    <a href="https://doi.org/10.1176/appi.ajp.21010047">https://doi.org/10.1176/appi.ajp.21010047</a>
 <b>*</b> Vicente-Mampel, J., et al., (2022). 
     Effects of ankle position during the Nordic Hamstring exercise on range of motion, 
     heel contact force and hamstring muscle activation. 
