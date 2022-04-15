@@ -15,6 +15,10 @@ If you use this repository for your research, please cite it, thank you.
 This repository has been used by:
 ### 2022
 <pre>
+<b>*</b> Taylor, N. L., (2022). 
+    The Contribution of Noradrenergic Activity to Anxiety‐Induced Freezing of Gait. 
+    <b>Movement Disorders</b>.
+    <a href="https://doi.org/10.1002/mds.28999">https://doi.org/10.1002/mds.28999</a>
 <b>*</b> Roberts, G., et al., (2022).
     Longitudinal Changes in Structural Connectivity in Young People 
     at High Genetic Risk for Bipolar Disorder.
