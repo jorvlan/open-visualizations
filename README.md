@@ -29,9 +29,13 @@ This repository has been used by:
  
 ### 2021
 <pre>
+<b>*</b> Medel Sierralta, V. (2021).
+    DYNAMICS OF CORTICAL COMPUTATIONS UNDERLYING ATTENTIVE STATES.
+    <b>Doctoral dissertation, Pontificia Universidad Catolica de Chile</b>.
+    <a href="https://repositorio.uc.cl/handle/11534/62985">https://repositorio.uc.cl/handle/11534/62985</a>
 <b>*</b> Yesilaltay, S. (2021).
     Understanding misinformation and fighting for information.
-    <b>(Doctoral dissertation, Université Paris sciences et lettres)</b>.
+    <b>Doctoral dissertation, Université Paris sciences et lettres</b>.
     <a href="https://www.theses.fr/2021UPSLE004">https://www.theses.fr/2021UPSLE004</a>
 <b>*</b> Uhlig, M., et al., (2021).
     Rapid volumetric brain changes after acute psychosocial stress.
