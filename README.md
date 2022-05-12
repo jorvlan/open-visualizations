@@ -15,6 +15,10 @@ If you use this repository for your research, please cite it, thank you.
 This repository has been used by:
 ### 2022
 <pre>
+<b>*</b Werner, F., et al., (2022). Limited temporal stability of the Spielberger 
+    State-Trait Inventory over 3.5 years.
+    <b>PsyArXiv</b>.
+    <a href="https://psyarxiv.com/mubgv/">https://psyarxiv.com/mubgv/</a>
 <b>*</b> Taylor, N. L., et al., (2022). 
     The Contribution of Noradrenergic Activity to Anxiety‐Induced Freezing of Gait. 
     <b>Movement Disorders</b>.
