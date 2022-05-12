@@ -15,8 +15,8 @@ If you use this repository for your research, please cite it, thank you.
 This repository has been used by:
 ### 2022
 <pre>
-<b>*</b Werner, F., et al., (2022). Limited temporal stability of the Spielberger 
-    State-Trait Inventory over 3.5 years.
+<b>*</b Werner, F., et al., (2022). 
+    Limited temporal stability of the Spielberger State-Trait Inventory over 3.5 years.
     <b>PsyArXiv</b>.
     <a href="https://psyarxiv.com/mubgv/">https://psyarxiv.com/mubgv/</a>
 <b>*</b> Taylor, N. L., et al., (2022). 
@@ -33,7 +33,7 @@ This repository has been used by:
     heel contact force and hamstring muscle activation. 
     <b>Sports Biomechanics</b>, 1-13.
     <a href="https://doi.org/10.1080/14763141.2021.2025416">https://doi.org/10.1080/14763141.2021.2025416</a>
- </pre>
+</pre>
  
 ### 2021
 <pre>
