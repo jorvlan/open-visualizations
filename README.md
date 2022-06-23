@@ -37,6 +37,10 @@ This repository has been used by:
  
 ### 2021
 <pre>
+<b>*</b> Weiss, B., et al., (2021). 
+    Examining changes in personality following shamanic ceremonial use of ayahuasca. 
+    <b>Scientific reports</b>, 11(1), 1-15.
+    <a href="https://doi.org/10.1038/s41598-021-84746-0">https://doi.org/10.1038/s41598-021-84746-0</a>
 <b>*</b> Medel Sierralta, V. (2021).
     DYNAMICS OF CORTICAL COMPUTATIONS UNDERLYING ATTENTIVE STATES.
     <b>Doctoral dissertation, Pontificia Universidad Catolica de Chile</b>.
