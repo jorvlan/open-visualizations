@@ -15,6 +15,10 @@ If you use this repository for your research, please cite it, thank you.
 This repository has been used by:
 ### 2022
 <pre>
+<b>*</b> Suetani, S., et al., (2022). Impairments in goal-directed action and reversal learning 
+    in a proportion of individuals with psychosis. 
+    <b>Cognitive, Affective, & Behavioral Neuroscience, 1-14.</b>
+    <a href="https://doi.org/10.3758/s13415-022-01026-8">https://doi.org/10.3758/s13415-022-01026-8</a>
 <b>*</b> Werner, F., et al., (2022). 
     Limited temporal stability of the Spielberger State-Trait Inventory over 3.5 years.
     <b>PsyArXiv</b>.
