@@ -15,7 +15,13 @@ If you use this repository for your research, please cite it, thank you.
 This repository has been used by:
 ### 2022
 <pre>
-<b>*</b> Suetani, S., et al., (2022). Impairments in goal-directed action and reversal learning 
+<b>*</b> Hur, J., et al., (2022). 
+    Anxiety-related frontocortical activity is associated with 
+    dampened stressor reactivity in the real world. 
+    <b>Psychological Science, 33(6), 906-924.</b>
+    <a href="https://doi.org/10.1177/09567976211056635">https://doi.org/10.1177/09567976211056635</a>
+<b>*</b> Suetani, S., et al., (2022). 
+    Impairments in goal-directed action and reversal learning 
     in a proportion of individuals with psychosis. 
     <b>Cognitive, Affective, & Behavioral Neuroscience, 1-14.</b>
     <a href="https://doi.org/10.3758/s13415-022-01026-8">https://doi.org/10.3758/s13415-022-01026-8</a>
