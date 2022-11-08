@@ -12,7 +12,7 @@ If you use this repository for your research, please cite it, thank you.
 </pre>
 
 
-This repository has been used by / cited in : <b>56</b> scientific publications/works (8-nov-2022)
+This repository has been cited in : <b>56</b> scientific publications/open-source software (8-nov-2022)
 ### 2022
 <pre>
 <b>*</b> Veenman, M., Stefan, A., & Haaf, J. M. (2022). 
