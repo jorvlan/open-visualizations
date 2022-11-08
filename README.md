@@ -18,7 +18,7 @@ This repository has been used by:
 <b>*</b> Veenman, M., Stefan, A., & Haaf, J. M. (2022). 
     Bayesian Hierarchical Modeling: An Introduction and Reassessment.
     <b>PsyArXiv</b>.
-    <a href="[10.31234/osf.io/pskvx](https://psyarxiv.com/pskvx/)">[10.31234/osf.io/pskvx](https://psyarxiv.com/pskvx/)</a>
+    <a href="https://psyarxiv.com/pskvx/">https://psyarxiv.com/pskvx/</a>
 <b>*</b> Hur, J., et al., (2022). 
     Anxiety-related frontocortical activity is associated with 
     dampened stressor reactivity in the real world. 
