@@ -244,7 +244,7 @@ This repository has been used by:
 
 Visualizations based on best open science practices.
 # Made in R,
-![Raincloud example](R/Schermafbeelding 2022-11-08 om 11.17.46.png)
+![Raincloud example](R/package_figures/Schermafbeelding 2022-11-08 om 11.17.46.png)
 ### example from:
 <pre>
 <b>*</b> Veenman, M., Stefan, A., & Haaf, J. M. (2022). 
