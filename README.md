@@ -243,11 +243,15 @@ This repository has been used by:
 </pre> 
 
 Visualizations based on best open science practices.
-# Example made in R from
- Veenman, M., Stefan, A., & Haaf, J. M. (2022). 
-    Bayesian Hierarchical Modeling: An Introduction and Reassessment.
-    <a href="https://psyarxiv.com/pskvx/">https://psyarxiv.com/pskvx/</a>
+# Made in R,
 ![Raincloud example](R/Schermafbeelding 2022-11-08 om 11.17.46.png)
+### example from:
+<pre>
+<b>*</b> Veenman, M., Stefan, A., & Haaf, J. M. (2022). 
+    Bayesian Hierarchical Modeling: An Introduction and Reassessment.
+    <b>PsyArXiv</b>.
+    <a href="https://psyarxiv.com/pskvx/">https://psyarxiv.com/pskvx/</a>
+</pre>
 # Made in R
 ![Raincloud example](R/figure19.png)
 # Made in R
