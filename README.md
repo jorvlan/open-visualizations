@@ -12,7 +12,16 @@ If you use this repository for your research, please cite it, thank you.
 </pre>
 
 
-This repository has been cited in : <b>56</b> scientific publications/open-source software (8-nov-2022)
+This repository has been cited in : <b>57</b> scientific publications/open-source software (4-jan-2023)
+
+### 2023
+<pre>
+<b>*</b> Uhlig, M., Reinelt, J. D., Lauckner, M. E., Kumral, D., Schaare, H. L., Mildner, T., ... & Gaebler, M. (2023). 
+    Rapid volumetric brain changes after acute psychosocial stress. 
+    <b>NeuroImage, 265, 119760.</b>
+    <a href="https://doi.org/10.1016/j.neuroimage.2022.119760">https://doi.org/10.1016/j.neuroimage.2022.119760</a>
+</pre>
+
 ### 2022
 <pre>
 <b>*</b> Veenman, M., Stefan, A., & Haaf, J. M. (2022). 
