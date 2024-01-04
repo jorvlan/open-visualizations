@@ -20,6 +20,35 @@ This repository has been cited in : <b>57</b> scientific publications/open-sourc
     Rapid volumetric brain changes after acute psychosocial stress. 
     <b>NeuroImage, 265, 119760.</b>
     <a href="https://doi.org/10.1016/j.neuroimage.2022.119760">https://doi.org/10.1016/j.neuroimage.2022.119760</a>
+<b>*</b> Stoops, A., & Montag, J. L. (2023). 
+    Effects of individual differences in text exposure on sentence comprehension. 
+    <b>Scientific reports, 13(1), 16812.</b>
+    <a href="https://doi.org/10.1038/s41598-023-43801-8">https://doi.org/10.1038/s41598-023-43801-8</a>
+<b>*</b> Booth, S. J., Brown, L. J., Taylor, J. R., & Pobric, G. (2023). 
+    Experimental investigation of training schedule on home-based working memory training in healthy older adults. 
+    <b>Frontiers in Psychology, 14, 1165275.</b>
+    <a href="https://doi.org/10.3389/fpsyg.2023.1165275">https://doi.org/10.3389/fpsyg.2023.1165275</a>
+<b>*</b> Baker, A., Suetani, S., Cosgrove, P., Siskind, D., Murray, G. K., Scott, J. G., & Kesby, J. P. (2023). 
+    Reversal learning in those with early psychosis features contingency-dependent changes in loss response and learning. 
+   <b>Cognitive Neuropsychiatry, 28(5), 342-360.</b>
+    <a href="https://doi.org/10.1080/13546805.2023.2259019">https://doi.org/10.1080/13546805.2023.2259019</a>
+<b>*</b> Altay, S., Hacquin, A.-S., Chevallier, C., & Mercier, H. (2023). 
+    Information delivered by a chatbot has a positive impact on COVID-19 vaccines attitudes and intentions. 
+    <b>Journal of Experimental Psychology: Applied, 29(1), 52–62.</b> 
+    <a href="https://doi.org/10.1037/xap0000400">https://doi.org/10.1037/xap0000400</a>
+<b>*</b> Veenman, M., Stefan, A. M., & Haaf, J. M. (2023). 
+    Bayesian hierarchical modeling: An introduction and reassessment. 
+    <b>Behavior Research Methods, 1-32.</b>
+    <a href="https://doi.org/10.3758/s13428-023-02204-3">https://doi.org/10.3758/s13428-023-02204-3</a>
+<b>*</b> Parrotta, E., Bach, P., Pezzulo, G., Perrucci, M. G., Costantini, M., & Ferri, F. (2023). 
+    Exposure to false cardiac feedback alters pain perception and anticipatory cardiac frequency. 
+    <b>bioRxiv, 2023-06.</b>
+    <a href="https://doi.org/10.1101/2023.06.07.544025">https://doi.org/10.1101/2023.06.07.544025</a>
+<b>*</b> Siqi-Liu, A. (2023). 
+    Context-Specific Adjustments of Cognitive Flexibility 
+    <b>(Doctoral dissertation, Duke University).</b>   
+    <a href="https://www.proquest.com/openview/79e6fe1b91d1810cb5deb02cc849ec42/1?pq-origsite=gscholar&cbl=18750&diss=y">https://www.proquest.com/openview/79e6fe1b91d1810cb5deb02cc849ec42/1?pq-origsite=gscholar&cbl=18750&diss=y</a>
+
 </pre>
 
 ### 2022
