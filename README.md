@@ -12,7 +12,7 @@ If you use this repository for your research, please cite it, thank you.
 </pre>
 
 
-This repository has been cited in : <b>57</b> scientific publications/open-source software (4-jan-2023)
+This repository has been cited in : <b>64</b> scientific publications/open-source software (4-jan-2024)
 
 ### 2023
 <pre>
