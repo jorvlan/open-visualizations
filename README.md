@@ -314,6 +314,16 @@ Visualizations based on best open science practices.
 ![Raincloud example2](R/figure6.png)
 
 # Made in Python
+![Raincloud example2](R/package_figures/example_breakspear.png)
+### example from: 
+<pre>
+<b>*</b> Roberts, G., et al., (2022).
+    Longitudinal Changes in Structural Connectivity in Young People 
+    at High Genetic Risk for Bipolar Disorder.
+    <b>The American Journal of Psychiatry</b>.
+    <a href="https://doi.org/10.1176/appi.ajp.21010047">https://doi.org/10.1176/appi.ajp.21010047</a>
+</pre>
+
 ![Example3](Python/tutorial_1/figure10.png)
 
 This repository currently includes visualizations made with:
