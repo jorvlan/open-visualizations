@@ -12,10 +12,14 @@ If you use this repository for your research, please cite it, thank you.
 </pre>
 
 
-This repository has been cited in : <b>64</b> scientific publications/open-source software (4-jan-2024) and is adopted by `plotnine` <a href ="https://plotnine.org/gallery/violins-boxes-points-and-lines.html">https://plotnine.org/gallery/violins-boxes-points-and-lines.html</a> the ggplot2 implementation in Python
+This repository has been cited in : <b>64</b> scientific publications/open-source software (4-jan-2024). 
+This repository is adopted by `plotnine` <a href ="https://plotnine.org/gallery/violins-boxes-points-and-lines.html">https://plotnine.org/gallery/violins-boxes-points-and-lines.html</a> the ggplot2 implementation in Python
 
 # plotnine 
-![plotnine example](R/plotnine.png)
+![plotnine example](R/plotnine1.png)
+![plotnine example](R/plotnine2.png)
+![plotnine example](R/plotnine3.png)
+
 
 ### 2023
 <pre>
