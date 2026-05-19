@@ -16,7 +16,8 @@ This repository has been cited in : <b>64</b> scientific publications/open-sourc
 
 This repository is implemented in `plotnine` <a href ="https://plotnine.org/gallery/violins-boxes-points-and-lines.html">https://plotnine.org/gallery/violins-boxes-points-and-lines.html</a> the ggplot2 package in Python
 
-Thanks @has2k1
+Thanks [![has2k1](https://github.com/has2k1.png?size=50)](https://github.com/has2k1)
+
 # plotnine 
 ![plotnine example](R/plotnine1.png)
 ![plotnine example](R/plotnine2.png)
